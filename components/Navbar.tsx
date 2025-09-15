@@ -154,7 +154,7 @@ export default function Navbar() {
                           All Destinations
                         </div>
                         <p className="text-sm leading-tight text-white/80 relative z-10">
-                          Discover Africa's most incredible places across Eastern and Southern Africa.
+                          Discover Africa&apos;s most incredible places across Eastern and Southern Africa.
                         </p>
                       </Link>
                     </NavigationMenuLink>
@@ -423,3 +423,4 @@ const ListItem = React.forwardRef<
     </NavigationMenuLink>
   )
 })
+ListItem.displayName = "ListItem"

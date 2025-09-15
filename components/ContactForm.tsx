@@ -201,7 +201,7 @@ export default function ContactForm() {
       {status.isSuccess && (
         <div className="p-4 bg-green-50 border border-green-200 rounded-sm">
           <p className="text-green-600">
-            Thank you for your message! We'll get back to you within 24 hours to help plan your African adventure.
+            Thank you for your message! We&apos;ll get back to you within 24 hours to help plan your African adventure.
           </p>
         </div>
       )}

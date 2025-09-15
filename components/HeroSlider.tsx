@@ -31,7 +31,7 @@ export default function HeroSlider({ className = "" }: HeroSliderProps) {
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h1 className="font-freight-display-pro text-5xl text-white leading-tight max-w-5xl mx-auto">
-              Purpose-driven safaris connecting travelers to Africa's untamed wilderness while championing conservation and cultural preservation
+              Purpose-driven safaris connecting travelers to Africa&apos;s untamed wilderness while championing conservation and cultural preservation
             </h1>
           </div>
         </div>

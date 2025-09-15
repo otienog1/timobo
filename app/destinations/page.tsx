@@ -225,7 +225,7 @@ export default function DestinationsPage() {
                 Planning Your African Adventure?
               </h2>
               <p className="font-sofia-pro text-base lg:text-lg text-stone-700 mb-8 leading-relaxed">
-                Our safari specialists have decades of experience across Africa. We'll help you choose the perfect destinations, plan your itinerary, and ensure every moment of your journey is unforgettable.
+                Our safari specialists have decades of experience across Africa. We&apos;ll help you choose the perfect destinations, plan your itinerary, and ensure every moment of your journey is unforgettable.
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-start space-x-3">

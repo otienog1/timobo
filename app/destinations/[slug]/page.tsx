@@ -117,7 +117,7 @@ export default async function DestinationPage({ params }: Props) {
           </h2>
           <p className="text-lg text-stone-300 mb-8 max-w-2xl mx-auto">
             Let our expert team create a customized itinerary for your {destination.name} adventure. 
-            We'll handle every detail to ensure your journey is unforgettable.
+            We&apos;ll handle every detail to ensure your journey is unforgettable.
           </p>
           <div className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
             <Link

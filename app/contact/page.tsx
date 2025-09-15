@@ -76,7 +76,7 @@ export default function ContactPage() {
                   Planning Your Safari?
                 </h3>
                 <p className="font-sofia-pro text-stone-700 mb-6 leading-relaxed">
-                  Our safari specialists are ready to help you create the perfect African adventure. Whether you're interested in wildlife safaris, cultural experiences, or MICE services, we'll craft a personalized itinerary just for you.
+                  Our safari specialists are ready to help you create the perfect African adventure. Whether you&apos;re interested in wildlife safaris, cultural experiences, or MICE services, we&apos;ll craft a personalized itinerary just for you.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-start space-x-3">
@@ -130,7 +130,7 @@ export default function ContactPage() {
                 Do you provide travel insurance?
               </h3>
               <p className="font-sofia-pro text-stone-700 leading-relaxed">
-                Yes, we offer comprehensive travel insurance options to ensure your peace of mind during your African adventure. We'll help you choose the right coverage.
+                Yes, we offer comprehensive travel insurance options to ensure your peace of mind during your African adventure. We&apos;ll help you choose the right coverage.
               </p>
             </div>
 
@@ -145,10 +145,10 @@ export default function ContactPage() {
 
             <div className="bg-white p-8 rounded-lg shadow-sm text-left border border-stone-200 hover:shadow-md transition-shadow">
               <h3 className="font-sofia-pro-bold text-xl mb-4 text-stone-800">
-                What's included in your safari packages?
+                What&apos;s included in your safari packages?
               </h3>
               <p className="font-sofia-pro text-stone-700 leading-relaxed">
-                Our packages typically include accommodation, meals, game drives, transfers, and professional guide services. We'll provide a detailed breakdown for your specific itinerary.
+                Our packages typically include accommodation, meals, game drives, transfers, and professional guide services. We&apos;ll provide a detailed breakdown for your specific itinerary.
               </p>
             </div>
 
@@ -179,7 +179,7 @@ export default function ContactPage() {
             Ready to Start Planning?
           </h2>
           <p className="font-sofia-pro text-base lg:text-lg text-stone-300 mb-8 max-w-3xl mx-auto">
-            Don't wait to create memories that will last a lifetime. Our expert safari specialists are ready to craft your perfect African adventure.
+            Don&apos;t wait to create memories that will last a lifetime. Our expert safari specialists are ready to craft your perfect African adventure.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <AnimatedButton asChild variant="primary" size="lg">

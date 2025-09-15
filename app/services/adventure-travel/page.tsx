@@ -109,7 +109,7 @@ export default function AdventureTravelPage() {
             Beyond the Ordinary
           </h2>
           <p className="font-sofia-pro text-lg lg:text-xl text-stone-700 leading-relaxed mb-8">
-            Our adventure expeditions take you to Africa's most remote wilderness areas, ancient cultural sites, and pristine landscapes. Each journey is designed for travelers seeking authentic, transformative experiences beyond traditional safari routes.
+            Our adventure expeditions take you to Africa&apos;s most remote wilderness areas, ancient cultural sites, and pristine landscapes. Each journey is designed for travelers seeking authentic, transformative experiences beyond traditional safari routes.
           </p>
           <div className="w-16 h-1 bg-amber-500 mx-auto"></div>
         </div>
@@ -123,7 +123,7 @@ export default function AdventureTravelPage() {
               Adventure Expeditions
             </h2>
             <p className="font-sofia-pro text-lg text-stone-700 max-w-3xl mx-auto">
-              Carefully planned expeditions to Africa's most spectacular and remote destinations. All journeys include expert guides, premium accommodations, and comprehensive logistics.
+              Carefully planned expeditions to Africa&apos;s most spectacular and remote destinations. All journeys include expert guides, premium accommodations, and comprehensive logistics.
             </p>
           </div>
 
@@ -260,7 +260,7 @@ export default function AdventureTravelPage() {
             Your Adventure Awaits
           </h2>
           <p className="font-sofia-pro text-lg lg:text-xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Ready to explore Africa's most remote and spectacular destinations? Our adventure travel specialists are here to craft your perfect expedition.
+            Ready to explore Africa&apos;s most remote and spectacular destinations? Our adventure travel specialists are here to craft your perfect expedition.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">

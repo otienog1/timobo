@@ -65,7 +65,7 @@ export default function EasternAfricaPage() {
             Where Every Sunrise Tells a Story
           </h2>
           <p className="font-sofia-pro text-lg lg:text-xl text-stone-700 leading-relaxed mb-8">
-            From Kenya's legendary Maasai Mara to Tanzania's endless Serengeti plains, from Rwanda's misty mountain forests to Uganda's pristine wilderness areas, Eastern Africa offers the ultimate safari experience where ancient traditions meet incredible wildlife encounters.
+            From Kenya&apos;s legendary Maasai Mara to Tanzania&apos;s endless Serengeti plains, from Rwanda&apos;s misty mountain forests to Uganda&apos;s pristine wilderness areas, Eastern Africa offers the ultimate safari experience where ancient traditions meet incredible wildlife encounters.
           </p>
           <div className="w-16 h-1 bg-amber-500 mx-auto"></div>
         </div>
@@ -133,7 +133,7 @@ export default function EasternAfricaPage() {
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
             <div>
               <h2 className="font-freight-display-pro text-3xl sm:text-4xl font-bold mb-6 text-stone-800">
-                Discover Eastern Africa's Wonders
+                Discover Eastern Africa&apos;s Wonders
               </h2>
               <p className="font-sofia-pro text-base lg:text-lg text-stone-700 mb-8 leading-relaxed">
                 With 18+ years of experience in Eastern Africa, we know every hidden gem, every migration pattern, and every cultural nuance. Let us craft your perfect safari adventure across this incredible region.
@@ -149,7 +149,7 @@ export default function EasternAfricaPage() {
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="flex-shrink-0 w-2 h-2 bg-amber-500 rounded-full mt-3"></div>
-                  <p className="font-sofia-pro text-stone-700">Explore Ethiopia's ancient churches and highlands</p>
+                  <p className="font-sofia-pro text-stone-700">Explore Ethiopia&apos;s ancient churches and highlands</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="flex-shrink-0 w-2 h-2 bg-amber-500 rounded-full mt-3"></div>

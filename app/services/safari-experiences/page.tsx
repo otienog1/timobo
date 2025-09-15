@@ -97,7 +97,7 @@ export default function SafariExperiencesPage() {
             Meaning & Magic
           </h2>
           <p className="font-sofia-pro text-lg lg:text-xl text-stone-700 leading-relaxed mb-8">
-            Every safari is crafted for meaning and magic, connecting you to Africa's untamed wilderness, diverse cultures, and conservation efforts. With over 18 years of expertise, we design transformative journeys.
+            Every safari is crafted for meaning and magic, connecting you to Africa&apos;s untamed wilderness, diverse cultures, and conservation efforts. With over 18 years of expertise, we design transformative journeys.
           </p>
           <div className="w-16 h-1 bg-amber-500 mx-auto"></div>
         </div>

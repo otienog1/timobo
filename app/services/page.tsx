@@ -103,7 +103,7 @@ export default function ServicesPage() {
             Precision, Purpose & Passion
           </h2>
           <p className="font-sofia-pro text-lg lg:text-xl text-stone-700 leading-relaxed mb-8">
-            Whether you dream of tracking the Big Five, exploring Ethiopia's cultural treasures, hosting a seamless conference, or relaxing on pristine beaches, we make it happen with expertise and attention to detail.
+            Whether you dream of tracking the Big Five, exploring Ethiopia&apos;s cultural treasures, hosting a seamless conference, or relaxing on pristine beaches, we make it happen with expertise and attention to detail.
           </p>
           <div className="w-16 h-1 bg-amber-500 mx-auto"></div>
         </div>
@@ -251,7 +251,7 @@ export default function ServicesPage() {
             Ready to Create Your African Experience?
           </h2>
           <p className="font-sofia-pro text-lg lg:text-xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Our team of safari specialists and event planners are ready to craft your perfect African adventure or corporate event. Let's turn your vision into an unforgettable experience.
+            Our team of safari specialists and event planners are ready to craft your perfect African adventure or corporate event. Let&apos;s turn your vision into an unforgettable experience.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">

@@ -97,7 +97,7 @@ export default function MICESolutionsPage() {
             Corporate Excellence
           </h2>
           <p className="font-sofia-pro text-lg lg:text-xl text-stone-700 leading-relaxed mb-8">
-            From intimate executive retreats to large-scale conferences, we manage every detail to ensure your business events succeed while showcasing the best of Africa's hospitality, culture, and natural beauty.
+            From intimate executive retreats to large-scale conferences, we manage every detail to ensure your business events succeed while showcasing the best of Africa&apos;s hospitality, culture, and natural beauty.
           </p>
           <div className="w-16 h-1 bg-amber-500 mx-auto"></div>
         </div>

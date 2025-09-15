@@ -65,7 +65,7 @@ export default function SouthernAfricaPage() {
             Where Contrasts Create Magic
           </h2>
           <p className="font-sofia-pro text-lg lg:text-xl text-stone-700 leading-relaxed mb-8">
-            From South Africa's diverse ecosystems and world-class wine regions to Botswana's pristine wilderness, Zimbabwe's thundering waterfalls, and Namibia's otherworldly desert landscapes, Southern Africa offers dramatic contrasts that create unforgettable experiences.
+            From South Africa&apos;s diverse ecosystems and world-class wine regions to Botswana&apos;s pristine wilderness, Zimbabwe&apos;s thundering waterfalls, and Namibia&apos;s otherworldly desert landscapes, Southern Africa offers dramatic contrasts that create unforgettable experiences.
           </p>
           <div className="w-16 h-1 bg-amber-500 mx-auto"></div>
         </div>
@@ -133,10 +133,10 @@ export default function SouthernAfricaPage() {
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
             <div>
               <h2 className="font-freight-display-pro text-3xl sm:text-4xl font-bold mb-6 text-stone-800">
-                Explore Southern Africa's Contrasts
+                Explore Southern Africa&apos;s Contrasts
               </h2>
               <p className="font-sofia-pro text-base lg:text-lg text-stone-700 mb-8 leading-relaxed">
-                From luxury lodges to adventurous camping safaris, we craft unforgettable journeys that showcase Southern Africa's incredible diversity. Our expert guides know every hidden waterhole, every migration route, and every cultural story.
+                From luxury lodges to adventurous camping safaris, we craft unforgettable journeys that showcase Southern Africa&apos;s incredible diversity. Our expert guides know every hidden waterhole, every migration route, and every cultural story.
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-start space-x-3">
@@ -145,15 +145,15 @@ export default function SouthernAfricaPage() {
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="flex-shrink-0 w-2 h-2 bg-amber-500 rounded-full mt-3"></div>
-                  <p className="font-sofia-pro text-stone-700">Cruise through the Okavango Delta's pristine waterways</p>
+                  <p className="font-sofia-pro text-stone-700">Cruise through the Okavango Delta&apos;s pristine waterways</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="flex-shrink-0 w-2 h-2 bg-amber-500 rounded-full mt-3"></div>
-                  <p className="font-sofia-pro text-stone-700">Explore Namibia's towering desert dunes</p>
+                  <p className="font-sofia-pro text-stone-700">Explore Namibia&apos;s towering desert dunes</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <div className="flex-shrink-0 w-2 h-2 bg-amber-500 rounded-full mt-3"></div>
-                  <p className="font-sofia-pro text-stone-700">Experience South Africa's wine regions and Cape Town</p>
+                  <p className="font-sofia-pro text-stone-700">Experience South Africa&apos;s wine regions and Cape Town</p>
                 </div>
               </div>
               <AnimatedButton asChild variant="primary" size="lg">
@@ -197,7 +197,7 @@ export default function SouthernAfricaPage() {
 
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
           <h2 className="font-freight-display-pro text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 text-white">
-            Discover Southern Africa's Magic
+            Discover Southern Africa&apos;s Magic
           </h2>
           <p className="font-sofia-pro text-lg lg:text-xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
             From the thundering spectacle of Victoria Falls to the ethereal beauty of the Okavango Delta, Southern Africa offers dramatic landscapes that will leave you breathless and forever changed.
