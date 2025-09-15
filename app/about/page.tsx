@@ -16,7 +16,7 @@ export default function AboutPage() {
         title="About Timobo Safaris Ltd"
         subtitle="18+ Years of African Safari Excellence"
         description="Discover our story, meet our team, and learn about our commitment to creating meaningful African experiences while supporting conservation and communities."
-        backgroundImage="/about-us-hero.jpg"
+        backgroundImage="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80"
       />
 
       {/* Our Story - Narrative Driven */}
@@ -46,7 +46,7 @@ export default function AboutPage() {
             <div className="order-1 lg:order-2">
               <div className="relative aspect-[4/5] overflow-hidden rounded-sm shadow-lg">
                 <img
-                  src="/about-us-page.jpg"
+                  src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2011&q=80"
                   alt="African safari landscape showcasing our heritage"
                   className="w-full h-full object-cover"
                 />
