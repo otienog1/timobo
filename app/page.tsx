@@ -147,40 +147,10 @@ export default function HomePage() {
   }, [api]);
 
 
-  const heroSlides = [
-    {
-      id: "masai-mara",
-      image: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80",
-      title: "Masai Mara Expeditions",
-      subtitle: "Witness the Great Migration",
-      description: "Experience Kenya's premier wildlife destination with over 1.5 million wildebeest, zebras, and gazelles during the annual Great Migration."
-    },
-    {
-      id: "serengeti",
-      image: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      title: "Serengeti Safari Adventures",
-      subtitle: "Tanzania's Crown Jewel",
-      description: "Discover endless plains teeming with wildlife in Tanzania's most famous national park, home to Africa's Big Five."
-    },
-    {
-      id: "gorilla-tracking",
-      image: "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2011&q=80",
-      title: "Mountain Gorilla Encounters",
-      subtitle: "Rwanda & Uganda Adventures",
-      description: "Come face-to-face with endangered mountain gorillas in the misty forests of Volcanoes National Park and Bwindi Impenetrable Forest."
-    },
-    {
-      id: "okavango",
-      image: "https://images.unsplash.com/photo-1551375073-4a96641d4d81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      title: "Okavango Delta Explorations",
-      subtitle: "Botswana's Water Wilderness",
-      description: "Navigate the pristine waterways of the world's largest inland delta, where elephants wade through crystal-clear channels."
-    }
-  ];
 
   return (
     <main className="min-h-screen overflow-x-hidden">
-      <HeroSlider slides={heroSlides} />
+      <HeroSlider />
 
 
       <Section className="py-16 lg:py-24 lg:flex lg:items-center">
