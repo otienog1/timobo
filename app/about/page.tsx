@@ -30,15 +30,15 @@ export default function AboutPage() {
 
               <div className="space-y-6 font-sofia-pro text-lg lg:text-xl leading-relaxed text-stone-700">
                 <p>
-                  Founded in 2006, Timobo Safaris Ltd was born from a deep passion for Africa's untamed wilderness and rich cultural heritage. What started as a vision to share authentic African experiences has evolved into one of the region's most trusted safari and MICE solutions partners.
+                  Founded in 2006, Timobo Safaris Ltd was born from a deep passion for Africa&apos;s untamed wilderness and rich cultural heritage. What started as a vision to share authentic African experiences has evolved into one of the region&apos;s most trusted safari and MICE solutions partners.
                 </p>
 
                 <p>
-                  We don't just sell destinations – we share our home. Every journey we craft tells a story of conservation, community empowerment, and the transformative power of authentic travel experiences.
+                  We don&apos;t just sell destinations – we share our home. Every journey we craft tells a story of conservation, community empowerment, and the transformative power of authentic travel experiences.
                 </p>
 
                 <p>
-                  From the vast savannas of the Maasai Mara to the pristine beaches of Zanzibar, from intimate wildlife encounters to seamless corporate events, we've spent over 18 years perfecting the art of African hospitality.
+                  From the vast savannas of the Maasai Mara to the pristine beaches of Zanzibar, from intimate wildlife encounters to seamless corporate events, we&apos;ve spent over 18 years perfecting the art of African hospitality.
                 </p>
               </div>
             </div>
@@ -65,7 +65,7 @@ export default function AboutPage() {
               The Timobo Difference
             </h2>
             <p className="font-sofia-pro text-xl text-stone-600 max-w-3xl mx-auto">
-              We don't just plan trips – we craft transformative journeys that connect you to Africa's soul
+              We don&apos;t just plan trips – we craft transformative journeys that connect you to Africa&apos;s soul
             </p>
           </div>
 
@@ -85,7 +85,7 @@ export default function AboutPage() {
 
                 <div className="border-l-4 border-stone-300 pl-6">
                   <h4 className="font-sofia-pro text-xl font-semibold mb-3 text-stone-800">MICE Solutions</h4>
-                  <p className="font-sofia-pro text-stone-700">Seamless corporate events and incentive programs in Africa's most inspiring destinations.</p>
+                  <p className="font-sofia-pro text-stone-700">Seamless corporate events and incentive programs in Africa&apos;s most inspiring destinations.</p>
                 </div>
 
                 <div className="border-l-4 border-stone-300 pl-6">
@@ -108,14 +108,14 @@ export default function AboutPage() {
                 <Card className="border-none shadow-sm bg-stone-50">
                   <CardContent className="p-6">
                     <h4 className="font-sofia-pro text-lg font-semibold mb-2 text-stone-800">Conservation Champions</h4>
-                    <p className="font-sofia-pro text-stone-600">Wildlife enthusiasts and conservationists committed to protecting Africa's natural heritage.</p>
+                    <p className="font-sofia-pro text-stone-600">Wildlife enthusiasts and conservationists committed to protecting Africa&apos;s natural heritage.</p>
                   </CardContent>
                 </Card>
 
                 <Card className="border-none shadow-sm bg-stone-50">
                   <CardContent className="p-6">
                     <h4 className="font-sofia-pro text-lg font-semibold mb-2 text-stone-800">Creative Professionals</h4>
-                    <p className="font-sofia-pro text-stone-600">Photographers, filmmakers, and content creators capturing Africa's raw beauty.</p>
+                    <p className="font-sofia-pro text-stone-600">Photographers, filmmakers, and content creators capturing Africa&apos;s raw beauty.</p>
                   </CardContent>
                 </Card>
 
@@ -167,7 +167,7 @@ export default function AboutPage() {
                 <CardTitle className="font-freight-display-pro text-2xl text-stone-800">Sustainability</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="font-sofia-pro text-stone-600">Protecting Africa's environment and wildlife while empowering local communities through responsible tourism.</p>
+                <p className="font-sofia-pro text-stone-600">Protecting Africa&apos;s environment and wildlife while empowering local communities through responsible tourism.</p>
               </CardContent>
             </Card>
 
@@ -219,7 +219,7 @@ export default function AboutPage() {
                 <div className="w-3 h-3 bg-stone-400 rounded-full mt-3 flex-shrink-0"></div>
                 <div>
                   <h4 className="font-sofia-pro text-xl font-semibold mb-3 text-stone-800">Wildlife Conservation</h4>
-                  <p className="font-sofia-pro text-stone-700">Partnering with conservation organizations to protect endangered species and preserve Africa's natural heritage for future generations.</p>
+                  <p className="font-sofia-pro text-stone-700">Partnering with conservation organizations to protect endangered species and preserve Africa&apos;s natural heritage for future generations.</p>
                 </div>
               </div>
 
@@ -227,7 +227,7 @@ export default function AboutPage() {
                 <div className="w-3 h-3 bg-stone-400 rounded-full mt-3 flex-shrink-0"></div>
                 <div>
                   <h4 className="font-sofia-pro text-xl font-semibold mb-3 text-stone-800">Cultural Preservation</h4>
-                  <p className="font-sofia-pro text-stone-700">Showcasing and respecting Africa's rich traditions while ensuring local cultures benefit from and maintain control over their heritage.</p>
+                  <p className="font-sofia-pro text-stone-700">Showcasing and respecting Africa&apos;s rich traditions while ensuring local cultures benefit from and maintain control over their heritage.</p>
                 </div>
               </div>
 
@@ -252,7 +252,7 @@ export default function AboutPage() {
               <Card className="border-none shadow-lg bg-stone-100">
                 <CardContent className="p-8">
                   <blockquote className="font-sofia-pro text-2xl font-light italic text-stone-700 mb-6 leading-relaxed">
-                    "Travel is the only thing you buy that makes you richer. At Timobo, we ensure that richness extends to the communities and wildlife that make Africa extraordinary."
+                    &ldquo;Travel is the only thing you buy that makes you richer. At Timobo, we ensure that richness extends to the communities and wildlife that make Africa extraordinary.&rdquo;
                   </blockquote>
                   <div className="text-center">
                     <div className="w-16 h-px bg-stone-400 mx-auto mb-4"></div>
