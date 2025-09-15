@@ -188,7 +188,7 @@ export default function HomePage() {
           <div className="lg:grid lg:grid-cols-12 lg:gap-8 xl:gap-12 lg:items-center">
             <div className="lg:col-span-8">
               <p className="font-sofia-pro text-base lg:text-lg text-stone-700 mb-6 leading-relaxed">
-                At Timobo Safaris Ltd, we've spent over 18 years designing exceptional journeys across Africa. Our expertise lies in planning, coordinating, and executing tailor-made safaris and special-interest tours, as well as seamless MICE solutions for corporate clients across Eastern and Southern Africa.
+                At Timobo Safaris Ltd, we&apos;ve spent over 18 years designing exceptional journeys across Africa. Our expertise lies in planning, coordinating, and executing tailor-made safaris and special-interest tours, as well as seamless MICE solutions for corporate clients across Eastern and Southern Africa.
               </p>
               <p className="font-sofia-pro text-base lg:text-lg text-stone-700 mb-6 lg:mb-6 leading-relaxed">
                 We are more than a safari company – we are travel designers and event specialists committed to creating journeys that connect people with nature, culture, and community ensuring Experiences of Africa to all our clients. With nearly two decades of experience, we have mastered the art of planning and executing tailor-made safaris while supporting purpose-driven travel that promotes wildlife conservation, cultural preservation, and community empowerment.
@@ -244,7 +244,7 @@ export default function HomePage() {
               <div>
                 <h3 className="font-sofia-pro-bold text-xl mb-4 text-stone-800">Safari Experiences</h3>
                 <p className="font-sofia-pro text-stone-700 mb-4">
-                  Step into the wild with custom-designed safari itineraries that connect you to Africa's most iconic destinations. From luxury lodge stays to cultural encounters and conservation experiences.
+                  Step into the wild with custom-designed safari itineraries that connect you to Africa&apos;s most iconic destinations. From luxury lodge stays to cultural encounters and conservation experiences.
                 </p>
                 <ul className="font-sofia-pro text-sm text-stone-600 space-y-2">
                   <li>• Wildlife & Cultural Safaris</li>
@@ -267,7 +267,7 @@ export default function HomePage() {
               <div>
                 <h3 className="font-sofia-pro-bold text-xl mb-4 text-stone-800">Adventure Travel</h3>
                 <p className="font-sofia-pro text-stone-700 mb-4">
-                  For explorers seeking raw, authentic experiences, our adventure packages take you off the beaten path to discover Africa's hidden gems.
+                  For explorers seeking raw, authentic experiences, our adventure packages take you off the beaten path to discover Africa&apos;s hidden gems.
                 </p>
                 <ul className="font-sofia-pro text-sm text-stone-600 space-y-2">
                   <li>• Northern Kenya Expeditions</li>
@@ -315,7 +315,7 @@ export default function HomePage() {
                 Kenya is home to the world-famous Maasai Mara, where the awe-inspiring Great Wildebeest Migration takes center stage each year. Explore Amboseli, renowned for its large-tusked elephants and stunning views of Mount Kilimanjaro.
               </p>
               <p className="font-sofia-pro text-lg text-muted-foreground mb-8">
-                From the vast plains of the Maasai Mara to Tanzania's Serengeti, Rwanda's mountain gorillas, and Botswana's Okavango Delta - we craft journeys to Africa's most iconic destinations.
+                From the vast plains of the Maasai Mara to Tanzania&apos;s Serengeti, Rwanda&apos;s mountain gorillas, and Botswana&apos;s Okavango Delta - we craft journeys to Africa&apos;s most iconic destinations.
               </p>
               <AnimatedButton asChild variant="primary" size="lg">
                 <Link href="/destinations">
