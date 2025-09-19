@@ -11,7 +11,7 @@ export default function SafariExperiencesPage() {
       title: "Wildlife Safaris",
       subtitle: "Big Five & Great Migration",
       description: "Witness the Great Migration in Maasai Mara and explore the Big Five hotspots such as Amboseli, Samburu, and Tsavo. Experience close encounters with Africa's most iconic wildlife.",
-      image: "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/services/safari-experiences/wildlife-safaris.jpg",
       highlights: [
         "Great Migration viewing in Maasai Mara",
         "Big Five encounters in Amboseli and Samburu",
@@ -23,7 +23,7 @@ export default function SafariExperiencesPage() {
       title: "Cultural Safaris",
       subtitle: "Authentic Cultural Immersion",
       description: "Engage with local tribes and learn ancient traditions. Meet the Maasai, Samburu, and other indigenous communities while experiencing their rich cultural heritage.",
-      image: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1869&q=80",
+      image: "/images/services/safari-experiences/cultural-safaris.jpg",
       highlights: [
         "Authentic cultural village visits",
         "Traditional ceremonies and dances",
@@ -35,7 +35,7 @@ export default function SafariExperiencesPage() {
       title: "Beach & Bush Combos",
       subtitle: "Safari & Coastal Paradise",
       description: "Combine thrilling game drives with white-sand beaches in Diani, Zanzibar, and Lamu. The perfect blend of adventure and relaxation.",
-      image: "https://images.unsplash.com/photo-1551782450-17144efb9c50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+      image: "/images/services/safari-experiences/beach-bush-combo.jpg",
       highlights: [
         "Safari and beach combination packages",
         "Coastal destinations: Diani, Lamu, Zanzibar",
@@ -47,7 +47,7 @@ export default function SafariExperiencesPage() {
       title: "Photography Safaris",
       subtitle: "Professional Wildlife Photography",
       description: "Specialized tours for photographers and content creators. Expert guidance on wildlife photography with the best lighting and positioning.",
-      image: "https://images.unsplash.com/photo-1571771019784-3ff35f4f4277?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80",
+      image: "/images/services/safari-experiences/photography-safaris.jpg",
       highlights: [
         "Professional photography guidance",
         "Optimal timing for wildlife photography",
@@ -59,7 +59,7 @@ export default function SafariExperiencesPage() {
       title: "Conservation Safaris",
       subtitle: "Conservation & Research",
       description: "Participate in conservation programs and wildlife research. Make a meaningful impact while experiencing Africa's wildlife.",
-      image: "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2011&q=80",
+      image: "/images/services/safari-experiences/conservation-safaris.jpg",
       highlights: [
         "Wildlife conservation participation",
         "Research project involvement",
@@ -71,7 +71,7 @@ export default function SafariExperiencesPage() {
       title: "Luxury Safaris",
       subtitle: "Ultimate Comfort & Exclusivity",
       description: "Private charters, luxury camps, and five-star services. Experience Africa's wilderness in ultimate comfort and style.",
-      image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80",
+      image: "/images/services/safari-experiences/luxury-safaris.jpg",
       highlights: [
         "Private safari vehicles and guides",
         "Luxury tented camps and lodges",
@@ -221,7 +221,7 @@ export default function SafariExperiencesPage() {
             <div className="mt-12 lg:mt-0">
               <div className="relative aspect-[4/3] bg-stone-200 overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  src="/images/services/safari-experiences/wildlife-safaris.jpg"
                   alt="Safari planning expertise"
                   className="w-full h-full object-cover"
                 />
@@ -235,7 +235,7 @@ export default function SafariExperiencesPage() {
       <Section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1571771019784-3ff35f4f4277?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80"
+            src="/images/services/safari-experiences/photography-safaris.jpg"
             alt="Safari adventure"
             className="w-full h-full object-cover"
           />

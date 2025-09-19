@@ -11,7 +11,7 @@ export default function MICESolutionsPage() {
       title: "Corporate Conferences & Meetings",
       subtitle: "Professional Business Events",
       description: "World-class venues and expert event management for corporate conferences, board meetings, and business gatherings across Africa's leading urban destinations.",
-      image: "https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+      image: "/images/services/mice-solutions/corporate-conference-meetings.jpg",
       highlights: [
         "Premium conference venues selection",
         "State-of-the-art audio-visual technology",
@@ -23,7 +23,7 @@ export default function MICESolutionsPage() {
       title: "Incentive Travel Programs",
       subtitle: "Reward & Motivate Teams",
       description: "Reward your team with curated African experiences that combine business objectives with unforgettable adventures and cultural immersion.",
-      image: "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/services/mice-solutions/incentive-travel-programs.jpg",
       highlights: [
         "Customized incentive safari packages",
         "Luxury lodge and beach resort experiences",
@@ -35,7 +35,7 @@ export default function MICESolutionsPage() {
       title: "Workshops & Training Programs",
       subtitle: "Learning & Development",
       description: "Tailored setups for productivity with inspiring African backdrops that enhance learning, creativity, and team collaboration.",
-      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/services/mice-solutions/workshop-training.jpg",
       highlights: [
         "Purpose-built training facilities",
         "Outdoor workshop spaces in nature",
@@ -47,7 +47,7 @@ export default function MICESolutionsPage() {
       title: "Special Events & Celebrations",
       subtitle: "Corporate Entertainment",
       description: "Bush dinners, themed events, and cultural performances that create unforgettable corporate celebrations and milestone events.",
-      image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+      image: "/images/services/mice-solutions/special-events-celebration.jpg",
       highlights: [
         "Bush dinner experiences under stars",
         "Cultural entertainment and performances",
@@ -59,7 +59,7 @@ export default function MICESolutionsPage() {
       title: "Exhibition Support",
       subtitle: "Trade Shows & Exhibitions",
       description: "Comprehensive support for trade shows, exhibitions, and industry events across major African business hubs with local expertise and logistics.",
-      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/services/mice-solutions/exhibition-support.jpg",
       highlights: [
         "Exhibition venue sourcing and booking",
         "Stand design and construction coordination",
@@ -71,7 +71,7 @@ export default function MICESolutionsPage() {
       title: "Executive Retreats",
       subtitle: "Strategic Planning & Leadership",
       description: "Exclusive executive retreats in Africa's most inspiring locations, combining strategic planning sessions with luxury experiences and adventure.",
-      image: "https://images.unsplash.com/photo-1551782450-17144efb9c50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+      image: "/images/services/mice-solutions/executive-retreat.jpg",
       highlights: [
         "Private luxury lodges and villas",
         "Strategic planning facilitation",
@@ -223,7 +223,7 @@ export default function MICESolutionsPage() {
       <Section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+            src="/images/services/mice-solutions/corporate-conference-meetings.jpg"
             alt="Corporate events"
             className="w-full h-full object-cover"
           />

@@ -12,7 +12,7 @@ export default function AdventureTravelPage() {
       subtitle: "Lake Turkana & Samburu Wilderness",
       duration: "10 Days",
       startingPrice: "From $4,850",
-      image: "https://images.unsplash.com/photo-1571771019784-3ff35f4f4277?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80",
+      image: "/images/services/Adventure-travel/northern-kenya-retreat.jpg",
       description: "Journey to Kenya's remote northern frontier, exploring the jade waters of Lake Turkana and encountering Samburu's unique wildlife in pristine desert landscapes.",
       highlights: [
         "Lake Turkana - Africa's largest desert lake",
@@ -26,7 +26,7 @@ export default function AdventureTravelPage() {
       subtitle: "Ancient Churches & Tribal Cultures",
       duration: "12 Days",
       startingPrice: "From $5,200",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/services/Adventure-travel/ethiopian-highland-discovery.jpg",
       description: "Explore the cradle of civilization with ancient rock-hewn churches, dramatic mountain landscapes, and encounters with traditional tribal communities.",
       highlights: [
         "Lalibela's rock-hewn churches",
@@ -40,7 +40,7 @@ export default function AdventureTravelPage() {
       subtitle: "Selous & Mafia Island Adventure",
       duration: "14 Days",
       startingPrice: "From $6,750",
-      image: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/services/Adventure-travel/southern-tanzania-explorer.jpg",
       description: "Discover Tanzania's largest wilderness areas combined with pristine island paradise. Experience walking safaris and world-class diving in untouched locations.",
       highlights: [
         "Nyerere National Park expeditions",
@@ -54,7 +54,7 @@ export default function AdventureTravelPage() {
       subtitle: "Rwanda & Uganda Primates",
       duration: "8 Days",
       startingPrice: "From $7,200",
-      image: "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2011&q=80",
+      image: "/images/services/Adventure-travel/gorilla-trekking-expedition.jpg",
       description: "Come face-to-face with endangered mountain gorillas and chimpanzees in the misty forests of Rwanda and Uganda's pristine highlands.",
       highlights: [
         "Mountain gorilla encounters",
@@ -68,7 +68,7 @@ export default function AdventureTravelPage() {
       subtitle: "Sossusvlei & Skeleton Coast",
       duration: "11 Days",
       startingPrice: "From $5,950",
-      image: "https://images.unsplash.com/photo-1578750019427-fc5b98dbc9d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/services/Adventure-travel/namibia-desert-adventure.jpg",
       description: "Traverse towering red sand dunes and explore the desolate beauty of the Skeleton Coast in one of Africa's most dramatic landscapes.",
       highlights: [
         "Sossusvlei's towering dunes",
@@ -82,7 +82,7 @@ export default function AdventureTravelPage() {
       subtitle: "East to Southern Africa Overland",
       duration: "21 Days",
       startingPrice: "From $12,500",
-      image: "https://images.unsplash.com/photo-1551375073-4a96641d4d81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/services/Adventure-travel/multi-country-expedition.jpg",
       description: "Epic overland journey connecting multiple countries and diverse ecosystems. Experience the full spectrum of African wilderness and cultures.",
       highlights: [
         "Cross-border migrations",
@@ -234,7 +234,7 @@ export default function AdventureTravelPage() {
             <div className="mt-12 lg:mt-0">
               <div className="relative aspect-[4/3] bg-stone-200 overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  src="/images/services/Adventure-travel/ethiopian-highland-discovery.jpg"
                   alt="Adventure travel expertise"
                   className="w-full h-full object-cover"
                 />
@@ -248,7 +248,7 @@ export default function AdventureTravelPage() {
       <Section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1551782450-17144efb9c50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+            src="/images/services/Adventure-travel/multi-country-expedition.jpg"
             alt="Adventure travel"
             className="w-full h-full object-cover"
           />
