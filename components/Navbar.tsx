@@ -107,8 +107,7 @@ export default function Navbar() {
                 <Link
                   href="/"
                   className={cn(
-                    navigationMenuTriggerStyle(),
-                    "transition-all duration-200 hover:bg-amber-50 hover:text-amber-700 active:bg-amber-100 focus-visible:bg-amber-50 focus-visible:text-amber-700",
+                    "group inline-flex h-9 w-max items-center justify-center rounded-sm px-4 py-2 text-sm font-medium transition-all duration-200 hover:bg-amber-50 hover:text-amber-700 active:bg-amber-100 focus-visible:bg-amber-50 focus-visible:text-amber-700",
                     pathname === "/" && "!bg-amber-100 !text-amber-800 font-semibold"
                   )}
                 >
@@ -265,8 +264,7 @@ export default function Navbar() {
                 <Link
                   href="/about"
                   className={cn(
-                    navigationMenuTriggerStyle(),
-                    "transition-all duration-200 hover:bg-amber-50 hover:text-amber-700 active:bg-amber-100 focus-visible:bg-amber-50 focus-visible:text-amber-700",
+                    "group inline-flex h-9 w-max items-center justify-center rounded-sm px-4 py-2 text-sm font-medium transition-all duration-200 hover:bg-amber-50 hover:text-amber-700 active:bg-amber-100 focus-visible:bg-amber-50 focus-visible:text-amber-700",
                     pathname === "/about" && "!bg-amber-100 !text-amber-800 font-semibold"
                   )}
                 >
@@ -280,8 +278,7 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   className={cn(
-                    navigationMenuTriggerStyle(),
-                    "transition-all duration-200 hover:bg-amber-50 hover:text-amber-700 active:bg-amber-100 focus-visible:bg-amber-50 focus-visible:text-amber-700",
+                    "group inline-flex h-9 w-max items-center justify-center rounded-sm px-4 py-2 text-sm font-medium transition-all duration-200 hover:bg-amber-50 hover:text-amber-700 active:bg-amber-100 focus-visible:bg-amber-50 focus-visible:text-amber-700",
                     pathname === "/contact" && "!bg-amber-100 !text-amber-800 font-semibold"
                   )}
                 >
