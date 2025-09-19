@@ -237,8 +237,8 @@ export default function ServicesPage() {
             <div className="mt-12 lg:mt-0">
               <div className="relative aspect-[4/3] bg-stone-200 overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2011&q=80"
-                  alt="Timobo Safaris team expertise"
+                  src="/images/services/services-why-choose-timobo.jpg"
+                  alt="Why choose Timobo Safaris"
                   fill
                   className="object-cover"
                 />
