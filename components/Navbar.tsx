@@ -93,7 +93,7 @@ export default function Navbar() {
               height={60}
               className="h-12 md:h-14 w-auto"
             />
-            <span className="hidden font-bold sm:inline-block text-lg" style={{fontFamily: '"freight-big-pro", serif', fontWeight: 400, fontStyle: 'normal'}}>
+            <span className="hidden font-bold sm:inline-block text-lg" style={{fontFamily: '"sofia-pro", sans-serif', fontWeight: 400, fontStyle: 'normal'}}>
               Timobo Safaris
             </span>
           </Link>
@@ -319,7 +319,7 @@ export default function Navbar() {
                     alt="Timobo Safaris Ltd"
                     className="h-8 w-auto"
                   />
-                  <span style={{fontFamily: '"freight-big-pro", serif', fontWeight: 400, fontStyle: 'normal'}}>Timobo Safaris</span>
+                  <span style={{fontFamily: '"sofia-pro", sans-serif', fontWeight: 400, fontStyle: 'normal'}}>Timobo Safaris</span>
                 </Link>
               </SheetTitle>
               <SheetDescription className="text-left">

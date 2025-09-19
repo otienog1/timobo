@@ -63,7 +63,7 @@ export default function RootLayout({
                 <link rel="stylesheet" href="https://use.typekit.net/zlm8ffl.css" />
             </head>
             <body className={productsans.className} suppressHydrationWarning>
-                <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+                <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} forcedTheme="light">
                     <Navbar />
                     {children}
                     <FooterAnimated />
