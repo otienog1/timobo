@@ -102,11 +102,17 @@ function parseDestinations(sections: string[], region: "eastern" | "southern"): 
     if (kenyaIndex > -1) {
       destinations.push(parseDestination(sections, kenyaIndex, "KENYA"));
     }
-    
-    // Parse Tanzania
+
+    // Parse Tanzania (Northern)
     const tanzaniaIndex = sections.findIndex(s => s === "TANZANIA");
     if (tanzaniaIndex > -1) {
       destinations.push(parseDestination(sections, tanzaniaIndex, "TANZANIA"));
+    }
+
+    // Parse Southern Tanzania as separate destination
+    const southernTanzaniaIndex = sections.findIndex(s => s.includes("Top Attractions & Experiences – Southern Tanzania"));
+    if (southernTanzaniaIndex > -1) {
+      destinations.push(parseSouthernTanzania(sections, southernTanzaniaIndex));
     }
     
     // Parse Rwanda
@@ -161,6 +167,57 @@ function parseDestinations(sections: string[], region: "eastern" | "southern"): 
   }
   
   return destinations;
+}
+
+function parseSouthernTanzania(sections: string[], attractionsIndex: number): Destination {
+  const name = "Southern Tanzania";
+  const tagline = "Wild beauty meets Island paradise – from the highest peak to endless plains and spice-scented shores.";
+  const description = "Discover the untamed wilderness of Southern Tanzania, featuring Africa's largest wild sanctuary in Nyerere National Park (formerly Selous), the remote and spectacular Ruaha National Park, the best-kept safari secret of Katavi National Park, and the chimpanzee haven of Mahale Mountains National Park on the shores of Lake Tanganyika.";
+  const sampleItinerary = "Southern Tanzania boasts legendary wilderness areas and hidden gems, offering some of Africa's most authentic and remote safari experiences away from the crowds.";
+
+  // Parse attractions for Southern Tanzania
+  const attractions: string[] = [
+    "Selous Game Reserve (Nyerere National Park) – Africa's largest wild sanctuary, endless wilderness and river adventures.",
+    "Ruaha National Park – Tanzania's untamed heart where giants roam the wilderness.",
+    "Katavi National Park – Africa's best-kept safari secret, raw, remote and remarkable.",
+    "Mahale Mountains National Park – Chimpanzees by the shores of Tanganyika, the Africa's deepest lake."
+  ];
+
+  // Best time to visit for Southern Tanzania
+  const bestTimeToVisit: string[] = [
+    "January to February – short dry months best for wildlife viewing and animal calving",
+    "June to October – Dry months characterized by minimal rainfall hence best time for wildlife viewing as animals gather around water sources"
+  ];
+
+  // Parse the 14-day itinerary
+  const itineraryStart = sections.findIndex(s => s.includes("14 – Days Untamed Wilderness Safari"));
+  let itinerary: { name: string; days: string[] } | undefined;
+
+  if (itineraryStart > -1) {
+    const itineraryName = sections[itineraryStart];
+    const days: string[] = [];
+
+    for (let i = itineraryStart + 1; i < sections.length; i++) {
+      const section = sections[i];
+      if (section.startsWith("Day ")) {
+        days.push(section);
+      } else if (section.length > 0 && !section.startsWith("Day ") && !section.includes("RWANDA")) {
+        break;
+      }
+    }
+
+    itinerary = { name: itineraryName, days };
+  }
+
+  return {
+    name,
+    tagline,
+    description,
+    sampleItinerary,
+    attractions,
+    bestTimeToVisit,
+    itinerary
+  };
 }
 
 function parseDestination(sections: string[], startIndex: number, name: string): Destination {

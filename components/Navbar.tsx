@@ -78,9 +78,11 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
   const [hoveredDestination, setHoveredDestination] = React.useState<string | null>(null)
   const [hoveredService, setHoveredService] = React.useState<string | null>(null)
+  const [mobileDestinationsOpen, setMobileDestinationsOpen] = React.useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = React.useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-white shadow-sm">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-white/95 backdrop-blur-sm shadow-sm">
       <div className="container flex h-20 max-w-screen-xl items-center justify-between">
         {/* Logo */}
         <div className="hidden md:flex">
@@ -296,7 +298,7 @@ export default function Navbar() {
               <span className="sr-only">Toggle Menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="pr-0">
+          <SheetContent side="left" className="pr-0 bg-white/100 backdrop-blur-none">
             <SheetHeader>
               <SheetTitle className="text-left">
                 <Link
@@ -331,46 +333,98 @@ export default function Navbar() {
                   Home
                 </Link>
                 <div>
-                  <Link
-                    href="/destinations"
-                    className={cn(
-                      "text-foreground/70 transition-colors hover:text-foreground font-medium",
-                      pathname.startsWith("/destinations") && "text-foreground font-semibold"
-                    )}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Destinations
-                  </Link>
-                  <div className="ml-4 mt-2 flex flex-col space-y-2">
-                    {destinations.map((region) => (
-                      <div key={region.title}>
-                        <div className="text-sm font-medium text-muted-foreground mb-1">
-                          {region.title}
-                        </div>
-                        {region.countries.map((country) => (
-                          <Link
-                            key={country.name}
-                            href={country.href}
-                            className="block text-sm text-foreground/60 hover:text-foreground ml-2 py-1"
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {country.name}
-                          </Link>
-                        ))}
-                      </div>
-                    ))}
+                  <div className="flex items-center justify-between">
+                    <Link
+                      href="/destinations"
+                      className={cn(
+                        "text-foreground/70 transition-colors hover:text-foreground font-medium",
+                        pathname.startsWith("/destinations") && "text-foreground font-semibold"
+                      )}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Destinations
+                    </Link>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="h-8 w-8 p-0"
+                      onClick={() => setMobileDestinationsOpen(!mobileDestinationsOpen)}
+                    >
+                      <svg
+                        className={cn("h-4 w-4 transition-transform", mobileDestinationsOpen && "rotate-180")}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </Button>
                   </div>
-                </div>
-                <Link
-                  href="/services"
-                  className={cn(
-                    "text-foreground/70 transition-colors hover:text-foreground",
-                    pathname === "/services" && "text-foreground font-semibold"
+                  {mobileDestinationsOpen && (
+                    <div className="ml-4 mt-2 flex flex-col space-y-2">
+                      {destinations.map((region) => (
+                        <div key={region.title}>
+                          <div className="text-sm font-medium text-muted-foreground mb-1">
+                            {region.title}
+                          </div>
+                          {region.countries.map((country) => (
+                            <Link
+                              key={country.name}
+                              href={country.href}
+                              className="block text-sm text-foreground/60 hover:text-foreground ml-2 py-1"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {country.name}
+                            </Link>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
                   )}
-                  onClick={() => setIsOpen(false)}
-                >
-                  Services
-                </Link>
+                </div>
+                <div>
+                  <div className="flex items-center justify-between">
+                    <Link
+                      href="/services"
+                      className={cn(
+                        "text-foreground/70 transition-colors hover:text-foreground font-medium",
+                        pathname.startsWith("/services") && "text-foreground font-semibold"
+                      )}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Services
+                    </Link>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="h-8 w-8 p-0"
+                      onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                    >
+                      <svg
+                        className={cn("h-4 w-4 transition-transform", mobileServicesOpen && "rotate-180")}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </Button>
+                  </div>
+                  {mobileServicesOpen && (
+                    <div className="ml-4 mt-2 flex flex-col space-y-2">
+                      {services.map((service) => (
+                        <Link
+                          key={service.title}
+                          href={service.href}
+                          className="block text-sm text-foreground/60 hover:text-foreground py-1"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
                 <Link
                   href="/about"
                   className={cn(

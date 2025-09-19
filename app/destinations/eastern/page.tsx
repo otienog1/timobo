@@ -27,6 +27,13 @@ export default function EasternAfricaPage() {
       bestTime: "June-October (Safari), Dec-Feb (Zanzibar)"
     },
     {
+      name: "Southern Tanzania",
+      description: "Discover the untamed wilderness of Southern Tanzania, featuring Africa's largest wild sanctuary in Nyerere National Park, the remote Ruaha National Park, and the chimpanzee haven of Mahale Mountains National Park.",
+      image: "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      highlight: "Remote Wilderness & Chimpanzees",
+      bestTime: "June-October (Dry season)"
+    },
+    {
       name: "Rwanda",
       description: "Rwanda offers a once-in-a-lifetime chance to trek endangered mountain gorillas in Volcanoes National Park. Discover the tranquil beauty of Lake Kivu and immerse yourself in the inspiring culture of Kigali.",
       image: "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2011&q=80",

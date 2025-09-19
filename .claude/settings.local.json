@@ -9,7 +9,12 @@
       "Bash(curl:*)",
       "Bash(dir:*)",
       "Bash(npm install)",
-      "Bash(git ls-tree:*)"
+      "Bash(git ls-tree:*)",
+      "Bash(npx playwright test:*)",
+      "Bash(PORT=3002 npm run dev)",
+      "Bash(npx playwright:*)",
+      "Bash(timeout 60 npx playwright test tests/mobile-navigation.spec.js --grep \"Mobile Small.*Navigation has proper background\" --timeout=30000)",
+      "WebFetch(domain:localhost)"
     ],
     "deny": [],
     "ask": []

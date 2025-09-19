@@ -4,7 +4,7 @@ import { Source_Sans_3 } from 'next/font/google'
 import localFont from 'next/font/local'
 
 import Navbar from '@/components/Navbar'
-import Footer4Col from '@/components/mvpblocks/footer-4col'
+import FooterAnimated from '@/components/mvpblocks/footer-animated'
 
 const poppins = Source_Sans_3({
     weight: '400',
@@ -66,7 +66,7 @@ export default function RootLayout({
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
                     <Navbar />
                     {children}
-                    <Footer4Col />
+                    <FooterAnimated />
                 </ThemeProvider>
             </body>
         </html>

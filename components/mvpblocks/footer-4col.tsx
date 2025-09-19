@@ -84,7 +84,7 @@ const contactInfo = [
 
 export default function Footer4Col() {
   return (
-    <footer className="bg-secondary dark:bg-secondary/20 w-full place-self-end rounded-t-xl">
+    <footer className="bg-red dark:bg-secondary/20 w-full place-self-end rounded-t-xl">
       <div className="mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
@@ -138,11 +138,10 @@ export default function Footer4Col() {
                   <li key={text}>
                     <Link
                       href={href}
-                      className={`${
-                        hasIndicator
+                      className={`${hasIndicator
                           ? 'group flex justify-center gap-1.5 sm:justify-start'
                           : 'text-secondary-foreground/70 hover:text-secondary-foreground transition'
-                      }`}
+                        }`}
                     >
                       <span className="text-secondary-foreground/70 hover:text-secondary-foreground transition">
                         {text}
