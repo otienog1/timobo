@@ -11,7 +11,7 @@ export default function ServicesPage() {
       title: "Safari Experiences",
       subtitle: "African Wildlife Adventures",
       description: "Step into the wild with custom-designed safari itineraries that connect you to Africa's most iconic destinations. From luxury lodge stays to cultural encounters and conservation experiences.",
-      image: "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/services/service-safari-experiences.jpg",
       highlights: [
         "Wildlife & Big Five safaris",
         "Cultural immersion experiences",
@@ -24,7 +24,7 @@ export default function ServicesPage() {
       title: "Adventure Travel",
       subtitle: "Off-the-Beaten-Path Expeditions",
       description: "For explorers seeking raw, authentic experiences, our adventure packages take you off the beaten path to discover Africa's hidden gems and remote wilderness areas.",
-      image: "https://images.unsplash.com/photo-1571771019784-3ff35f4f4277?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80",
+      image: "/images/services/service-adventure-travel.jpg",
       highlights: [
         "Northern Kenya expeditions",
         "Ethiopia cultural discoveries",
@@ -37,7 +37,7 @@ export default function ServicesPage() {
       title: "MICE Solutions",
       subtitle: "Corporate Events & Business Travel",
       description: "Professional, end-to-end MICE services across Eastern and Southern Africa, ensuring stress-free event planning and flawless execution with authentic African hospitality.",
-      image: "https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+      image: "/images/services/service-mice-solutions.jpg",
       highlights: [
         "Corporate conferences & meetings",
         "Incentive travel programs",
@@ -50,7 +50,7 @@ export default function ServicesPage() {
       title: "Holiday Getaways",
       subtitle: "Luxury African Holidays",
       description: "Indulge in luxury holidays across Africa's most beautiful destinations. Perfect for vacations, honeymoons, family holidays, and romantic retreats.",
-      image: "https://images.unsplash.com/photo-1551782450-17144efb9c50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+      image: "/images/services/service-holiday-getaways.jpg",
       highlights: [
         "Coastal paradise destinations",
         "Private conservancy lodges",
@@ -63,7 +63,7 @@ export default function ServicesPage() {
       title: "Transport Solutions",
       subtitle: "Seamless African Travel",
       description: "Enjoy seamless travel with our range of transport services designed for comfort, safety, and reliability throughout your African journey.",
-      image: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80",
+      image: "/images/services/service-transport-solutions.jpg",
       highlights: [
         "Safari vehicles & game drives",
         "Airport transfers & logistics",
@@ -76,7 +76,7 @@ export default function ServicesPage() {
       title: "Outbound Travel",
       subtitle: "International Travel Services",
       description: "Plan your international trips with confidence through our comprehensive outbound travel services and expert guidance for destinations worldwide.",
-      image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
+      image: "/images/services/services-hero.jpg",
       highlights: [
         "International travel consultancy",
         "Visa processing assistance",
@@ -93,7 +93,7 @@ export default function ServicesPage() {
         title="Our Services"
         subtitle="African Travel Excellence"
         description="With over 18 years of expertise, we specialize in creating unforgettable journeys and corporate travel solutions across Africa. From luxury safaris to adventure expeditions and world-class MICE experiences."
-        backgroundImage="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80"
+        backgroundImage="/images/services/services-hero.jpg"
       />
 
       {/* Introduction Section */}
@@ -129,7 +129,7 @@ export default function ServicesPage() {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover"
                   />
                 </div>
 
@@ -162,6 +162,16 @@ export default function ServicesPage() {
                       ))}
                     </div>
                   </div>
+
+                  {/* Service Link - only for Safari Experiences, Adventure Travel, and MICE Solutions */}
+                  {(service.title === "Safari Experiences" || service.title === "Adventure Travel" || service.title === "MICE Solutions") && (
+                    <Link href={service.link} className="font-sofia-pro text-sm text-amber-600 hover:text-amber-700 transition-colors duration-200 inline-flex items-center">
+                      Explore {service.title}
+                      <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  )}
                 </div>
               </div>
             ))}

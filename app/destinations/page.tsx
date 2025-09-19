@@ -16,72 +16,79 @@ export default function DestinationsPage() {
       {
         name: "Kenya",
         description: "Kenya is home to the world-famous Maasai Mara, where the awe-inspiring Great Wildebeest Migration takes center stage each year. Explore Amboseli, renowned for its large-tusked elephants and stunning views of Mount Kilimanjaro.",
-        image: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80",
+        image: "/images/destinations/destination-kenya.jpg",
         highlight: "Great Migration & Big Five",
         bestTime: "July-October (Migration), Jan-March (Beach)"
       },
       {
         name: "Tanzania",
         description: "Tanzania is home to legendary wilderness icons – the vast Serengeti National Park, the awe-inspiring Ngorongoro Crater, and Africa's highest peak, Mount Kilimanjaro. Witness the drama of the Great Migration and explore untamed beauty.",
-        image: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        image: "/images/destinations/destination-tanzania.jpg",
         highlight: "Serengeti & Ngorongoro Crater",
         bestTime: "June-October (Safari), Dec-Feb (Zanzibar)"
       },
       {
         name: "Rwanda",
         description: "Rwanda offers a once-in-a-lifetime chance to trek endangered mountain gorillas in Volcanoes National Park. Discover the tranquil beauty of Lake Kivu and immerse yourself in the inspiring culture of Kigali.",
-        image: "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2011&q=80",
+        image: "/images/destinations/destination-rwanda.jpg",
         highlight: "Mountain Gorilla Trekking",
         bestTime: "June-September, December-February"
       },
       {
         name: "Uganda",
         description: "Uganda is a land of rare encounters – from gorilla trekking in Bwindi Impenetrable Forest to chimpanzee tracking in Kibale National Park. Cruise the legendary Nile River and enjoy classic savannah safaris.",
-        image: "https://images.unsplash.com/photo-1551782450-17144efb9c50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+        image: "/images/destinations/destination-uganda.jpg",
         highlight: "Gorillas & Chimpanzees",
         bestTime: "June-September, December-February"
       },
       {
         name: "Ethiopia",
         description: "Ethiopia blends rich history with breathtaking landscapes – from the ancient rock-hewn churches of Lalibela to the surreal Danakil Depression. Trek the majestic Simien Mountains and immerse yourself in vibrant traditions.",
-        image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        image: "/images/destinations/destination-ethiopia.jpg",
         highlight: "Ancient Churches & Highland Treks",
         bestTime: "October-March"
+      },
+      {
+        name: "Southern Tanzania",
+        description: "Discover Tanzania's hidden wilderness gems in the south – the vast Nyerere National Park (formerly Selous), the dramatic Ruaha National Park, and remote safari experiences far from the crowds. Explore pristine landscapes where elephants roam freely and wild dogs hunt in packs.",
+        image: "/images/homepage/homepage-adventure-travel.jpg",
+        highlight: "Remote Wilderness & Wild Dogs",
+        bestTime: "June-October"
       }
     ],
     southern: [
       {
         name: "South Africa",
         description: "From thrilling Big Five safaris in Kruger National Park to vibrant Cape Town with its iconic Table Mountain and world-class Cape Winelands, South Africa offers a seamless blend of wildlife, rich culture, and unforgettable adventure.",
-        image: "https://images.unsplash.com/photo-1484318571209-661cf29a69ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        image: "/images/destinations/destination-southern-africa.jpg",
         highlight: "Big Five & Cape Town",
         bestTime: "May-September (Safari), Oct-April (Cape Town)"
       },
       {
         name: "Zimbabwe",
         description: "Home to the majestic Victoria Falls, Zimbabwe offers dramatic landscapes, abundant wildlife in Hwange National Park and authentic cultural experiences in a warm, welcoming setting.",
-        image: "https://images.unsplash.com/photo-1605026163234-85f4b8c038f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        image: "/images/destinations/destination-zimbabwe.jpg",
         highlight: "Victoria Falls & Big Game",
         bestTime: "March-May, May-October"
       },
       {
         name: "Zambia",
         description: "Famous for walking safaris and stunning views of Victoria Falls, Zambia offers pristine wilderness in South Luangwa and thrilling river adventures along the Zambezi River.",
-        image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        image: "/images/destinations/destination zambia.jpg",
         highlight: "Walking Safaris & Victoria Falls",
         bestTime: "June-October"
       },
       {
         name: "Botswana",
         description: "Discover the wild beauty of the Okavango Delta – a vast, wildlife-rich UNESCO World Heritage Site – and marvel at the great elephant herds of Chobe National Park.",
-        image: "https://images.unsplash.com/photo-1551375073-4a96641d4d81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        image: "/images/destinations/destination-botswana.jpg",
         highlight: "Okavango Delta & Chobe",
         bestTime: "May-October"
       },
       {
         name: "Namibia",
         description: "Marvel at the towering red dunes of Sossusvlei, roam the untamed Skeleton Coast, and encounter rare desert-adapted wildlife in one of Africa's most breathtaking landscapes.",
-        image: "https://images.unsplash.com/photo-1578750019427-fc5b98dbc9d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        image: "/images/destinations/destination-namibia.jpg",
         highlight: "Desert Dunes & Skeleton Coast",
         bestTime: "May-October"
       }
@@ -101,7 +108,7 @@ export default function DestinationsPage() {
         title="African Destinations"
         subtitle="Discover Africa's Most Incredible Places"
         description="From the vast savannas of East Africa to the dramatic landscapes of Southern Africa, explore destinations that will leave you breathless."
-        backgroundImage="https://images.unsplash.com/photo-1551782450-17144efb9c50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+        backgroundImage="/images/destinations/all-destinations-hero.jpg"
       />
 
       {/* Philosophical Introduction Section */}
@@ -255,7 +262,7 @@ export default function DestinationsPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative aspect-[3/4] bg-stone-50 overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80"
+                    src="/images/destinations/destination-kenya.jpg"
                     alt="African wildlife safari"
                     className="w-full h-full object-cover"
                   />
@@ -263,14 +270,14 @@ export default function DestinationsPage() {
                 <div className="space-y-4">
                   <div className="relative aspect-square bg-stone-50 overflow-hidden">
                     <img
-                      src="https://images.unsplash.com/photo-1551782450-17144efb9c50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                      src="/images/destinations/destination-tanzania.jpg"
                       alt="African landscape"
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="relative aspect-square bg-stone-50 overflow-hidden">
                     <img
-                      src="https://images.unsplash.com/photo-1549366021-9f761d040a94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                      src="/images/destinations/destination-rwanda.jpg"
                       alt="Mountain gorillas"
                       className="w-full h-full object-cover"
                     />
@@ -286,7 +293,7 @@ export default function DestinationsPage() {
       <Section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+            src="/images/destinations/all-destinations-hero.jpg"
             alt="African safari sunset"
             className="w-full h-full object-cover"
           />

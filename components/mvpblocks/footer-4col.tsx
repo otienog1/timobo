@@ -36,7 +36,7 @@ const data = {
   },
   contact: {
     email: 'karibu@timobosafaris.com',
-    phone: '+254 725 822 927',
+    phone: '+254 104 560 540',
     address: 'Nairobi, Kenya, East Africa',
   },
   company: {

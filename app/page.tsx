@@ -4,6 +4,7 @@ import HeroSlider from "@/components/HeroSlider";
 import Section from "@/components/Section";
 import { AnimatedButton } from "@/components/ui/animated-button";
 import Link from "next/link";
+import Image from "next/image";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
   Carousel,
@@ -66,61 +67,24 @@ const TestimonialCard = ({
   testimonial: (typeof testimonials)[number];
 }) => (
   <div className="mb-8 bg-white border border-stone-200 rounded-xl py-8 px-6 sm:py-6 shadow-sm">
-    <div className="flex items-center justify-between gap-20">
-      <div className="hidden lg:block relative shrink-0 aspect-3/4 max-w-[18rem] w-full bg-stone-50 overflow-hidden">
-        <img 
-          src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1869&q=80"
-          alt="Safari testimonial"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute top-1/4 right-0 translate-x-1/2 h-12 w-12 bg-amber-500 rounded-full flex items-center justify-center">
-          <svg
-            width="102"
-            height="102"
-            viewBox="0 0 102 102"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-          >
-            <path
-              d="M26.0063 19.8917C30.0826 19.8625 33.7081 20.9066 36.8826 23.024C40.057 25.1414 42.5746 28.0279 44.4353 31.6835C46.2959 35.339 47.2423 39.4088 47.2744 43.8927C47.327 51.2301 44.9837 58.4318 40.2444 65.4978C35.4039 72.6664 28.5671 78.5755 19.734 83.2249L2.54766 74.1759C8.33598 71.2808 13.2548 67.9334 17.3041 64.1335C21.2515 60.3344 23.9203 55.8821 25.3105 50.7765C20.5179 50.4031 16.6348 48.9532 13.6612 46.4267C10.5864 44.0028 9.03329 40.5999 9.00188 36.2178C8.97047 31.8358 10.5227 28.0029 13.6584 24.7192C16.693 21.5381 20.809 19.9289 26.0063 19.8917ZM77.0623 19.5257C81.1387 19.4965 84.7641 20.5406 87.9386 22.6581C91.1131 24.7755 93.6306 27.662 95.4913 31.3175C97.3519 34.9731 98.2983 39.0428 98.3304 43.5268C98.383 50.8642 96.0397 58.0659 91.3004 65.1319C86.4599 72.3005 79.6231 78.2095 70.79 82.859L53.6037 73.8099C59.392 70.9149 64.3108 67.5674 68.3601 63.7676C72.3075 59.9685 74.9763 55.5161 76.3665 50.4105C71.5739 50.0372 67.6908 48.5873 64.7172 46.0608C61.6424 43.6369 60.0893 40.2339 60.0579 35.8519C60.0265 31.4698 61.5787 27.6369 64.7145 24.3532C67.7491 21.1722 71.865 19.563 77.0623 19.5257Z"
-              className="fill-white"
-            />
-          </svg>
-        </div>
+    <div className="text-center max-w-4xl mx-auto">
+      <div className="flex items-center justify-center gap-1 mb-6">
+        {[...Array(5)].map((_, i) => (
+          <StarIcon key={i} className="w-5 h-5 fill-amber-500 stroke-amber-500" />
+        ))}
       </div>
-      <div className="flex flex-col justify-center">
-        <div className="flex items-center justify-between gap-1">
-          <div className="hidden sm:flex md:hidden items-center gap-4">
-            <Avatar className="w-8 h-8 md:w-10 md:h-10">
-              <AvatarFallback className="text-xl font-medium bg-amber-500 text-white">
-                {testimonial.name.charAt(0)}
-              </AvatarFallback>
-            </Avatar>
-            <div>
-              <p className="font-sofia-pro-bold text-lg">{testimonial.name}</p>
-              <p className="font-sofia-pro text-sm text-stone-600">{testimonial.designation}</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-1">
-            {[...Array(5)].map((_, i) => (
-              <StarIcon key={i} className="w-5 h-5 fill-amber-500 stroke-amber-500" />
-            ))}
-          </div>
-        </div>
-        <p className="font-sofia-pro mt-6 text-base sm:text-lg lg:text-xl xl:text-2xl leading-relaxed font-medium tracking-tight text-stone-700">
-          {testimonial.testimonial}
-        </p>
-        <div className="flex sm:hidden md:flex mt-6 items-center gap-4">
-          <Avatar>
-            <AvatarFallback className="text-xl font-medium bg-amber-500 text-white">
-              {testimonial.name.charAt(0)}
-            </AvatarFallback>
-          </Avatar>
-          <div>
-            <p className="font-sofia-pro-bold text-lg">{testimonial.name}</p>
-            <p className="font-sofia-pro text-sm text-muted-foreground">{testimonial.designation}</p>
-          </div>
+      <p className="font-sofia-pro text-base sm:text-lg lg:text-xl xl:text-2xl leading-relaxed font-medium tracking-tight text-stone-700 mb-6">
+        {testimonial.testimonial}
+      </p>
+      <div className="flex items-center justify-center gap-4">
+        <Avatar>
+          <AvatarFallback className="text-xl font-medium bg-amber-500 text-white">
+            {testimonial.name.charAt(0)}
+          </AvatarFallback>
+        </Avatar>
+        <div className="text-center">
+          <p className="font-sofia-pro-bold text-lg">{testimonial.name}</p>
+          <p className="font-sofia-pro text-sm text-stone-600">{testimonial.designation}</p>
         </div>
       </div>
     </div>
@@ -167,10 +131,11 @@ export default function HomePage() {
               {/* Mobile Image - shows between paragraphs on mobile only */}
               <div className="lg:hidden mb-6">
                 <div className="relative aspect-[4/3] bg-stone-50 overflow-hidden">
-                  <img
-                    src="/safari-portrait.jpg"
+                  <Image
+                    src="/images/homepage/homepage-section2.jpg"
                     alt="Portrait of safari guide with wildlife"
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
               </div>
@@ -183,10 +148,11 @@ export default function HomePage() {
             {/* Desktop Image - shows on right side for desktop only */}
             <div className="hidden lg:block lg:col-span-4">
               <div className="relative aspect-[3/4] bg-stone-50 overflow-hidden">
-                <img
-                  src="/safari-portrait.jpg"
+                <Image
+                  src="/images/homepage/homepage-section2.jpg"
                   alt="Portrait of safari guide with wildlife"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
             </div>
@@ -205,10 +171,11 @@ export default function HomePage() {
             {/* Safari Experiences */}
             <div className="space-y-6">
               <div className="relative h-48 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                <Image
+                  src="/images/homepage/homepage-safari-experiences.jpg"
                   alt="Wildlife safari experience"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
               <div>
@@ -228,10 +195,11 @@ export default function HomePage() {
             {/* Adventure Travel */}
             <div className="space-y-6">
               <div className="relative h-48 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1571771019784-3ff35f4f4277?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80"
+                <Image
+                  src="/images/homepage/homepage-adventure-travel.jpg"
                   alt="Adventure travel in Africa"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
               <div>
@@ -251,10 +219,11 @@ export default function HomePage() {
             {/* MICE Solutions */}
             <div className="space-y-6">
               <div className="relative h-48 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                <Image
+                  src="/images/homepage/homepage-mice-solutions.jpg"
                   alt="Corporate meetings and events in Africa"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
               <div>
@@ -296,27 +265,30 @@ export default function HomePage() {
             <div className="grid grid-cols-2 gap-4 aspect-[4/3] lg:aspect-[3/2]">
               {/* Large image - spans full height */}
               <div className="relative bg-stone-50 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80"
+                <Image
+                  src="/images/homepage/discover-ea-sa-1.jpg"
                   alt="African wildlife in their natural habitat"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
               
               {/* Right side - 2 stacked images */}
               <div className="grid grid-rows-2 gap-4">
                 <div className="relative bg-stone-50 overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1551782450-17144efb9c50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                  <Image
+                    src="/images/homepage/discover-ea-sa-2.jpg"
                     alt="Safari landscape with acacia trees"
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
                 <div className="relative bg-stone-50 overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1549366021-9f761d040a94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  <Image
+                    src="/images/homepage/discover-ea-sa-3.jpg"
                     alt="Mountain gorilla in Rwanda"
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
               </div>

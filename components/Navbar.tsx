@@ -26,7 +26,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import Logo from "../public/_Logo.svg"
 
 const destinations = [
   {
@@ -85,8 +84,15 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-white/95 backdrop-blur-sm shadow-sm">
       <div className="container flex h-20 max-w-screen-xl items-center justify-between">
         {/* Logo */}
-        <div className="hidden md:flex">
-          <Link href="/" className="flex items-center space-x-2">
+        <div className="flex">
+          <Link href="/" className="flex items-center space-x-3">
+            <Image
+              src="/_Logo.svg"
+              alt="Timobo Safaris Logo"
+              width={60}
+              height={60}
+              className="h-12 md:h-14 w-auto"
+            />
             <span className="hidden font-bold sm:inline-block text-lg" style={{fontFamily: '"freight-big-pro", serif', fontWeight: 400, fontStyle: 'normal'}}>
               Timobo Safaris
             </span>
@@ -133,21 +139,21 @@ export default function Navbar() {
                           hoveredDestination === 'Eastern Africa' ? 'opacity-100' : 'opacity-0'
                         }`}
                              style={{
-                               backgroundImage: 'url(https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80)'
+                               backgroundImage: 'url(/images/destinations/sub-menu/eastern-africa.jpg)'
                              }}
                         />
                         <div className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${
                           hoveredDestination === 'Southern Africa' ? 'opacity-100' : 'opacity-0'
                         }`}
                              style={{
-                               backgroundImage: 'url(https://images.unsplash.com/photo-1484318571209-661cf29a69ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)'
+                               backgroundImage: 'url(/images/destinations/sub-menu/southern-africa.jpg)'
                              }}
                         />
                         <div className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${
                           !hoveredDestination ? 'opacity-100' : 'opacity-0'
                         }`}
                              style={{
-                               backgroundImage: 'url(https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)'
+                               backgroundImage: 'url(/images/destinations/sub-menu/all-destinations.jpg)'
                              }}
                         />
                         {/* Dark overlay */}
@@ -201,28 +207,28 @@ export default function Navbar() {
                           hoveredService === 'Safari Experiences' ? 'opacity-100' : 'opacity-0'
                         }`}
                              style={{
-                               backgroundImage: 'url(https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80)'
+                               backgroundImage: 'url(/images/services/sub-menu/safari-experiences.jpg)'
                              }}
                         />
                         <div className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${
                           hoveredService === 'MICE Solutions' ? 'opacity-100' : 'opacity-0'
                         }`}
                              style={{
-                               backgroundImage: 'url(https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)'
+                               backgroundImage: 'url(/images/services/sub-menu/mice-solutions.jpg)'
                              }}
                         />
                         <div className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${
                           hoveredService === 'Adventure Travel' ? 'opacity-100' : 'opacity-0'
                         }`}
                              style={{
-                               backgroundImage: 'url(https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2011&q=80)'
+                               backgroundImage: 'url(/images/services/sub-menu/adventure-travel.jpg)'
                              }}
                         />
                         <div className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${
                           !hoveredService ? 'opacity-100' : 'opacity-0'
                         }`}
                              style={{
-                               backgroundImage: 'url(https://images.unsplash.com/photo-1578750019427-fc5b98dbc9d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)'
+                               backgroundImage: 'url(/images/services/sub-menu/all-services.jpg)'
                              }}
                         />
                         {/* Dark overlay */}
@@ -307,11 +313,11 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                 >
                   <Image
-                    src={Logo}
-                    width={32}
-                    height={27}
+                    src="/_Logo.svg"
+                    width={40}
+                    height={40}
                     alt="Timobo Safaris Ltd"
-                    className="h-6 w-auto"
+                    className="h-8 w-auto"
                   />
                   <span style={{fontFamily: '"freight-big-pro", serif', fontWeight: 400, fontStyle: 'normal'}}>Timobo Safaris</span>
                 </Link>

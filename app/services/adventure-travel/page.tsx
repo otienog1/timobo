@@ -99,7 +99,7 @@ export default function AdventureTravelPage() {
         title="Adventure Travel"
         subtitle="African Expeditions"
         description="Join our carefully curated adventure journeys to Africa's most remote and spectacular destinations. Experience authentic wilderness encounters away from the crowds."
-        backgroundImage="https://images.unsplash.com/photo-1571771019784-3ff35f4f4277?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80"
+        backgroundImage="/images/services/service-adventure-travel.jpg"
       />
 
       {/* Introduction Section */}

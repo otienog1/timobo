@@ -15,42 +15,42 @@ export default function EasternAfricaPage() {
     {
       name: "Kenya",
       description: "Kenya is home to the world-famous Maasai Mara, where the awe-inspiring Great Wildebeest Migration takes center stage each year. Explore Amboseli, renowned for its large-tusked elephants and stunning views of Mount Kilimanjaro.",
-      image: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80",
+      image: "/images/destinations/destination-kenya.jpg",
       highlight: "Great Migration & Big Five",
       bestTime: "July-October (Migration), Jan-March (Beach)"
     },
     {
       name: "Tanzania",
       description: "Tanzania is home to legendary wilderness icons – the vast Serengeti National Park, the awe-inspiring Ngorongoro Crater, and Africa's highest peak, Mount Kilimanjaro. Witness the drama of the Great Migration and explore untamed beauty.",
-      image: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/destinations/destination-tanzania.jpg",
       highlight: "Serengeti & Ngorongoro Crater",
       bestTime: "June-October (Safari), Dec-Feb (Zanzibar)"
     },
     {
       name: "Southern Tanzania",
       description: "Discover the untamed wilderness of Southern Tanzania, featuring Africa's largest wild sanctuary in Nyerere National Park, the remote Ruaha National Park, and the chimpanzee haven of Mahale Mountains National Park.",
-      image: "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/destinations/destination-southern-tanzania.jpg",
       highlight: "Remote Wilderness & Chimpanzees",
       bestTime: "June-October (Dry season)"
     },
     {
       name: "Rwanda",
       description: "Rwanda offers a once-in-a-lifetime chance to trek endangered mountain gorillas in Volcanoes National Park. Discover the tranquil beauty of Lake Kivu and immerse yourself in the inspiring culture of Kigali.",
-      image: "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2011&q=80",
+      image: "/images/destinations/destination-rwanda.jpg",
       highlight: "Mountain Gorilla Trekking",
       bestTime: "June-September, December-February"
     },
     {
       name: "Uganda",
       description: "Uganda is a land of rare encounters – from gorilla trekking in Bwindi Impenetrable Forest to chimpanzee tracking in Kibale National Park. Cruise the legendary Nile River and enjoy classic savannah safaris.",
-      image: "https://images.unsplash.com/photo-1551782450-17144efb9c50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+      image: "/images/destinations/destination-uganda.jpg",
       highlight: "Gorillas & Chimpanzees",
       bestTime: "June-September, December-February"
     },
     {
       name: "Ethiopia",
       description: "Ethiopia blends rich history with breathtaking landscapes – from the ancient rock-hewn churches of Lalibela to the surreal Danakil Depression. Trek the majestic Simien Mountains and immerse yourself in vibrant traditions.",
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/destinations/destination-ethiopia.jpg",
       highlight: "Ancient Churches & Highland Treks",
       bestTime: "October-March"
     }
@@ -62,7 +62,7 @@ export default function EasternAfricaPage() {
         title="Eastern Africa"
         subtitle="The Birthplace of Safari"
         description="Experience the iconic landscapes of Eastern Africa, home to the Great Migration, mountain gorillas, and some of the world's most diverse wildlife ecosystems."
-        backgroundImage="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+        backgroundImage="/images/destinations/eastern-africa-hero.jpg"
       />
 
       {/* Philosophical Introduction Section */}
@@ -173,14 +173,14 @@ export default function EasternAfricaPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative aspect-[3/4] bg-stone-50 overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+                    src="/images/destinations/destination-kenya.jpg"
                     alt="Great Migration in Kenya"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="relative aspect-[3/4] bg-stone-50 overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2011&q=80"
+                    src="/images/destinations/destination-rwanda.jpg"
                     alt="Mountain gorillas in Rwanda"
                     className="w-full h-full object-cover"
                   />
@@ -195,7 +195,7 @@ export default function EasternAfricaPage() {
       <Section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1551782450-17144efb9c50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+            src="/images/destinations/eastern-africa-hero.jpg"
             alt="Eastern Africa sunset"
             className="w-full h-full object-cover"
           />

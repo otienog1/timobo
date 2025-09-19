@@ -87,7 +87,7 @@ export default function MICESolutionsPage() {
         title="MICE Solutions"
         subtitle="Corporate Events & Business Travel"
         description="Professional, end-to-end MICE services across Eastern and Southern Africa. We ensure stress-free event planning and flawless execution with authentic African hospitality."
-        backgroundImage="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+        backgroundImage="/images/services/service-mice-solutions.jpg"
       />
 
       {/* Introduction Section */}

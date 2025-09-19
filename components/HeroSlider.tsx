@@ -16,7 +16,7 @@ export default function HeroSlider({ className = "" }: HeroSliderProps) {
       {/* Background Image */}
       <div className="relative h-full w-full">
         <Image
-          src="/hero-safari.jpg"
+          src="/images/homepage/homepage-hero.jpg"
           alt="Safari vehicle among buffalo herd in African savanna"
           fill
           className="object-cover"

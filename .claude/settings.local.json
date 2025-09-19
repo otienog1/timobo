@@ -14,7 +14,10 @@
       "Bash(PORT=3002 npm run dev)",
       "Bash(npx playwright:*)",
       "Bash(timeout 60 npx playwright test tests/mobile-navigation.spec.js --grep \"Mobile Small.*Navigation has proper background\" --timeout=30000)",
-      "WebFetch(domain:localhost)"
+      "WebFetch(domain:localhost)",
+      "Bash(npx next build:*)",
+      "Bash(npx:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": [],
     "ask": []

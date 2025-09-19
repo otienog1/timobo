@@ -15,35 +15,35 @@ export default function SouthernAfricaPage() {
     {
       name: "South Africa",
       description: "From thrilling Big Five safaris in Kruger National Park to vibrant Cape Town with its iconic Table Mountain and world-class Cape Winelands, South Africa offers a seamless blend of wildlife, rich culture, and unforgettable adventure.",
-      image: "https://images.unsplash.com/photo-1484318571209-661cf29a69ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/destinations/destination-southern-africa.jpg",
       highlight: "Big Five & Cape Town",
       bestTime: "May-September (Safari), Oct-April (Cape Town)"
     },
     {
       name: "Zimbabwe",
       description: "Home to the majestic Victoria Falls, Zimbabwe offers dramatic landscapes, abundant wildlife in Hwange National Park and authentic cultural experiences in a warm, welcoming setting.",
-      image: "https://images.unsplash.com/photo-1605026163234-85f4b8c038f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/destinations/destination-zimbabwe.jpg",
       highlight: "Victoria Falls & Big Game",
       bestTime: "March-May, May-October"
     },
     {
       name: "Zambia",
       description: "Famous for walking safaris and stunning views of Victoria Falls, Zambia offers pristine wilderness in South Luangwa and thrilling river adventures along the Zambezi River.",
-      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/destinations/destination zambia.jpg",
       highlight: "Walking Safaris & Victoria Falls",
       bestTime: "June-October"
     },
     {
       name: "Botswana",
       description: "Discover the wild beauty of the Okavango Delta – a vast, wildlife-rich UNESCO World Heritage Site – and marvel at the great elephant herds of Chobe National Park.",
-      image: "https://images.unsplash.com/photo-1551375073-4a96641d4d81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/destinations/destination-botswana.jpg",
       highlight: "Okavango Delta & Chobe",
       bestTime: "May-October"
     },
     {
       name: "Namibia",
       description: "Marvel at the towering red dunes of Sossusvlei, roam the untamed Skeleton Coast, and encounter rare desert-adapted wildlife in one of Africa's most breathtaking landscapes.",
-      image: "https://images.unsplash.com/photo-1578750019427-fc5b98dbc9d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "/images/destinations/destination-namibia.jpg",
       highlight: "Desert Dunes & Skeleton Coast",
       bestTime: "May-October"
     }
@@ -55,7 +55,7 @@ export default function SouthernAfricaPage() {
         title="Southern Africa"
         subtitle="Dramatic Landscapes & Pristine Wilderness"
         description="Discover the raw beauty of Southern Africa, from the Kalahari Desert's vast expanses to the lush waterways of the Okavango Delta and the thundering majesty of Victoria Falls."
-        backgroundImage="https://images.unsplash.com/photo-1484318571209-661cf29a69ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        backgroundImage="/images/destinations/southern-africa-hero.jpg"
       />
 
       {/* Philosophical Introduction Section */}
@@ -166,14 +166,14 @@ export default function SouthernAfricaPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative aspect-[3/4] bg-stone-50 overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1605026163234-85f4b8c038f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                    src="/images/destinations/destination-zimbabwe.jpg"
                     alt="Victoria Falls Zimbabwe"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="relative aspect-[3/4] bg-stone-50 overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1551375073-4a96641d4d81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                    src="/images/destinations/destination-botswana.jpg"
                     alt="Okavango Delta Botswana"
                     className="w-full h-full object-cover"
                   />
@@ -188,7 +188,7 @@ export default function SouthernAfricaPage() {
       <Section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1484318571209-661cf29a69ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            src="/images/destinations/southern-africa-hero.jpg"
             alt="Southern Africa sunset"
             className="w-full h-full object-cover"
           />

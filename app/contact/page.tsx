@@ -17,7 +17,7 @@ export default function ContactPage() {
         title="Get in Touch"
         subtitle="Your Journey Specialist is Here to Help"
         description="Have questions? Need a custom itinerary? Your journey specialist is here to help you plan a seamless, unforgettable African adventure."
-        backgroundImage="/contact-hero.jpg"
+        backgroundImage="/images/contact/contact-hero.jpg"
       />
 
       <Section className="py-16 lg:py-24">
@@ -33,10 +33,10 @@ export default function ContactPage() {
                   icon="phone"
                   title="Call Us"
                   details={[
-                    "+254 725 822 927",
+                    "+254 104 560 540",
                   ]}
                   links={[
-                    "tel:+254725822927",
+                    "tel:+254104560540",
                   ]}
                 />
 

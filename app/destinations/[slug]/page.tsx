@@ -12,11 +12,21 @@ interface Props {
   }>;
 }
 
-export async function generateStaticParams() {
-  const slugs = getDestinationSlugs();
-  return slugs.map((slug) => ({
-    slug,
-  }));
+export function generateStaticParams(): { slug: string }[] {
+  // Return static list of destination slugs for static export
+  return [
+    { slug: 'kenya' },
+    { slug: 'tanzania' },
+    { slug: 'southern-tanzania' },
+    { slug: 'rwanda' },
+    { slug: 'uganda' },
+    { slug: 'ethiopia' },
+    { slug: 'south-africa-and-cape-town' },
+    { slug: 'zimbabwe' },
+    { slug: 'zambia' },
+    { slug: 'botswana' },
+    { slug: 'namibia' }
+  ];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -49,13 +59,32 @@ export default async function DestinationPage({ params }: Props) {
     notFound();
   }
 
+  // Map slugs to their corresponding destination images
+  const getDestinationImage = (slug: string): string => {
+    const imageMap: Record<string, string> = {
+      'kenya': '/images/destinations/destination-kenya.jpg',
+      'tanzania': '/images/destinations/destination-tanzania.jpg',
+      'southern-tanzania': '/images/destinations/destination-southern-tanzania.jpg',
+      'rwanda': '/images/destinations/destination-rwanda.jpg',
+      'uganda': '/images/destinations/destination-uganda.jpg',
+      'ethiopia': '/images/destinations/destination-ethiopia.jpg',
+      'south-africa-and-cape-town': '/images/destinations/destination-southern-africa.jpg',
+      'zimbabwe': '/images/destinations/destination-zimbabwe.jpg',
+      'zambia': '/images/destinations/destination zambia.jpg',
+      'botswana': '/images/destinations/destination-botswana.jpg',
+      'namibia': '/images/destinations/destination-namibia.jpg'
+    };
+
+    return imageMap[slug] || '/images/destinations/all-destinations-hero.jpg';
+  };
+
   return (
     <main className="min-h-screen">
-      <Hero 
+      <Hero
         title={destination.name}
         subtitle={destination.tagline}
         description={destination.sampleItinerary}
-        backgroundImage={`/images/destinations/${slug}-hero.jpg`}
+        backgroundImage={getDestinationImage(slug)}
       />
 
       <Section className="py-16">
@@ -121,10 +150,10 @@ export default async function DestinationPage({ params }: Props) {
           </p>
           <div className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
             <Link
-              href="/destinations"
+              href="/contact"
               className="inline-block bg-amber-600 text-white px-8 py-3 rounded-lg hover:bg-amber-700 transition-colors font-semibold"
             >
-              View All Destinations
+              Start Planning Your Journey
             </Link>
           </div>
         </div>
