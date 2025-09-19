@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface Service {
   title: string;
@@ -41,10 +42,11 @@ export default function ServiceCard({ service, reverse = false }: ServiceCardPro
 
       <div className={`${reverse ? "lg:order-1" : "lg:order-2"}`}>
         <div className="relative aspect-[4/3] bg-stone-200 overflow-hidden">
-          <img
+          <Image
             src={service.image}
             alt={`${service.title} service`}
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
         </div>
       </div>

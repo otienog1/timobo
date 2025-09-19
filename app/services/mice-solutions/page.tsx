@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import { AnimatedButton } from "@/components/ui/animated-button";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function MICESolutionsPage() {
   const miceServices = [
@@ -120,10 +121,11 @@ export default function MICESolutionsPage() {
               <div key={index} className="bg-white overflow-hidden group transition-all duration-300">
                 {/* Service Image */}
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <img
+                  <Image
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
 
@@ -222,10 +224,11 @@ export default function MICESolutionsPage() {
       {/* CTA Section */}
       <Section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
             src="/images/services/mice-solutions/corporate-conference-meetings.jpg"
             alt="Corporate events"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-black/60"></div>
         </div>

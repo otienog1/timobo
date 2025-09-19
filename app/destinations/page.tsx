@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import { AnimatedButton } from "@/components/ui/animated-button";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 // Note: metadata should be in layout.tsx or a separate metadata file for client components
@@ -187,10 +188,11 @@ export default function DestinationsPage() {
                 <div key={`${region}-${index}`} className="bg-white overflow-hidden">
                   {/* Destination Image */}
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src={destination.image}
                       alt={`${destination.name} safari destination`}
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
 
@@ -261,25 +263,28 @@ export default function DestinationsPage() {
             <div className="mt-12 lg:mt-0">
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative aspect-[3/4] bg-stone-50 overflow-hidden">
-                  <img
+                  <Image
                     src="/images/destinations/destination-kenya.jpg"
                     alt="African wildlife safari"
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
                 <div className="space-y-4">
                   <div className="relative aspect-square bg-stone-50 overflow-hidden">
-                    <img
+                    <Image
                       src="/images/destinations/destination-tanzania.jpg"
                       alt="African landscape"
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                   <div className="relative aspect-square bg-stone-50 overflow-hidden">
-                    <img
+                    <Image
                       src="/images/destinations/destination-rwanda.jpg"
                       alt="Mountain gorillas"
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                 </div>
@@ -292,10 +297,11 @@ export default function DestinationsPage() {
       {/* Immersive CTA Section */}
       <Section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
             src="/images/destinations/all-destinations-hero.jpg"
             alt="African safari sunset"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-black/60"></div>
         </div>

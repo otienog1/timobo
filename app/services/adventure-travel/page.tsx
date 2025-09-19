@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import { AnimatedButton } from "@/components/ui/animated-button";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AdventureTravelPage() {
   const adventureJourneys = [
@@ -132,10 +133,11 @@ export default function AdventureTravelPage() {
               <div key={index} className="bg-white overflow-hidden group transition-all duration-300">
                 {/* Journey Image */}
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <img
+                  <Image
                     src={journey.image}
                     alt={journey.title}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
 
@@ -233,10 +235,11 @@ export default function AdventureTravelPage() {
             </div>
             <div className="mt-12 lg:mt-0">
               <div className="relative aspect-[4/3] bg-stone-200 overflow-hidden">
-                <img
+                <Image
                   src="/images/services/Adventure-travel/ethiopian-highland-discovery.jpg"
                   alt="Adventure travel expertise"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
             </div>
@@ -247,10 +250,11 @@ export default function AdventureTravelPage() {
       {/* CTA Section */}
       <Section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
             src="/images/services/Adventure-travel/multi-country-expedition.jpg"
             alt="Adventure travel"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-black/60"></div>
         </div>

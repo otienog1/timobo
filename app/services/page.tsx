@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import { AnimatedButton } from "@/components/ui/animated-button";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ServicesPage() {
   const services = [
@@ -126,10 +127,11 @@ export default function ServicesPage() {
               <div key={index} className="bg-white overflow-hidden group transition-all duration-300">
                 {/* Service Image */}
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <img
+                  <Image
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
 
@@ -234,10 +236,11 @@ export default function ServicesPage() {
             </div>
             <div className="mt-12 lg:mt-0">
               <div className="relative aspect-[4/3] bg-stone-200 overflow-hidden">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2011&q=80"
                   alt="Timobo Safaris team expertise"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
             </div>
@@ -248,10 +251,11 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <Section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80"
             alt="African safari"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-black/60"></div>
         </div>

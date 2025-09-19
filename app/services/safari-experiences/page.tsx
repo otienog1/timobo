@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import { AnimatedButton } from "@/components/ui/animated-button";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function SafariExperiencesPage() {
   const safariExperiences = [
@@ -120,10 +121,11 @@ export default function SafariExperiencesPage() {
               <div key={index} className="bg-white overflow-hidden group transition-all duration-300">
                 {/* Experience Image */}
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <img
+                  <Image
                     src={experience.image}
                     alt={experience.title}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
 
@@ -220,10 +222,11 @@ export default function SafariExperiencesPage() {
             </div>
             <div className="mt-12 lg:mt-0">
               <div className="relative aspect-[4/3] bg-stone-200 overflow-hidden">
-                <img
+                <Image
                   src="/images/services/safari-experiences/wildlife-safaris.jpg"
                   alt="Safari planning expertise"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
             </div>
@@ -234,10 +237,11 @@ export default function SafariExperiencesPage() {
       {/* CTA Section */}
       <Section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
             src="/images/services/safari-experiences/photography-safaris.jpg"
             alt="Safari adventure"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-black/60"></div>
         </div>

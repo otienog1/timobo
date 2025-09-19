@@ -17,7 +17,19 @@
       "WebFetch(domain:localhost)",
       "Bash(npx next build:*)",
       "Bash(npx:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(yarn --version)",
+      "Bash(yarn config get:*)",
+      "Bash(yarn config:*)",
+      "Bash(yarn install)",
+      "Bash(yarn remove:*)",
+      "Bash(yarn add:*)",
+      "Bash(tasklist)",
+      "Bash(findstr:*)",
+      "Bash(yarn install:*)",
+      "Bash(npm:*)",
+      "Bash(rd:*)",
+      "Bash(yarn build)"
     ],
     "deny": [],
     "ask": []

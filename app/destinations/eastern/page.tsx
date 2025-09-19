@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import { AnimatedButton } from "@/components/ui/animated-button";
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -98,10 +99,11 @@ export default function EasternAfricaPage() {
                 <div key={index} className="bg-white overflow-hidden">
                   {/* Destination Image */}
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
+                    <Image
                       src={destination.image}
                       alt={`${destination.name} safari destination`}
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
 
@@ -172,17 +174,19 @@ export default function EasternAfricaPage() {
             <div className="mt-12 lg:mt-0">
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative aspect-[3/4] bg-stone-50 overflow-hidden">
-                  <img
+                  <Image
                     src="/images/destinations/destination-kenya.jpg"
                     alt="Great Migration in Kenya"
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
                 <div className="relative aspect-[3/4] bg-stone-50 overflow-hidden">
-                  <img
+                  <Image
                     src="/images/destinations/destination-rwanda.jpg"
                     alt="Mountain gorillas in Rwanda"
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
               </div>
@@ -194,10 +198,11 @@ export default function EasternAfricaPage() {
       {/* Immersive CTA Section */}
       <Section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
             src="/images/destinations/eastern-africa-hero.jpg"
             alt="Eastern Africa sunset"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-black/60"></div>
         </div>

@@ -5,6 +5,7 @@ import Section from "@/components/Section";
 import { AnimatedButton } from "@/components/ui/animated-button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 
 // Note: metadata should be in layout.tsx or a separate metadata file for client components
@@ -45,10 +46,11 @@ export default function AboutPage() {
 
             <div className="order-1 lg:order-2">
               <div className="relative aspect-[4/5] overflow-hidden rounded-sm shadow-lg">
-                <img
+                <Image
                   src="/images/about/about-our-story.jpg"
                   alt="African safari landscape showcasing our heritage"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
             </div>
