@@ -75,7 +75,7 @@ export default function DestinationsPage() {
       {
         name: "Zambia",
         description: "Famous for walking safaris and stunning views of Victoria Falls, Zambia offers pristine wilderness in South Luangwa and thrilling river adventures along the Zambezi River.",
-        image: "/images/destinations/destination zambia.jpg",
+        image: "/images/destinations/destination-zambia.jpg",
         highlight: "Walking Safaris & Victoria Falls",
         bestTime: "June-October"
       },
