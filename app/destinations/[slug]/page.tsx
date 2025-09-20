@@ -13,20 +13,14 @@ interface Props {
 }
 
 export function generateStaticParams(): { slug: string }[] {
-  // Return static list of destination slugs for static export
-  return [
-    { slug: 'kenya' },
-    { slug: 'tanzania' },
-    { slug: 'southern-tanzania' },
-    { slug: 'rwanda' },
-    { slug: 'uganda' },
-    { slug: 'ethiopia' },
-    { slug: 'south-africa-and-cape-town' },
-    { slug: 'zimbabwe' },
-    { slug: 'zambia' },
-    { slug: 'botswana' },
-    { slug: 'namibia' }
-  ];
+  // Get all destination slugs dynamically from content
+  const slugs = getDestinationSlugs();
+  const params = slugs.map(slug => ({ slug }));
+
+  // Add alias for South Africa to handle both URLs
+  params.push({ slug: 'south-africa' });
+
+  return params;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -69,8 +63,9 @@ export default async function DestinationPage({ params }: Props) {
       'uganda': '/images/destinations/destination-uganda.jpg',
       'ethiopia': '/images/destinations/destination-ethiopia.jpg',
       'south-africa-and-cape-town': '/images/destinations/destination-southern-africa.jpg',
+      'south-africa': '/images/destinations/destination-southern-africa.jpg', // Alias for South Africa
       'zimbabwe': '/images/destinations/destination-zimbabwe.jpg',
-      'zambia': '/images/destinations/destination zambia.jpg',
+      'zambia': '/images/destinations/destination-zambia.jpg',
       'botswana': '/images/destinations/destination-botswana.jpg',
       'namibia': '/images/destinations/destination-namibia.jpg'
     };

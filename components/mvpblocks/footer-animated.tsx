@@ -7,7 +7,7 @@ const FooterAnimated = () => {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Destinations", href: "/destinations" },
-    { name: "Experience", href: "/experience" },
+    { name: "Services", href: "/services" },
     { name: "Blog", href: "#" },
     { name: "Contact", href: "/contact" },
   ];

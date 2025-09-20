@@ -165,11 +165,9 @@ export default function EasternAfricaPage() {
                   <p className="font-sofia-pro text-stone-700">Experience authentic Maasai and other local cultures</p>
                 </div>
               </div>
-              <AnimatedButton asChild variant="primary" size="lg">
-                <Link href="/contact">
-                  Get Your Eastern Africa Quote
-                </Link>
-              </AnimatedButton>
+              <Link href="/contact" className="relative inline-flex items-center justify-center whitespace-nowrap font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer overflow-hidden z-10 text-white bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 shadow-lg shadow-amber-600/20 hover:shadow-amber-700/30 before:absolute before:content-[''] before:top-[-50%] before:left-[-50%] before:w-[200%] before:h-[200%] before:bg-gradient-to-r before:from-white/10 before:to-transparent before:rotate-45 before:transition-all before:duration-500 before:z-[-1] hover:before:top-[-100%] hover:before:left-[-100%] after:absolute after:content-[''] after:w-0 after:h-full after:top-0 after:right-0 after:z-[-1] after:bg-gradient-to-r after:from-amber-700 after:to-amber-800 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 active:scale-[0.98] active:shadow-md h-12 px-6 text-base rounded-sm">
+                <span className="relative z-20">Get Your Eastern Africa Quote</span>
+              </Link>
             </div>
             <div className="mt-12 lg:mt-0">
               <div className="grid grid-cols-2 gap-4">
@@ -216,11 +214,9 @@ export default function EasternAfricaPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <AnimatedButton asChild variant="primary" size="xl" className="shadow-2xl">
-              <Link href="/contact">
-                Get Your Itinerary
-              </Link>
-            </AnimatedButton>
+            <Link href="/contact" className="relative inline-flex items-center justify-center whitespace-nowrap font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer overflow-hidden z-10 text-white bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 shadow-amber-600/20 hover:shadow-amber-700/30 before:absolute before:content-[''] before:top-[-50%] before:left-[-50%] before:w-[200%] before:h-[200%] before:bg-gradient-to-r before:from-white/10 before:to-transparent before:rotate-45 before:transition-all before:duration-500 before:z-[-1] hover:before:top-[-100%] hover:before:left-[-100%] after:absolute after:content-[''] after:w-0 after:h-full after:top-0 after:right-0 after:z-[-1] after:bg-gradient-to-r after:from-amber-700 after:to-amber-800 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 active:scale-[0.98] active:shadow-md h-14 px-8 text-lg rounded-sm shadow-2xl relative z-20">
+              Get Your Itinerary
+            </Link>
           </div>
 
           {/* Trust Indicators */}

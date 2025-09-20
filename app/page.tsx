@@ -256,11 +256,9 @@ export default function HomePage() {
               <p className="font-sofia-pro text-lg text-muted-foreground mb-8">
                 From the vast plains of the Maasai Mara to Tanzania&apos;s Serengeti, Rwanda&apos;s mountain gorillas, and Botswana&apos;s Okavango Delta - we craft journeys to Africa&apos;s most iconic destinations.
               </p>
-              <AnimatedButton asChild variant="primary" size="lg">
-                <Link href="/destinations">
-                  Explore All Destinations
-                </Link>
-              </AnimatedButton>
+              <Link href="/destinations" className="relative inline-flex items-center justify-center whitespace-nowrap font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer overflow-hidden z-10 text-white bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 shadow-lg shadow-amber-600/20 hover:shadow-amber-700/30 before:absolute before:content-[''] before:top-[-50%] before:left-[-50%] before:w-[200%] before:h-[200%] before:bg-gradient-to-r before:from-white/10 before:to-transparent before:rotate-45 before:transition-all before:duration-500 before:z-[-1] hover:before:top-[-100%] hover:before:left-[-100%] after:absolute after:content-[''] after:w-0 after:h-full after:top-0 after:right-0 after:z-[-1] after:bg-gradient-to-r after:from-amber-700 after:to-amber-800 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 active:scale-[0.98] active:shadow-md h-12 px-6 text-base rounded-sm">
+                <span className="relative z-20">Explore All Destinations</span>
+              </Link>
             </div>
             <div className="grid grid-cols-2 gap-4 aspect-[4/3] lg:aspect-[3/2]">
               {/* Large image - spans full height */}
@@ -342,11 +340,9 @@ export default function HomePage() {
           <p className="text-base lg:text-lg text-stone-700 mb-8 max-w-2xl mx-auto">
             Let us craft your perfect African adventure with our 18+ years of expertise in safari planning and MICE solutions across Eastern and Southern Africa.
           </p>
-          <AnimatedButton asChild variant="secondary" size="xl">
-            <Link href="/contact">
-              Start Planning Your Journey
-            </Link>
-          </AnimatedButton>
+          <Link href="/contact" className="relative inline-flex items-center justify-center whitespace-nowrap font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer overflow-hidden z-10 text-white bg-gradient-to-r from-stone-700 to-stone-800 hover:from-stone-800 hover:to-stone-900 shadow-lg shadow-stone-700/20 hover:shadow-stone-800/30 before:absolute before:content-[''] before:top-[-50%] before:left-[-50%] before:w-[200%] before:h-[200%] before:bg-gradient-to-r before:from-white/10 before:to-transparent before:rotate-45 before:transition-all before:duration-500 before:z-[-1] hover:before:top-[-100%] hover:before:left-[-100%] after:absolute after:content-[''] after:w-0 after:h-full after:top-0 after:right-0 after:z-[-1] after:bg-gradient-to-r after:from-stone-800 after:to-stone-900 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 active:scale-[0.98] active:shadow-md h-14 px-8 text-lg rounded-sm">
+            <span className="relative z-20">Start Planning Your Journey</span>
+          </Link>
         </div>
       </Section>
     </main>

@@ -265,7 +265,7 @@ export default function Navbar() {
                   href="/about"
                   className={cn(
                     "group inline-flex h-9 w-max items-center justify-center rounded-sm px-4 py-2 text-sm font-medium transition-all duration-200 hover:bg-amber-50 hover:text-amber-700 active:bg-amber-100 focus-visible:bg-amber-50 focus-visible:text-amber-700",
-                    pathname === "/about" && "!bg-amber-100 !text-amber-800 font-semibold"
+                    (pathname === "/about" || pathname.startsWith("/about/")) && "!bg-amber-100 !text-amber-800 font-semibold"
                   )}
                 >
                   About
@@ -279,7 +279,7 @@ export default function Navbar() {
                   href="/contact"
                   className={cn(
                     "group inline-flex h-9 w-max items-center justify-center rounded-sm px-4 py-2 text-sm font-medium transition-all duration-200 hover:bg-amber-50 hover:text-amber-700 active:bg-amber-100 focus-visible:bg-amber-50 focus-visible:text-amber-700",
-                    pathname === "/contact" && "!bg-amber-100 !text-amber-800 font-semibold"
+                    (pathname === "/contact" || pathname.startsWith("/contact/")) && "!bg-amber-100 !text-amber-800 font-semibold"
                   )}
                 >
                   Contact
@@ -301,7 +301,7 @@ export default function Navbar() {
               <span className="sr-only">Toggle Menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="pr-0 bg-white/100 backdrop-blur-none">
+          <SheetContent side="left" className="w-full h-full max-w-none pr-0 bg-white/100 backdrop-blur-none">
             <SheetHeader>
               <SheetTitle className="text-left">
                 <Link
@@ -323,13 +323,13 @@ export default function Navbar() {
                 Experiences of Africa - 18+ years of safari excellence
               </SheetDescription>
             </SheetHeader>
-            <div className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
+            <div className="my-4 h-[calc(100vh-8rem)] pb-10 px-6">
               <div className="flex flex-col space-y-4">
                 <Link
                   href="/"
                   className={cn(
-                    "text-foreground/70 transition-colors hover:text-foreground",
-                    pathname === "/" && "text-foreground font-semibold"
+                    "text-foreground/70 transition-all duration-200 hover:text-foreground rounded-md px-3 py-2 hover:bg-amber-50",
+                    pathname === "/" && "!text-amber-800 !bg-amber-100 font-semibold"
                   )}
                   onClick={() => setIsOpen(false)}
                 >
@@ -340,8 +340,8 @@ export default function Navbar() {
                     <Link
                       href="/destinations"
                       className={cn(
-                        "text-foreground/70 transition-colors hover:text-foreground font-medium",
-                        pathname.startsWith("/destinations") && "text-foreground font-semibold"
+                        "text-foreground/70 transition-all duration-200 hover:text-foreground font-medium rounded-md px-3 py-2 hover:bg-amber-50",
+                        pathname.startsWith("/destinations") && "!text-amber-800 !bg-amber-100 font-semibold"
                       )}
                       onClick={() => setIsOpen(false)}
                     >
@@ -374,7 +374,10 @@ export default function Navbar() {
                             <Link
                               key={country.name}
                               href={country.href}
-                              className="block text-sm text-foreground/60 hover:text-foreground ml-2 py-1"
+                              className={cn(
+                                "block text-sm text-foreground/60 hover:text-foreground ml-2 py-1 px-2 rounded transition-all duration-200 hover:bg-amber-50",
+                                pathname === country.href && "!text-amber-800 !bg-amber-100 font-medium"
+                              )}
                               onClick={() => setIsOpen(false)}
                             >
                               {country.name}
@@ -390,8 +393,8 @@ export default function Navbar() {
                     <Link
                       href="/services"
                       className={cn(
-                        "text-foreground/70 transition-colors hover:text-foreground font-medium",
-                        pathname.startsWith("/services") && "text-foreground font-semibold"
+                        "text-foreground/70 transition-all duration-200 hover:text-foreground font-medium rounded-md px-3 py-2 hover:bg-amber-50",
+                        pathname.startsWith("/services") && "!text-amber-800 !bg-amber-100 font-semibold"
                       )}
                       onClick={() => setIsOpen(false)}
                     >
@@ -419,7 +422,10 @@ export default function Navbar() {
                         <Link
                           key={service.title}
                           href={service.href}
-                          className="block text-sm text-foreground/60 hover:text-foreground py-1"
+                          className={cn(
+                            "block text-sm text-foreground/60 hover:text-foreground py-1 px-2 rounded transition-all duration-200 hover:bg-amber-50",
+                            pathname === service.href && "!text-amber-800 !bg-amber-100 font-medium"
+                          )}
                           onClick={() => setIsOpen(false)}
                         >
                           {service.title}
@@ -431,8 +437,8 @@ export default function Navbar() {
                 <Link
                   href="/about"
                   className={cn(
-                    "text-foreground/70 transition-colors hover:text-foreground",
-                    pathname === "/about" && "text-foreground font-semibold"
+                    "text-foreground/70 transition-all duration-200 hover:text-foreground rounded-md px-3 py-2 hover:bg-amber-50",
+                    (pathname === "/about" || pathname.startsWith("/about/")) && "!text-amber-800 !bg-amber-100 font-semibold"
                   )}
                   onClick={() => setIsOpen(false)}
                 >
@@ -441,8 +447,8 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   className={cn(
-                    "text-foreground/70 transition-colors hover:text-foreground",
-                    pathname === "/contact" && "text-foreground font-semibold"
+                    "text-foreground/70 transition-all duration-200 hover:text-foreground rounded-md px-3 py-2 hover:bg-amber-50",
+                    (pathname === "/contact" || pathname.startsWith("/contact/")) && "!text-amber-800 !bg-amber-100 font-semibold"
                   )}
                   onClick={() => setIsOpen(false)}
                 >

@@ -377,9 +377,12 @@ function parseContact(sections: string[]): ContactInfo {
 export function getDestinationBySlug(slug: string): Destination | undefined {
   const content = getSiteContent();
   const allDestinations = [...content.destinations.eastern, ...content.destinations.southern];
-  
-  return allDestinations.find(dest => 
-    dest.name.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, 'and') === slug.toLowerCase()
+
+  // Handle alias for South Africa
+  const normalizedSlug = slug.toLowerCase() === 'south-africa' ? 'south-africa-and-cape-town' : slug.toLowerCase();
+
+  return allDestinations.find(dest =>
+    dest.name.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, 'and') === normalizedSlug
   );
 }
 
