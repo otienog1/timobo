@@ -29,7 +29,7 @@ const testimonials = [
   },
   {
     id: 2,
-    name: "Michael Chen", 
+    name: "Michael Chen",
     designation: "CEO",
     company: "Tech Solutions Inc.",
     testimonial:
@@ -38,7 +38,7 @@ const testimonials = [
   {
     id: 3,
     name: "Emma Rodriguez",
-    designation: "Adventure Traveler", 
+    designation: "Adventure Traveler",
     company: "Spain",
     testimonial:
       "The gorilla trekking experience in Rwanda was life-changing. Coming face-to-face with these magnificent creatures in their natural habitat was emotional and unforgettable. Thank you for this incredible journey.",
@@ -127,7 +127,7 @@ export default function HomePage() {
               <p className="font-sofia-pro text-base lg:text-lg text-stone-700 mb-6 lg:mb-6 leading-relaxed">
                 We are more than a safari company – we are travel designers and event specialists committed to creating journeys that connect people with nature, culture, and community ensuring Experiences of Africa to all our clients. With nearly two decades of experience, we have mastered the art of planning and executing tailor-made safaris while supporting purpose-driven travel that promotes wildlife conservation, cultural preservation, and community empowerment.
               </p>
-              
+
               {/* Mobile Image - shows between paragraphs on mobile only */}
               <div className="lg:hidden mb-6">
                 <div className="relative aspect-[4/3] bg-stone-50 overflow-hidden">
@@ -139,12 +139,12 @@ export default function HomePage() {
                   />
                 </div>
               </div>
-              
+
               <p className="font-sofia-pro text-base lg:text-lg text-stone-700 leading-relaxed">
                 Our journeys are designed for passionate travelers seeking authentic experiences, wildlife enthusiasts and conservationists, professional photographers and content creators, adventure lovers and special interest groups, as well as global brands and corporate clients looking for seamless MICE solutions in Africa.
               </p>
             </div>
-            
+
             {/* Desktop Image - shows on right side for desktop only */}
             <div className="hidden lg:block lg:col-span-4">
               <div className="relative aspect-[3/4] bg-stone-50 overflow-hidden">
@@ -270,7 +270,7 @@ export default function HomePage() {
                   className="object-cover"
                 />
               </div>
-              
+
               {/* Right side - 2 stacked images */}
               <div className="grid grid-rows-2 gap-4">
                 <div className="relative bg-stone-50 overflow-hidden">
@@ -337,8 +337,11 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold mb-8 text-stone-800">
             Ready for Your African Adventure?
           </h2>
-          <p className="text-base lg:text-lg text-stone-700 mb-8 max-w-2xl mx-auto">
+          {/* <p className="text-base lg:text-lg text-stone-700 mb-6 max-w-2xl mx-auto">
             Let us craft your perfect African adventure with our 18+ years of expertise in safari planning and MICE solutions across Eastern and Southern Africa.
+          </p> */}
+          <p className="text-base lg:text-lg text-stone-700 mb-8 max-w-3xl mx-auto italic">
+            Timobo Safaris Ltd invites you to discover Africa – where every journey tells a story, every safari supports sustainability, and every experience stays with you forever.
           </p>
           <Link href="/contact" className="relative inline-flex items-center justify-center whitespace-nowrap font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer overflow-hidden z-10 text-white bg-gradient-to-r from-stone-700 to-stone-800 hover:from-stone-800 hover:to-stone-900 shadow-lg shadow-stone-700/20 hover:shadow-stone-800/30 before:absolute before:content-[''] before:top-[-50%] before:left-[-50%] before:w-[200%] before:h-[200%] before:bg-gradient-to-r before:from-white/10 before:to-transparent before:rotate-45 before:transition-all before:duration-500 before:z-[-1] hover:before:top-[-100%] hover:before:left-[-100%] after:absolute after:content-[''] after:w-0 after:h-full after:top-0 after:right-0 after:z-[-1] after:bg-gradient-to-r after:from-stone-800 after:to-stone-900 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 active:scale-[0.98] active:shadow-md h-14 px-8 text-lg rounded-sm">
             <span className="relative z-20">Start Planning Your Journey</span>

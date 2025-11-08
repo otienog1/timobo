@@ -58,7 +58,7 @@ export default function ServicesPage() {
         "Luxury beach resorts",
         "City & nature combinations"
       ],
-      link: "/destinations"
+      link: "/services/holiday-getaways"
     },
     {
       title: "Transport Solutions",
@@ -71,7 +71,7 @@ export default function ServicesPage() {
         "VIP transport & security",
         "Inter-destination connections"
       ],
-      link: "/contact"
+      link: "/services/transport-solutions"
     },
     {
       title: "Outbound Travel",
@@ -84,7 +84,7 @@ export default function ServicesPage() {
         "Flight bookings & tickets",
         "Travel insurance solutions"
       ],
-      link: "/contact"
+      link: "/services/outbound-travel"
     }
   ];
 
@@ -136,7 +136,7 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Service Content */}
-                <div className="p-6">
+                <div className="p-6 px-0">
                   <div className="mb-4">
                     <h3 className="font-freight-display-pro text-xl font-bold text-stone-800 mb-2">
                       {service.title}
@@ -165,15 +165,13 @@ export default function ServicesPage() {
                     </div>
                   </div>
 
-                  {/* Service Link - only for Safari Experiences, Adventure Travel, and MICE Solutions */}
-                  {(service.title === "Safari Experiences" || service.title === "Adventure Travel" || service.title === "MICE Solutions") && (
-                    <Link href={service.link} className="font-sofia-pro text-sm text-amber-600 hover:text-amber-700 transition-colors duration-200 inline-flex items-center">
-                      Explore {service.title}
-                      <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </Link>
-                  )}
+                  {/* Service Link */}
+                  <Link href={service.link} className="font-sofia-pro text-sm text-amber-600 hover:text-amber-700 transition-colors duration-200 inline-flex items-center">
+                    Explore {service.title}
+                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
                 </div>
               </div>
             ))}

@@ -78,7 +78,6 @@ export default async function DestinationPage({ params }: Props) {
       <Hero
         title={destination.name}
         subtitle={destination.tagline}
-        description={destination.sampleItinerary}
         backgroundImage={getDestinationImage(slug)}
       />
 
@@ -86,7 +85,7 @@ export default async function DestinationPage({ params }: Props) {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg prose-stone max-w-none mb-12">
-              <p className="text-xl leading-relaxed text-stone-700">
+              <p className="text-xl leading-relaxed text-stone-700 text-justify">
                 {destination.description}
               </p>
             </div>

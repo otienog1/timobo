@@ -16,7 +16,7 @@ const Footer = () => {
                 </div>
 
                 <p className="mx-auto mt-12 max-w-lg text-center leading-relaxed text-gray-500">
-                    African Citril Safaris offers personalized East African tours with a focus on sustainability and exceptional service, including custom itineraries and travel support.
+                    Timobo Safaris Ltd offers personalized East African tours with a focus on sustainability and exceptional service, including custom itineraries and travel support.
                 </p>
 
                 <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">

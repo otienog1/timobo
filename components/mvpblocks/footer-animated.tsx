@@ -27,7 +27,7 @@ const FooterAnimated = () => {
         ))}
       </div>
       <p className="text-center text-sm text-muted-foreground mt-4">
-        © 2025 African Citril Safaris. All rights reserved.
+        © 2025 Timobo Safaris Ltd. All rights reserved.
       </p>
     </footer>
   );

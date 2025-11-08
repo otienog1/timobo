@@ -226,12 +226,12 @@ function parseDestination(sections: string[], startIndex: number, name: string):
   const sampleItinerary = sections[startIndex + 3] || "";
   
   // Find attractions section
-  const attractionsStart = sections.findIndex((s, i) => i > startIndex && s.includes("Top Attractions"));
+  const attractionsStart = sections.findIndex((s, i) => i > startIndex && s.toLowerCase().includes("top attractions"));
   const attractions: string[] = [];
   if (attractionsStart > -1) {
     for (let i = attractionsStart + 1; i < sections.length; i++) {
       const section = sections[i];
-      if (section.includes("Best Time to Visit") || section.includes("–")) {
+      if (section.toLowerCase().includes("best time to visit") || section.toLowerCase().includes("best time to visit:")) {
         break;
       }
       if (section.includes("–") || section.includes("-")) {
@@ -239,14 +239,14 @@ function parseDestination(sections: string[], startIndex: number, name: string):
       }
     }
   }
-  
+
   // Find best time to visit
-  const bestTimeStart = sections.findIndex((s, i) => i > startIndex && s.includes("Best Time to Visit"));
+  const bestTimeStart = sections.findIndex((s, i) => i > startIndex && s.toLowerCase().includes("best time to visit"));
   const bestTimeToVisit: string[] = [];
   if (bestTimeStart > -1) {
     for (let i = bestTimeStart + 1; i < sections.length; i++) {
       const section = sections[i];
-      if (section.includes("Days") || section.includes(":")) {
+      if (section.includes("Days") && section.includes(":")) {
         break;
       }
       if (section.includes("–") || section.includes("-")) {
