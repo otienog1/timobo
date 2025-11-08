@@ -3,7 +3,7 @@ import React from "react";
 interface HeroProps {
   title: string;
   subtitle: string;
-  description: string;
+  description?: string;
   backgroundImage?: string;
   className?: string;
 }
@@ -44,9 +44,11 @@ export default function Hero({
             </h2>
           )}
 
-          <p className="font-sofia-pro text-lg md:text-xl leading-relaxed text-stone-300 max-w-3xl mx-auto">
-            {description}
-          </p>
+          {description && (
+            <p className="font-sofia-pro text-lg md:text-xl leading-relaxed text-stone-300 max-w-3xl mx-auto">
+              {description}
+            </p>
+          )}
         </div>
       </div>
     </section>
