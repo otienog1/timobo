@@ -22,13 +22,13 @@ export default function ContactPage() {
 
       <Section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-12">
             <div>
               <h2 className="font-freight-display-pro text-3xl lg:text-4xl font-bold mb-8 text-stone-800">
                 Contact Information
               </h2>
 
-              <div className="space-y-6 mb-8">
+              <div className="space-y-6">
                 <ContactCard
                   icon="phone"
                   title="Call Us"
@@ -70,40 +70,40 @@ export default function ContactPage() {
                   ]}
                 />
               </div>
-
-              <div className="bg-amber-50 p-8 rounded-lg">
-                <h3 className="font-sofia-pro-bold text-xl mb-4 text-stone-800">
-                  Planning Your Safari?
-                </h3>
-                <p className="font-sofia-pro text-stone-700 mb-6 leading-relaxed">
-                  Our safari specialists are ready to help you create the perfect African adventure. Whether you&apos;re interested in wildlife safaris, cultural experiences, or MICE services, we&apos;ll craft a personalized itinerary just for you.
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 w-2 h-2 bg-amber-500 rounded-full mt-3"></div>
-                    <p className="font-sofia-pro text-stone-700">Free consultation and trip planning</p>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 w-2 h-2 bg-amber-500 rounded-full mt-3"></div>
-                    <p className="font-sofia-pro text-stone-700">Custom itinerary design</p>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 w-2 h-2 bg-amber-500 rounded-full mt-3"></div>
-                    <p className="font-sofia-pro text-stone-700">18+ years of expertise</p>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 w-2 h-2 bg-amber-500 rounded-full mt-3"></div>
-                    <p className="font-sofia-pro text-stone-700">Sustainable and ethical tourism</p>
-                  </div>
-                </div>
-              </div>
             </div>
 
-            <div className="bg-white p-8 rounded-lg shadow-lg border border-stone-200">
+            <div className="bg-white p-8 rounded-lg border border-stone-200">
               <h2 className="font-freight-display-pro text-2xl lg:text-3xl font-bold mb-6 text-stone-800">
                 Send Us a Message
               </h2>
               <ContactForm />
+            </div>
+          </div>
+
+          <div className="bg-amber-50 p-8 rounded-lg">
+            <h3 className="font-sofia-pro-bold text-xl mb-4 text-stone-800">
+              Planning Your Safari?
+            </h3>
+            <p className="font-sofia-pro text-stone-700 mb-6 leading-relaxed">
+              Our safari specialists are ready to help you create the perfect African adventure. Whether you&apos;re interested in wildlife safaris, cultural experiences, or MICE services, we&apos;ll craft a personalized itinerary just for you.
+            </p>
+            <div className="space-y-3">
+              <div className="flex items-start space-x-3">
+                <div className="flex-shrink-0 w-2 h-2 bg-amber-500 rounded-full mt-3"></div>
+                <p className="font-sofia-pro text-stone-700">Free consultation and trip planning</p>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="flex-shrink-0 w-2 h-2 bg-amber-500 rounded-full mt-3"></div>
+                <p className="font-sofia-pro text-stone-700">Custom itinerary design</p>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="flex-shrink-0 w-2 h-2 bg-amber-500 rounded-full mt-3"></div>
+                <p className="font-sofia-pro text-stone-700">18+ years of expertise</p>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="flex-shrink-0 w-2 h-2 bg-amber-500 rounded-full mt-3"></div>
+                <p className="font-sofia-pro text-stone-700">Sustainable and ethical tourism</p>
+              </div>
             </div>
           </div>
         </div>
