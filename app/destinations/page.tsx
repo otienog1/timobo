@@ -197,7 +197,7 @@ export default function DestinationsPage() {
                   </div>
 
                   {/* Destination Content */}
-                  <div className="p-6">
+                  <div className="p-6 px-0">
                     <div className="mb-4">
                       <h3 className="font-freight-display-pro text-xl font-bold text-stone-800 mb-2">
                         {destination.name}

@@ -31,7 +31,7 @@ export default function AboutPage() {
 
               <div className="space-y-6 font-sofia-pro text-lg lg:text-xl leading-relaxed text-stone-700">
                 <p>
-                  Founded in 2006, Timobo Safaris Ltd was born from a deep passion for Africa&apos;s untamed wilderness and rich cultural heritage. What started as a vision to share authentic African experiences has evolved into one of the region&apos;s most trusted safari and MICE solutions partners.
+                  Timobo Safaris Ltd was born from a deep passion for Africa&apos;s untamed wilderness and rich cultural heritage. What started as a vision to share authentic African experiences has evolved into one of the region&apos;s most trusted safari and MICE solutions partners.
                 </p>
 
                 <p>

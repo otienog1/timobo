@@ -79,6 +79,18 @@ export default function SafariExperiencesPage() {
         "Gourmet dining experiences",
         "Personalized itineraries"
       ]
+    },
+    {
+      title: "Elephant Safaris",
+      subtitle: "Majestic Giants of Africa",
+      description: "Specialized safaris focused on elephant encounters in prime habitats. Witness Africa's gentle giants in Amboseli, Chobe, and other renowned elephant sanctuaries.",
+      image: "/images/services/safari-experiences/wildlife-safaris.jpg",
+      highlights: [
+        "Elephant-focused game drives",
+        "Expert elephant behavior guides",
+        "Prime elephant habitats in Amboseli and Chobe",
+        "Conservation education programs"
+      ]
     }
   ];
 
@@ -130,7 +142,7 @@ export default function SafariExperiencesPage() {
                 </div>
 
                 {/* Experience Content */}
-                <div className="p-6">
+                <div className="p-6 px-0">
                   <div className="mb-4">
                     <h3 className="font-freight-display-pro text-xl font-bold text-stone-800 mb-2">
                       {experience.title}
