@@ -5,6 +5,8 @@ import localFont from 'next/font/local'
 
 import Navbar from '@/components/Navbar'
 import FooterAnimated from '@/components/mvpblocks/footer-animated'
+import SmoothScroll from '@/components/SmoothScroll'
+import PageTransition from '@/components/PageTransition'
 
 const poppins = Source_Sans_3({
     weight: '400',
@@ -64,9 +66,11 @@ export default function RootLayout({
             </head>
             <body className={productsans.className} suppressHydrationWarning>
                 <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} forcedTheme="light">
-                    <Navbar />
-                    {children}
-                    <FooterAnimated />
+                    <SmoothScroll>
+                        <Navbar />
+                        <PageTransition>{children}</PageTransition>
+                        <FooterAnimated />
+                    </SmoothScroll>
                 </ThemeProvider>
             </body>
         </html>

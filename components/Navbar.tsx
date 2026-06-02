@@ -4,9 +4,10 @@ import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { Menu, X } from "lucide-react"
+import { Menu, ChevronDown } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { gsap } from "@/lib/gsap"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,16 +15,10 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import { Button } from "@/components/ui/button"
-import { AnimatedButton } from "@/components/ui/animated-button"
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
 
@@ -31,7 +26,7 @@ const destinations = [
   {
     title: "Eastern Africa",
     href: "/destinations/eastern",
-    description: "Kenya, Tanzania, Rwanda, Uganda, Ethiopia - The birthplace of safari.",
+    description: "Kenya, Tanzania, Rwanda, Uganda, Ethiopia — the birthplace of safari.",
     countries: [
       { name: "Kenya", href: "/destinations/kenya" },
       { name: "Tanzania", href: "/destinations/tanzania" },
@@ -43,7 +38,7 @@ const destinations = [
   {
     title: "Southern Africa",
     href: "/destinations/southern",
-    description: "South Africa, Zimbabwe, Zambia, Botswana, Namibia - Dramatic landscapes and wildlife.",
+    description: "South Africa, Zimbabwe, Zambia, Botswana, Namibia — dramatic landscapes and wildlife.",
     countries: [
       { name: "South Africa", href: "/destinations/south-africa-and-cape-town" },
       { name: "Zimbabwe", href: "/destinations/zimbabwe" },
@@ -72,6 +67,25 @@ const services = [
   },
 ]
 
+const navLinkClass = (isActive: boolean) =>
+  cn(
+    "font-sofia-pro text-[11px] tracking-[0.1em] uppercase inline-flex h-10 items-center px-4 py-2 transition-colors duration-200 rounded-sm",
+    isActive ? "text-amber-400" : "text-stone-600 hover:text-amber-400"
+  )
+
+const triggerClass = (isActive: boolean) =>
+  cn(
+    "font-sofia-pro text-[11px] tracking-[0.1em] uppercase !h-10 !px-4 transition-colors duration-200 !rounded-sm",
+    "!bg-transparent hover:!bg-transparent focus:!bg-transparent data-[state=open]:!bg-transparent",
+    isActive ? "!text-amber-400" : "!text-stone-600 hover:!text-amber-400"
+  )
+
+const mobileLinkClass = (isActive: boolean) =>
+  cn(
+    "font-sofia-pro text-sm block py-2.5 transition-colors duration-200",
+    isActive ? "text-amber-200" : "text-stone-300 hover:text-amber-200"
+  )
+
 export default function Navbar() {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = React.useState(false)
@@ -79,195 +93,196 @@ export default function Navbar() {
   const [hoveredService, setHoveredService] = React.useState<string | null>(null)
   const [mobileDestinationsOpen, setMobileDestinationsOpen] = React.useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = React.useState(false)
+  const prevValueRef = React.useRef("")
+
+  const handleMenuChange = React.useCallback((value: string) => {
+    const wasEmpty = !prevValueRef.current
+    prevValueRef.current = value
+
+    const wrapper = document.querySelector("[data-nav-viewport]") as HTMLElement | null
+    if (!wrapper) return
+
+    if (!value) {
+      gsap.killTweensOf(wrapper)
+      gsap.to(wrapper, { opacity: 0, y: -4, duration: 0.15, ease: "power2.in" })
+      return
+    }
+
+    if (wasEmpty) {
+      gsap.killTweensOf(wrapper)
+      gsap.fromTo(wrapper,
+        { opacity: 0, y: -10, scale: 0.97 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.28, ease: "power2.out" }
+      )
+    }
+
+    requestAnimationFrame(() => {
+      const items = Array.from(document.querySelectorAll("[data-nav-item]")).filter(
+        (el) => (el as HTMLElement).getBoundingClientRect().height > 0
+      )
+      if (items.length) {
+        gsap.fromTo(items,
+          { opacity: 0, y: 8 },
+          { opacity: 1, y: 0, duration: 0.28, ease: "power2.out", stagger: 0.06, delay: 0.06, overwrite: true }
+        )
+      }
+    })
+  }, [])
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-white/95 backdrop-blur-sm shadow-sm">
+    <header className="sticky top-0 z-50 w-full bg-white border-b border-stone-200/80">
       <div className="container flex h-20 max-w-screen-xl items-center justify-between">
-        {/* Logo */}
-        <div className="flex">
-          <Link href="/" className="flex items-center space-x-3">
-            <Image
-              src="/_Logo.svg"
-              alt="Timobo Safaris Logo"
-              width={60}
-              height={60}
-              className="h-12 md:h-14 w-auto"
-            />
-            <span className="hidden font-bold sm:inline-block text-lg" style={{fontFamily: '"sofia-pro", sans-serif', fontWeight: 400, fontStyle: 'normal'}}>
-              Timobo Safaris
-            </span>
-          </Link>
-        </div>
 
-        {/* Desktop Navigation */}
-        <NavigationMenu className="hidden md:flex">
-          <NavigationMenuList>
+        {/* ── Logo ── */}
+        <Link href="/" className="flex items-center gap-3 shrink-0">
+          <Image
+            src="/_Logo.svg"
+            alt="Timobo Safaris"
+            width={56}
+            height={56}
+            className="h-12 md:h-14 w-auto"
+          />
+          <span className="hidden sm:block font-freight-display-pro text-xl text-stone-800 leading-none">
+            Timobo Safaris
+          </span>
+        </Link>
+
+        {/* ── Desktop Navigation ── */}
+        <NavigationMenu className="hidden lg:flex self-stretch" onValueChange={handleMenuChange}>
+          <NavigationMenuList className="gap-1">
+
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link
-                  href="/"
-                  className={cn(
-                    "group inline-flex h-9 w-max items-center justify-center rounded-sm px-4 py-2 text-sm font-medium transition-all duration-200 hover:bg-amber-50 hover:text-amber-700 active:bg-amber-100 focus-visible:bg-amber-50 focus-visible:text-amber-700",
-                    pathname === "/" && "!bg-amber-100 !text-amber-800 font-semibold"
-                  )}
-                >
-                  Home
-                </Link>
+                <Link href="/" className={navLinkClass(pathname === "/")}>Home</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
 
+            {/* Destinations dropdown */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger
-                className={cn(
-                  "transition-all duration-200 hover:bg-amber-50 hover:text-amber-700 active:bg-amber-100 focus-visible:bg-amber-50 focus-visible:text-amber-700",
-                  pathname.startsWith("/destinations") && "!bg-amber-100 !text-amber-800 font-semibold"
-                )}
-              >
+              <NavigationMenuTrigger className={triggerClass(pathname.startsWith("/destinations"))}>
                 Destinations
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                  <div className="row-span-3 relative overflow-hidden">
+                <div className="flex gap-0 w-[660px]">
+                  {/* Image preview panel */}
+                  <div className="relative w-56 shrink-0 overflow-hidden p-3">
                     <NavigationMenuLink asChild>
-                      <Link
-                        className="flex h-full w-full select-none flex-col justify-end rounded-sm p-6 no-underline outline-none transition-all duration-500 hover:shadow-lg focus:shadow-md relative z-10"
-                        href="/destinations"
-                      >
-                        {/* Background Images */}
-                        <div className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${
-                          hoveredDestination === 'Eastern Africa' ? 'opacity-100' : 'opacity-0'
-                        }`}
-                             style={{
-                               backgroundImage: 'url(/images/destinations/sub-menu/eastern-africa.jpg)'
-                             }}
-                        />
-                        <div className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${
-                          hoveredDestination === 'Southern Africa' ? 'opacity-100' : 'opacity-0'
-                        }`}
-                             style={{
-                               backgroundImage: 'url(/images/destinations/sub-menu/southern-africa.jpg)'
-                             }}
-                        />
-                        <div className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${
-                          !hoveredDestination ? 'opacity-100' : 'opacity-0'
-                        }`}
-                             style={{
-                               backgroundImage: 'url(/images/destinations/sub-menu/all-destinations.jpg)'
-                             }}
-                        />
-                        {/* Dark overlay */}
-                        <div className="absolute inset-0 bg-black/40"></div>
-                        <div className="mb-2 mt-4 text-lg font-medium text-white relative z-10">
-                          All Destinations
+                      <Link href="/destinations" className="block h-full relative rounded-sm overflow-hidden select-none no-underline outline-none">
+                        <div className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${hoveredDestination === 'Eastern Africa' ? 'opacity-100' : 'opacity-0'}`}
+                             style={{ backgroundImage: 'url(/images/destinations/sub-menu/eastern-africa.jpg)' }} />
+                        <div className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${hoveredDestination === 'Southern Africa' ? 'opacity-100' : 'opacity-0'}`}
+                             style={{ backgroundImage: 'url(/images/destinations/sub-menu/southern-africa.jpg)' }} />
+                        <div className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${!hoveredDestination ? 'opacity-100' : 'opacity-0'}`}
+                             style={{ backgroundImage: 'url(/images/destinations/sub-menu/all-destinations.jpg)' }} />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                        <div className="absolute bottom-0 left-0 right-0 p-4">
+                          <p className="font-sofia-pro text-[9px] tracking-[0.25em] uppercase text-amber-200 mb-1">Explore</p>
+                          <p className="font-freight-display-pro text-lg text-white leading-tight">All Destinations</p>
                         </div>
-                        <p className="text-sm leading-tight text-white/80 relative z-10">
-                          Discover Africa&apos;s most incredible places across Eastern and Southern Africa.
-                        </p>
                       </Link>
                     </NavigationMenuLink>
                   </div>
-                  {destinations.map((region) => (
-                    <div
-                      key={region.title}
-                      onMouseEnter={() => setHoveredDestination(region.title)}
-                      onMouseLeave={() => setHoveredDestination(null)}
-                    >
-                      <ListItem
-                        title={region.title}
-                        href={region.href}
+
+                  {/* Regions grid */}
+                  <div className="flex-1 grid grid-cols-2 gap-0">
+                    {destinations.map((region) => (
+                      <div
+                        key={region.title}
+                        data-nav-item
+                        className="p-5"
+                        onMouseEnter={() => setHoveredDestination(region.title)}
+                        onMouseLeave={() => setHoveredDestination(null)}
                       >
-                        {region.description}
-                      </ListItem>
-                    </div>
-                  ))}
+                        <Link href={region.href} className="block mb-3">
+                          <p className="font-sofia-pro-bold text-[10px] tracking-[0.2em] uppercase text-stone-500 hover:text-amber-400 transition-colors pb-2">
+                            {region.title}
+                          </p>
+                        </Link>
+                        <ul className="space-y-0.5">
+                          {region.countries.map((country) => (
+                            <li key={country.name}>
+                              <NavigationMenuLink asChild>
+                                <Link
+                                  href={country.href}
+                                  className="font-sofia-pro text-sm text-stone-600 hover:text-amber-400 transition-colors block py-1"
+                                >
+                                  {country.name}
+                                </Link>
+                              </NavigationMenuLink>
+                            </li>
+                          ))}
+                        </ul>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href={region.href}
+                            className="font-sofia-pro-bold text-[10px] tracking-[0.15em] uppercase text-amber-400 hover:text-amber-300 transition-colors mt-3 block"
+                          >
+                            View All &rarr;
+                          </Link>
+                        </NavigationMenuLink>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
 
+            {/* Services dropdown */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger
-                className={cn(
-                  "transition-all duration-200 hover:bg-amber-50 hover:text-amber-700 active:bg-amber-100 focus-visible:bg-amber-50 focus-visible:text-amber-700",
-                  pathname.startsWith("/services") && "!bg-amber-100 !text-amber-800 font-semibold"
-                )}
-              >
+              <NavigationMenuTrigger className={triggerClass(pathname.startsWith("/services"))}>
                 Services
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                  <li className="row-span-3 relative overflow-hidden">
+                <div className="flex gap-0 w-[520px]">
+                  {/* Image preview panel */}
+                  <div className="relative w-52 shrink-0 overflow-hidden p-3">
                     <NavigationMenuLink asChild>
-                      <Link
-                        className="flex h-full w-full select-none flex-col justify-end rounded-sm p-6 no-underline outline-none transition-all duration-500 hover:shadow-lg focus:shadow-md relative z-10"
-                        href="/services"
-                      >
-                        {/* Background Images */}
-                        <div className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${
-                          hoveredService === 'Safari Experiences' ? 'opacity-100' : 'opacity-0'
-                        }`}
-                             style={{
-                               backgroundImage: 'url(/images/services/sub-menu/safari-experiences.jpg)'
-                             }}
-                        />
-                        <div className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${
-                          hoveredService === 'MICE Solutions' ? 'opacity-100' : 'opacity-0'
-                        }`}
-                             style={{
-                               backgroundImage: 'url(/images/services/sub-menu/mice-solutions.jpg)'
-                             }}
-                        />
-                        <div className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${
-                          hoveredService === 'Adventure Travel' ? 'opacity-100' : 'opacity-0'
-                        }`}
-                             style={{
-                               backgroundImage: 'url(/images/services/sub-menu/adventure-travel.jpg)'
-                             }}
-                        />
-                        <div className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${
-                          !hoveredService ? 'opacity-100' : 'opacity-0'
-                        }`}
-                             style={{
-                               backgroundImage: 'url(/images/services/sub-menu/all-services.jpg)'
-                             }}
-                        />
-                        {/* Dark overlay */}
-                        <div className="absolute inset-0 bg-black/40"></div>
-                        <div className="mb-2 mt-4 text-lg font-medium text-white relative z-10">
-                          All Services
+                      <Link href="/services" className="block h-full min-h-[220px] relative rounded-sm overflow-hidden select-none no-underline outline-none">
+                        <div className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${hoveredService === 'Safari Experiences' ? 'opacity-100' : 'opacity-0'}`}
+                             style={{ backgroundImage: 'url(/images/services/sub-menu/safari-experiences.jpg)' }} />
+                        <div className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${hoveredService === 'MICE Solutions' ? 'opacity-100' : 'opacity-0'}`}
+                             style={{ backgroundImage: 'url(/images/services/sub-menu/mice-solutions.jpg)' }} />
+                        <div className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${hoveredService === 'Adventure Travel' ? 'opacity-100' : 'opacity-0'}`}
+                             style={{ backgroundImage: 'url(/images/services/sub-menu/adventure-travel.jpg)' }} />
+                        <div className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${!hoveredService ? 'opacity-100' : 'opacity-0'}`}
+                             style={{ backgroundImage: 'url(/images/services/sub-menu/all-services.jpg)' }} />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                        <div className="absolute bottom-0 left-0 right-0 p-4">
+                          <p className="font-sofia-pro text-[9px] tracking-[0.25em] uppercase text-amber-200 mb-1">Discover</p>
+                          <p className="font-freight-display-pro text-lg text-white leading-tight">All Services</p>
                         </div>
-                        <p className="text-sm leading-tight text-white/80 relative z-10">
-                          From luxury safaris to MICE solutions, we craft unforgettable African experiences.
-                        </p>
                       </Link>
                     </NavigationMenuLink>
-                  </li>
-                  {services.map((service) => (
-                    <li
-                      key={service.title}
-                      onMouseEnter={() => setHoveredService(service.title)}
-                      onMouseLeave={() => setHoveredService(null)}
-                    >
-                      <ListItem
-                        title={service.title}
-                        href={service.href}
-                      >
-                        {service.description}
-                      </ListItem>
-                    </li>
-                  ))}
-                </ul>
+                  </div>
+
+                  {/* Services list */}
+                  <div className="flex-1 py-2">
+                    {services.map((service) => (
+                      <NavigationMenuLink asChild key={service.title}>
+                        <Link
+                          href={service.href}
+                          data-nav-item
+                          className="group block px-5 py-3.5 transition-colors hover:bg-amber-50/60"
+                          onMouseEnter={() => setHoveredService(service.title)}
+                          onMouseLeave={() => setHoveredService(null)}
+                        >
+                          <p className="font-sofia-pro-bold text-sm text-stone-800 group-hover:text-amber-500 transition-colors mb-0.5">
+                            {service.title}
+                          </p>
+                          <p className="font-sofia-pro text-xs text-stone-500 leading-snug line-clamp-2">
+                            {service.description}
+                          </p>
+                        </Link>
+                      </NavigationMenuLink>
+                    ))}
+                  </div>
+                </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link
-                  href="/about"
-                  className={cn(
-                    "group inline-flex h-9 w-max items-center justify-center rounded-sm px-4 py-2 text-sm font-medium transition-all duration-200 hover:bg-amber-50 hover:text-amber-700 active:bg-amber-100 focus-visible:bg-amber-50 focus-visible:text-amber-700",
-                    (pathname === "/about" || pathname.startsWith("/about/")) && "!bg-amber-100 !text-amber-800 font-semibold"
-                  )}
-                >
+                <Link href="/about" className={navLinkClass(pathname === "/about" || pathname.startsWith("/about/"))}>
                   About
                 </Link>
               </NavigationMenuLink>
@@ -275,215 +290,176 @@ export default function Navbar() {
 
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link
-                  href="/contact"
-                  className={cn(
-                    "group inline-flex h-9 w-max items-center justify-center rounded-sm px-4 py-2 text-sm font-medium transition-all duration-200 hover:bg-amber-50 hover:text-amber-700 active:bg-amber-100 focus-visible:bg-amber-50 focus-visible:text-amber-700",
-                    (pathname === "/contact" || pathname.startsWith("/contact/")) && "!bg-amber-100 !text-amber-800 font-semibold"
-                  )}
-                >
+                <Link href="/contact" className={navLinkClass(pathname === "/contact" || pathname.startsWith("/contact/"))}>
                   Contact
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
+
           </NavigationMenuList>
         </NavigationMenu>
 
+        {/* ── Right: CTA + Mobile trigger ── */}
+        <div className="flex items-center gap-3">
+          <Link
+            href="/contact"
+            className="hidden lg:inline-flex items-center justify-center font-sofia-pro-bold text-[11px] tracking-[0.15em] uppercase px-6 py-3 bg-amber-200 hover:bg-amber-300 text-stone-900 transition-all duration-200 rounded-sm shadow-[0_2px_6px_rgba(140,110,35,0.5)] hover:shadow-[0_2px_8px_rgba(140,110,35,0.65)]"
+          >
+            Plan Your Safari
+          </Link>
 
-        {/* Mobile Menu */}
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild>
-            <Button
-              variant="ghost"
-              className="px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
+          {/* Mobile hamburger */}
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild>
+              <button
+                className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-sm text-stone-700 hover:text-stone-900 hover:bg-stone-100 transition-colors"
+                aria-label="Open menu"
+              >
+                <Menu className="h-5 w-5" />
+              </button>
+            </SheetTrigger>
+
+            {/* ── Mobile drawer (dark) ── */}
+            <SheetContent
+              side="right"
+              className="w-80 bg-stone-900 border-l border-stone-700/50 p-0 flex flex-col"
             >
-              <Menu className="h-6 w-6" />
-              <span className="sr-only">Toggle Menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="left" className="w-full h-full max-w-none pr-0 bg-white/100 backdrop-blur-none">
-            <SheetHeader>
-              <SheetTitle className="text-left">
-                <Link
-                  href="/"
-                  className="flex items-center space-x-2"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <Image
-                    src="/_Logo.svg"
-                    width={40}
-                    height={40}
-                    alt="Timobo Safaris Ltd"
-                    className="h-8 w-auto"
-                  />
-                  <span style={{fontFamily: '"sofia-pro", sans-serif', fontWeight: 400, fontStyle: 'normal'}}>Timobo Safaris</span>
-                </Link>
-              </SheetTitle>
-              <SheetDescription className="text-left">
-                Experiences of Africa - 18+ years of safari excellence
-              </SheetDescription>
-            </SheetHeader>
-            <div className="my-4 h-[calc(100vh-8rem)] pb-10 px-6">
-              <div className="flex flex-col space-y-4">
-                <Link
-                  href="/"
-                  className={cn(
-                    "text-foreground/70 transition-all duration-200 hover:text-foreground rounded-md px-3 py-2 hover:bg-amber-50",
-                    pathname === "/" && "!text-amber-800 !bg-amber-100 font-semibold"
-                  )}
-                  onClick={() => setIsOpen(false)}
-                >
-                  Home
-                </Link>
-                <div>
-                  <div className="flex items-center justify-between">
-                    <Link
-                      href="/destinations"
-                      className={cn(
-                        "text-foreground/70 transition-all duration-200 hover:text-foreground font-medium rounded-md px-3 py-2 hover:bg-amber-50",
-                        pathname.startsWith("/destinations") && "!text-amber-800 !bg-amber-100 font-semibold"
-                      )}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      Destinations
-                    </Link>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="h-8 w-8 p-0"
-                      onClick={() => setMobileDestinationsOpen(!mobileDestinationsOpen)}
-                    >
-                      <svg
-                        className={cn("h-4 w-4 transition-transform", mobileDestinationsOpen && "rotate-180")}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </Button>
-                  </div>
-                  {mobileDestinationsOpen && (
-                    <div className="ml-4 mt-2 flex flex-col space-y-2">
-                      {destinations.map((region) => (
-                        <div key={region.title}>
-                          <div className="text-sm font-medium text-muted-foreground mb-1">
-                            {region.title}
-                          </div>
-                          {region.countries.map((country) => (
-                            <Link
-                              key={country.name}
-                              href={country.href}
-                              className={cn(
-                                "block text-sm text-foreground/60 hover:text-foreground ml-2 py-1 px-2 rounded transition-all duration-200 hover:bg-amber-50",
-                                pathname === country.href && "!text-amber-800 !bg-amber-100 font-medium"
-                              )}
-                              onClick={() => setIsOpen(false)}
-                            >
-                              {country.name}
-                            </Link>
-                          ))}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-                <div>
-                  <div className="flex items-center justify-between">
-                    <Link
-                      href="/services"
-                      className={cn(
-                        "text-foreground/70 transition-all duration-200 hover:text-foreground font-medium rounded-md px-3 py-2 hover:bg-amber-50",
-                        pathname.startsWith("/services") && "!text-amber-800 !bg-amber-100 font-semibold"
-                      )}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      Services
-                    </Link>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="h-8 w-8 p-0"
-                      onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                    >
-                      <svg
-                        className={cn("h-4 w-4 transition-transform", mobileServicesOpen && "rotate-180")}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </Button>
-                  </div>
-                  {mobileServicesOpen && (
-                    <div className="ml-4 mt-2 flex flex-col space-y-2">
-                      {services.map((service) => (
-                        <Link
-                          key={service.title}
-                          href={service.href}
-                          className={cn(
-                            "block text-sm text-foreground/60 hover:text-foreground py-1 px-2 rounded transition-all duration-200 hover:bg-amber-50",
-                            pathname === service.href && "!text-amber-800 !bg-amber-100 font-medium"
-                          )}
-                          onClick={() => setIsOpen(false)}
-                        >
-                          {service.title}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-                <Link
-                  href="/about"
-                  className={cn(
-                    "text-foreground/70 transition-all duration-200 hover:text-foreground rounded-md px-3 py-2 hover:bg-amber-50",
-                    (pathname === "/about" || pathname.startsWith("/about/")) && "!text-amber-800 !bg-amber-100 font-semibold"
-                  )}
-                  onClick={() => setIsOpen(false)}
-                >
-                  About
-                </Link>
-                <Link
-                  href="/contact"
-                  className={cn(
-                    "text-foreground/70 transition-all duration-200 hover:text-foreground rounded-md px-3 py-2 hover:bg-amber-50",
-                    (pathname === "/contact" || pathname.startsWith("/contact/")) && "!text-amber-800 !bg-amber-100 font-semibold"
-                  )}
-                  onClick={() => setIsOpen(false)}
-                >
-                  Contact
+              {/* Drawer header */}
+              <div className="flex items-center justify-between px-5 py-4 border-b border-stone-700/60">
+                <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3">
+                  <Image src="/_Logo.svg" width={36} height={36} alt="Timobo Safaris" className="h-9 w-auto" />
+                  <span className="font-freight-display-pro text-white text-base leading-none">
+                    Timobo Safaris
+                  </span>
                 </Link>
               </div>
-            </div>
-          </SheetContent>
-        </Sheet>
+
+              {/* Nav links */}
+              <div className="flex-1 overflow-y-auto px-5 py-5">
+                <nav className="space-y-0.5">
+
+                  <Link href="/" className={mobileLinkClass(pathname === "/")} onClick={() => setIsOpen(false)}>
+                    Home
+                  </Link>
+
+                  {/* Destinations accordion */}
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <Link
+                        href="/destinations"
+                        className={mobileLinkClass(pathname.startsWith("/destinations"))}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Destinations
+                      </Link>
+                      <button
+                        onClick={() => setMobileDestinationsOpen(!mobileDestinationsOpen)}
+                        className="p-2 -mr-2 text-stone-500 hover:text-stone-300 transition-colors"
+                        aria-label="Toggle destinations"
+                      >
+                        <ChevronDown className={cn("h-4 w-4 transition-transform duration-200", mobileDestinationsOpen && "rotate-180")} />
+                      </button>
+                    </div>
+                    {mobileDestinationsOpen && (
+                      <div className="mt-1 ml-3 border-l border-stone-700 pl-4 pb-2 space-y-3">
+                        {destinations.map((region) => (
+                          <div key={region.title}>
+                            <p className="font-sofia-pro text-[10px] tracking-[0.2em] uppercase text-amber-200 mb-1.5 mt-2">
+                              {region.title}
+                            </p>
+                            {region.countries.map((country) => (
+                              <Link
+                                key={country.name}
+                                href={country.href}
+                                className={cn(
+                                  "font-sofia-pro block text-sm py-1 transition-colors",
+                                  pathname === country.href ? "text-amber-400" : "text-stone-400 hover:text-white"
+                                )}
+                                onClick={() => setIsOpen(false)}
+                              >
+                                {country.name}
+                              </Link>
+                            ))}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Services accordion */}
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <Link
+                        href="/services"
+                        className={mobileLinkClass(pathname.startsWith("/services"))}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Services
+                      </Link>
+                      <button
+                        onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                        className="p-2 -mr-2 text-stone-500 hover:text-stone-300 transition-colors"
+                        aria-label="Toggle services"
+                      >
+                        <ChevronDown className={cn("h-4 w-4 transition-transform duration-200", mobileServicesOpen && "rotate-180")} />
+                      </button>
+                    </div>
+                    {mobileServicesOpen && (
+                      <div className="mt-1 ml-3 border-l border-stone-700 pl-4 pb-2 space-y-0.5">
+                        {services.map((service) => (
+                          <Link
+                            key={service.title}
+                            href={service.href}
+                            className={cn(
+                              "font-sofia-pro block text-sm py-1.5 transition-colors",
+                              pathname === service.href ? "text-amber-400" : "text-stone-400 hover:text-white"
+                            )}
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {service.title}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  <Link href="/about" className={mobileLinkClass(pathname === "/about")} onClick={() => setIsOpen(false)}>
+                    About
+                  </Link>
+                  <Link href="/contact" className={mobileLinkClass(pathname === "/contact")} onClick={() => setIsOpen(false)}>
+                    Contact
+                  </Link>
+
+                </nav>
+
+                {/* Mobile contact info */}
+                <div className="mt-8 pt-6 border-t border-stone-700/60">
+                  <p className="font-sofia-pro text-[10px] tracking-[0.2em] uppercase text-stone-500 mb-3">Get In Touch</p>
+                  <a href="tel:+254104560540" className="font-sofia-pro text-sm text-stone-400 hover:text-amber-400 transition-colors block mb-1">
+                    +254 104 560 540
+                  </a>
+                  <a href="mailto:karibu@timobosafaris.com" className="font-sofia-pro text-sm text-stone-400 hover:text-amber-400 transition-colors block">
+                    karibu@timobosafaris.com
+                  </a>
+                </div>
+              </div>
+
+              {/* CTA at bottom */}
+              <div className="px-5 py-5 border-t border-stone-700/60">
+                <Link
+                  href="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center justify-center w-full font-sofia-pro-bold text-[11px] tracking-[0.15em] uppercase py-3.5 bg-amber-200 hover:bg-amber-300 text-stone-900 transition-all duration-200 rounded-sm shadow-[0_2px_6px_rgba(140,110,35,0.5)] hover:shadow-[0_2px_8px_rgba(140,110,35,0.65)]"
+                >
+                  Plan Your Safari
+                </Link>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+
       </div>
     </header>
   )
 }
 
-const ListItem = React.forwardRef<
-  React.ElementRef<typeof Link>,
-  React.ComponentPropsWithoutRef<typeof Link> & { title: string }
->(({ className, title, children, href, ...props }, ref) => {
-  return (
-    <NavigationMenuLink asChild>
-      <Link
-        ref={ref}
-        href={href}
-        className={cn(
-          "block select-none space-y-1 rounded-sm p-3 leading-none no-underline outline-none transition-all duration-200 hover:bg-amber-50 hover:text-amber-700 focus:bg-amber-100 focus:text-amber-800 active:bg-amber-100",
-          className
-        )}
-        {...props}
-      >
-        <div className="text-sm font-medium leading-none">{title}</div>
-        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-          {children}
-        </p>
-      </Link>
-    </NavigationMenuLink>
-  )
-})
-ListItem.displayName = "ListItem"

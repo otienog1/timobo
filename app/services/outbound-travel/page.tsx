@@ -1,8 +1,7 @@
 "use client";
 
-import Hero from "@/components/Hero";
+import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
-import { AnimatedButton } from "@/components/ui/animated-button";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -11,151 +10,104 @@ export default function OutboundTravelPage() {
     {
       title: "International Flight Bookings",
       subtitle: "Competitive Airfare Worldwide",
-      description: "Access to competitive airfares and comprehensive flight booking services for all international destinations with expert guidance on routes and connections.",
-      image: "/images/services/services-hero.jpg",
-      highlights: [
-        "Competitive international airfares",
-        "Multi-city and complex routing",
-        "Airline preference management",
-        "Flight schedule optimization"
-      ]
+      description: "Access to competitive international airfares and comprehensive flight booking services for all global destinations — with expert guidance on routes, connections, and airline preferences.",
+      highlights: ["Competitive international airfares", "Multi-city and complex routing", "Airline preference management", "Flight schedule optimisation"]
     },
     {
       title: "Visa Processing Assistance",
       subtitle: "Expert Visa Support",
-      description: "Comprehensive visa application support and guidance for travelers from Africa to destinations worldwide, ensuring smooth documentation processes.",
-      image: "/images/services/services-hero.jpg",
-      highlights: [
-        "Visa requirements consultation",
-        "Application form assistance",
-        "Document preparation support",
-        "Embassy liaison services"
-      ]
+      description: "Comprehensive visa application support and guidance for African travellers going worldwide. We navigate the documentation so your journey begins without complication.",
+      highlights: ["Visa requirements consultation", "Application form assistance", "Document preparation support", "Embassy liaison services"]
     },
     {
       title: "Travel Insurance",
       subtitle: "Comprehensive Coverage",
-      description: "Travel insurance solutions providing comprehensive coverage for international trips including medical, trip cancellation, and emergency assistance.",
-      image: "/images/services/services-hero.jpg",
-      highlights: [
-        "Medical coverage worldwide",
-        "Trip cancellation protection",
-        "Emergency evacuation",
-        "24/7 assistance services"
-      ]
+      description: "Travel insurance solutions that provide genuine peace of mind — comprehensive coverage for international trips including medical, trip cancellation, and emergency assistance.",
+      highlights: ["Medical coverage worldwide", "Trip cancellation protection", "Emergency evacuation", "24/7 assistance services"]
     },
     {
       title: "Hotel Reservations",
       subtitle: "Global Accommodation",
-      description: "Access to hotels and accommodations worldwide with competitive rates and expert recommendations for your international destinations.",
-      image: "/images/services/services-hero.jpg",
-      highlights: [
-        "Global hotel network access",
-        "Competitive rates",
-        "Accommodation recommendations",
-        "Special requests handling"
-      ]
+      description: "Access to hotels and accommodations worldwide. Competitive rates, expert recommendations, and the personal attention that ensures every stay meets your expectations.",
+      highlights: ["Global hotel network access", "Competitive rates", "Accommodation recommendations", "Special requests handling"]
     },
     {
       title: "Tour Packages",
       subtitle: "Curated International Tours",
-      description: "Pre-designed and custom tour packages to popular international destinations including Europe, Asia, Americas, and the Middle East.",
-      image: "/images/services/services-hero.jpg",
-      highlights: [
-        "Popular destination packages",
-        "Custom tour design",
-        "Group tour arrangements",
-        "Multi-country itineraries"
-      ]
+      description: "Pre-designed and custom tour packages to popular international destinations — Europe, Asia, the Americas, and the Middle East — crafted with the same care as our African journeys.",
+      highlights: ["Popular destination packages", "Custom tour design", "Group tour arrangements", "Multi-country itineraries"]
     },
     {
       title: "Travel Consultancy",
       subtitle: "Expert Travel Guidance",
-      description: "Professional travel consultancy services providing expert advice on destinations, requirements, best travel times, and cultural insights.",
-      image: "/images/services/services-hero.jpg",
-      highlights: [
-        "Destination expertise",
-        "Travel requirement advice",
-        "Cultural insights",
-        "Itinerary planning support"
-      ]
+      description: "Professional travel consultancy providing expert insight on destinations, visa requirements, optimal travel times, cultural nuance, and end-to-end itinerary planning support.",
+      highlights: ["Destination expertise", "Travel requirement advice", "Cultural insights", "Itinerary planning support"]
     }
+  ];
+
+  const popularDestinations = [
+    { region: "Europe", body: "UK, France, Italy, Spain, and Germany — comprehensive tour packages and independent travel arrangements across Europe's most iconic destinations." },
+    { region: "Asia", body: "Dubai, Thailand, China, India, Singapore — expert guidance on Asia's most diverse and captivating travel experiences." },
+    { region: "Americas", body: "USA, Canada, Brazil, and beyond — comprehensive support for North and South American adventures and city breaks." },
+    { region: "Middle East", body: "Turkey, Egypt, and the Gulf States — a region of extraordinary history, culture, and modern luxury." },
   ];
 
   return (
     <main className="min-h-screen overflow-x-hidden">
-      <Hero
+      <PageHero
         title="Outbound Travel"
-        subtitle="International Travel Services"
-        description="Plan your international journeys with confidence through our comprehensive outbound travel services. From visa assistance to flight bookings and travel insurance, we handle every detail of your global adventures."
+        subtitle="Plan your international journeys with confidence — from visa assistance to flights and travel insurance."
         backgroundImage="/images/services/services-hero.jpg"
       />
 
-      {/* Introduction Section */}
-      <Section className="py-16 lg:py-20 bg-stone-50">
+      <Section className="py-20 lg:py-24 bg-stone-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
-          <h2 className="font-freight-display-pro text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 text-stone-800">
+          <p className="font-sofia-pro text-[11px] tracking-[0.2em] uppercase text-amber-600 mb-5">Beyond Africa</p>
+          <h2 className="font-freight-display-pro text-3xl sm:text-4xl text-stone-800 mb-6 leading-tight">
             Your Gateway to the World
           </h2>
-          <p className="font-sofia-pro text-lg lg:text-xl text-stone-700 leading-relaxed mb-8">
-            With our extensive network and expertise in international travel, we provide comprehensive support for travelers exploring destinations beyond Africa. Let us handle the complexities while you focus on your journey.
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <span className="h-px w-14 bg-stone-300" />
+            <span className="w-1.5 h-1.5 rotate-45 bg-amber-400/70 inline-block shrink-0" />
+            <span className="h-px w-14 bg-stone-300" />
+          </div>
+          <p className="font-sofia-pro text-base lg:text-[1.05rem] text-stone-600 leading-relaxed">
+            With an extensive global network and deep expertise in international travel, we provide comprehensive support for African travellers exploring the world. Let us handle the complexity while you focus on the journey.
           </p>
-          <div className="w-16 h-1 bg-amber-500 mx-auto"></div>
         </div>
       </Section>
 
-      {/* Outbound Services Grid */}
-      <Section className="py-16 lg:py-24">
+      <Section className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
-          <div className="text-center mb-16">
-            <h2 className="font-freight-display-pro text-3xl sm:text-4xl font-bold mb-6 text-stone-800">
+          <div className="mb-14">
+            <p className="font-sofia-pro text-[11px] tracking-[0.2em] uppercase text-amber-600 mb-4">What We Offer</p>
+            <h2 className="font-freight-display-pro text-3xl sm:text-4xl text-stone-800 leading-tight max-w-xl">
               Outbound Travel Services
             </h2>
-            <p className="font-sofia-pro text-lg text-stone-700 max-w-3xl mx-auto">
-              Complete international travel solutions from visa processing to flight bookings, ensuring seamless journeys to destinations worldwide.
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="divide-y divide-stone-100">
             {outboundServices.map((service, index) => (
-              <div key={index} className="bg-white overflow-hidden group transition-all duration-300">
-                {/* Service Image */}
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-
-                {/* Service Content */}
-                <div className="p-6 px-0">
-                  <div className="mb-4">
-                    <h3 className="font-freight-display-pro text-xl font-bold text-stone-800 mb-2">
-                      {service.title}
-                    </h3>
-                    <p className="font-sofia-pro text-sm text-stone-600 mb-3">
-                      {service.subtitle}
-                    </p>
-                  </div>
-
-                  <p className="font-sofia-pro text-sm text-stone-700 leading-relaxed mb-4">
-                    {service.description}
-                  </p>
-
-                  {/* Highlights */}
-                  <div className="mb-6">
-                    <h4 className="font-sofia-pro text-xs uppercase tracking-wide text-stone-600 mb-3 font-semibold">
-                      Service Features
-                    </h4>
-                    <div className="space-y-2">
-                      {service.highlights.map((highlight, highlightIndex) => (
-                        <div key={highlightIndex} className="flex items-start space-x-2">
-                          <div className="flex-shrink-0 w-1.5 h-1.5 bg-amber-500 rounded-full mt-2"></div>
-                          <span className="font-sofia-pro text-xs text-stone-700">{highlight}</span>
-                        </div>
-                      ))}
+              <div key={index} className="py-12 lg:py-14">
+                <div className="flex gap-6 lg:gap-10 items-start">
+                  <span className="font-freight-display-pro text-3xl lg:text-5xl text-stone-200 leading-none select-none flex-shrink-0 pt-1 w-10 lg:w-14" aria-hidden="true">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div className="flex-1 min-w-0 flex flex-col lg:flex-row lg:gap-12 gap-5 lg:items-start">
+                    <div className="lg:w-52 lg:flex-shrink-0">
+                      <p className="font-sofia-pro text-[10px] tracking-[0.2em] uppercase text-amber-600 mb-2">{service.subtitle}</p>
+                      <h3 className="font-freight-display-pro text-2xl text-stone-800 leading-snug">{service.title}</h3>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-sofia-pro text-sm text-stone-600 leading-relaxed mb-5">{service.description}</p>
+                      <div className="space-y-2.5">
+                        {service.highlights.map((h, i) => (
+                          <div key={i} className="flex items-start gap-2.5">
+                            <span className="flex-shrink-0 w-1.5 h-1.5 rotate-45 bg-amber-400/70 inline-block mt-1" aria-hidden="true" />
+                            <span className="font-sofia-pro text-xs text-stone-500">{h}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -165,113 +117,62 @@ export default function OutboundTravelPage() {
         </div>
       </Section>
 
-      {/* Popular Destinations Section */}
-      <Section className="py-16 lg:py-24 bg-stone-50">
+      <Section className="py-20 lg:py-28 bg-stone-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
-          <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-20 lg:items-center">
             <div>
-              <h2 className="font-freight-display-pro text-3xl sm:text-4xl font-bold mb-8 text-stone-800">
+              <p className="font-sofia-pro text-[11px] tracking-[0.2em] uppercase text-amber-600 mb-5">Global Reach</p>
+              <h2 className="font-freight-display-pro text-3xl sm:text-4xl text-stone-800 mb-10 leading-tight">
                 Popular International Destinations
               </h2>
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clipRule="evenodd" />
-                    </svg>
+              <div className="divide-y divide-stone-100">
+                {popularDestinations.map(({ region, body }) => (
+                  <div key={region} className="flex items-start gap-5 py-6 first:pt-0 last:pb-0">
+                    <div className="flex-shrink-0 w-px self-stretch bg-amber-300/60" />
+                    <div>
+                      <h3 className="font-sofia-pro-bold text-sm mb-1.5 text-stone-800 uppercase tracking-[0.05em]">{region}</h3>
+                      <p className="font-sofia-pro text-sm text-stone-500 leading-relaxed">{body}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-sofia-pro text-lg mb-2 text-stone-800 font-semibold">Europe</h3>
-                    <p className="font-sofia-pro text-stone-700">Popular destinations including UK, France, Italy, Spain, and Germany with comprehensive tour packages.</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-sofia-pro text-lg mb-2 text-stone-800 font-semibold">Asia</h3>
-                    <p className="font-sofia-pro text-stone-700">Explore Dubai, Thailand, China, India, Singapore, and other Asian destinations with expert guidance.</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-sofia-pro text-lg mb-2 text-stone-800 font-semibold">Americas</h3>
-                    <p className="font-sofia-pro text-stone-700">Travel to USA, Canada, Brazil, and other American destinations with comprehensive support.</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zM17.707 5.293L14 1.586v12.828l2.293 2.293A1 1 0 0018 16V6a1 1 0 00-.293-.707z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-sofia-pro text-lg mb-2 text-stone-800 font-semibold">Middle East</h3>
-                    <p className="font-sofia-pro text-stone-700">Experience the wonders of the Middle East including Turkey, Egypt, and the Gulf States.</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
             <div className="mt-12 lg:mt-0">
-              <div className="relative aspect-[4/3] bg-stone-200 overflow-hidden">
-                <Image
-                  src="/images/services/services-hero.jpg"
-                  alt="International travel"
-                  fill
-                  className="object-cover"
-                />
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image src="/images/services/services-hero.jpg" alt="International travel" fill className="object-cover" />
               </div>
             </div>
           </div>
         </div>
       </Section>
 
-      {/* CTA Section */}
-      <Section className="relative py-24 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/services/services-hero.jpg"
-            alt="Outbound travel"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/60"></div>
-        </div>
-
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
-          <h2 className="font-freight-display-pro text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 text-white">
-            Explore the World with Confidence
-          </h2>
-          <p className="font-sofia-pro text-lg lg:text-xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
-            From visa processing to flight bookings and travel insurance, let our expert team handle every detail of your international journey.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link href="/contact" className="relative inline-flex items-center justify-center whitespace-nowrap font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer overflow-hidden z-10 text-white bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 shadow-amber-600/20 hover:shadow-amber-700/30 before:absolute before:content-[''] before:top-[-50%] before:left-[-50%] before:w-[200%] before:h-[200%] before:bg-gradient-to-r before:from-white/10 before:to-transparent before:rotate-45 before:transition-all before:duration-500 before:z-[-1] hover:before:top-[-100%] hover:before:left-[-100%] after:absolute after:content-[''] after:w-0 after:h-full after:top-0 after:right-0 after:z-[-1] after:bg-gradient-to-r after:from-amber-700 after:to-amber-800 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 active:scale-[0.98] active:shadow-md h-14 px-8 text-lg rounded-sm shadow-2xl relative z-20">
-              Plan Your International Trip
-            </Link>
-            <Link href="/services" className="relative inline-flex items-center justify-center whitespace-nowrap font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer overflow-hidden z-10 bg-transparent shadow-black/10 hover:shadow-white/20 before:absolute before:content-[''] before:top-[-50%] before:left-[-50%] before:w-[200%] before:h-[200%] before:bg-gradient-to-r before:from-white/10 before:to-transparent before:rotate-45 before:transition-all before:duration-500 before:z-[-1] hover:before:top-[-100%] hover:before:left-[-100%] after:absolute after:content-[''] after:w-0 after:h-full after:top-0 after:right-0 after:z-[-1] after:bg-white after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 active:scale-[0.98] active:shadow-md h-14 px-8 text-lg rounded-sm border-2 border-white text-white hover:bg-white hover:text-stone-800 shadow-2xl relative z-20">
-              View All Services
-            </Link>
+      <Section className="py-20 lg:py-28 bg-stone-900 overflow-hidden">
+        <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row">
+          <div className="relative w-full lg:w-1/2 aspect-[16/9] lg:aspect-auto lg:min-h-[480px]">
+            <Image src="/images/services/services-hero.jpg" alt="Outbound travel" fill className="object-cover" />
           </div>
-
-          {/* Trust Indicators */}
-          <div className="mt-16 pt-8 border-t border-white/20">
-            <p className="font-sofia-pro text-white/80 text-sm mb-4">International travel specialists for over 18 years</p>
-            <div className="flex justify-center items-center space-x-8 text-white/60 text-xs">
-              <span>Visa Experts</span>
-              <span>•</span>
-              <span>Global Network</span>
-              <span>•</span>
-              <span>Comprehensive Support</span>
+          <div className="w-full lg:w-1/2 bg-stone-900 flex items-center">
+            <div className="px-8 py-14 sm:px-12 lg:px-16 lg:py-20">
+              <p className="font-sofia-pro text-[11px] tracking-[0.2em] uppercase text-amber-300 mb-6">Travel Worldwide</p>
+              <h2 className="font-freight-display-pro text-3xl sm:text-4xl text-white mb-6 leading-tight">
+                Explore the World with Confidence
+              </h2>
+              <div className="flex items-center gap-3 mb-7">
+                <span className="h-px w-14 bg-white/20" />
+                <span className="w-1.5 h-1.5 rotate-45 bg-amber-300/60 inline-block shrink-0" />
+                <span className="h-px w-14 bg-white/20" />
+              </div>
+              <p className="font-sofia-pro text-sm text-stone-400 mb-10 leading-relaxed max-w-sm">
+                From visa processing to flight bookings and travel insurance, let our expert team handle every detail of your international journey.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/contact" className="inline-flex items-center justify-center font-sofia-pro-bold text-[11px] tracking-[0.2em] uppercase px-8 py-4 bg-amber-200 hover:bg-amber-300 text-stone-900 transition-all duration-300 rounded-sm shadow-[0_2px_6px_rgba(140,110,35,0.5)] hover:shadow-[0_2px_8px_rgba(140,110,35,0.65)]">
+                  Plan Your International Trip
+                </Link>
+                <Link href="/services" className="inline-flex items-center justify-center font-sofia-pro text-[11px] tracking-[0.2em] uppercase px-8 py-4 border border-white/30 hover:border-white/60 text-white/80 hover:text-white hover:bg-white/5 transition-all duration-300 rounded-sm">
+                  View All Services
+                </Link>
+              </div>
             </div>
           </div>
         </div>
