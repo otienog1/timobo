@@ -116,7 +116,7 @@ export default function HomePage() {
             </div>
             {/* ── Image column ── */}
             <div className="lg:col-span-5 mt-10 lg:mt-0">
-              <div data-s="about-image" className="relative aspect-[3/4] overflow-hidden">
+              <div data-s="about-image" className="relative aspect-square overflow-hidden">
                 <Image
                   src="/images/homepage/homepage-section2.jpg"
                   alt="Safari guide in the African wilderness"

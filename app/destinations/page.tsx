@@ -142,7 +142,7 @@ export default function DestinationsPage() {
                 onClick={() => setSelectedRegion(key)}
                 className={`font-sofia-pro text-[11px] tracking-[0.2em] uppercase pb-1 transition-all duration-200 ${
                   selectedRegion === key
-                    ? 'text-stone-900 border-b border-stone-900'
+                    ? 'text-stone-900'
                     : 'text-stone-400 hover:text-stone-700'
                 }`}
               >

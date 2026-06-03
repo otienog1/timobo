@@ -4,10 +4,11 @@ import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { Menu, ChevronDown } from "lucide-react"
+import { Menu, ChevronDown, Search } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { gsap } from "@/lib/gsap"
+import SearchModal from "@/components/SearchModal"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -89,6 +90,7 @@ const mobileLinkClass = (isActive: boolean) =>
 export default function Navbar() {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = React.useState(false)
+  const [searchOpen, setSearchOpen] = React.useState(false)
   const [hoveredDestination, setHoveredDestination] = React.useState<string | null>(null)
   const [hoveredService, setHoveredService] = React.useState<string | null>(null)
   const [mobileDestinationsOpen, setMobileDestinationsOpen] = React.useState(false)
@@ -130,6 +132,7 @@ export default function Navbar() {
   }, [])
 
   return (
+    <>
     <header className="sticky top-0 z-50 w-full bg-white border-b border-stone-200/80">
       <div className="container flex h-20 max-w-screen-xl items-center justify-between">
 
@@ -299,8 +302,15 @@ export default function Navbar() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* ── Right: CTA + Mobile trigger ── */}
+        {/* ── Right: CTA + Search + Mobile trigger ── */}
         <div className="flex items-center gap-3">
+          <button
+            onClick={() => setSearchOpen(true)}
+            aria-label="Open search"
+            className="inline-flex items-center justify-center w-9 h-9 text-stone-500 hover:text-stone-900 transition-colors"
+          >
+            <Search className="w-4 h-4" />
+          </button>
           <Link
             href="/contact"
             className="hidden lg:inline-flex items-center justify-center font-sofia-pro-bold text-[11px] tracking-[0.15em] uppercase px-6 py-3 bg-amber-200 hover:bg-amber-300 text-stone-900 transition-all duration-200 rounded-sm"
@@ -460,6 +470,9 @@ export default function Navbar() {
 
       </div>
     </header>
+
+    <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
+    </>
   )
 }
 
