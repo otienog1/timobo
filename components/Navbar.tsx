@@ -303,7 +303,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact"
-            className="hidden lg:inline-flex items-center justify-center font-sofia-pro-bold text-[11px] tracking-[0.15em] uppercase px-6 py-3 bg-amber-200 hover:bg-amber-300 text-stone-900 transition-all duration-200 rounded-sm shadow-[0_2px_6px_rgba(140,110,35,0.5)] hover:shadow-[0_2px_8px_rgba(140,110,35,0.65)]"
+            className="hidden lg:inline-flex items-center justify-center font-sofia-pro-bold text-[11px] tracking-[0.15em] uppercase px-6 py-3 bg-amber-200 hover:bg-amber-300 text-stone-900 transition-all duration-200 rounded-sm"
           >
             Plan Your Safari
           </Link>
@@ -449,7 +449,7 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center w-full font-sofia-pro-bold text-[11px] tracking-[0.15em] uppercase py-3.5 bg-amber-200 hover:bg-amber-300 text-stone-900 transition-all duration-200 rounded-sm shadow-[0_2px_6px_rgba(140,110,35,0.5)] hover:shadow-[0_2px_8px_rgba(140,110,35,0.65)]"
+                  className="flex items-center justify-center w-full font-sofia-pro-bold text-[11px] tracking-[0.15em] uppercase py-3.5 bg-amber-200 hover:bg-amber-300 text-stone-900 transition-all duration-200 rounded-sm"
                 >
                   Plan Your Safari
                 </Link>

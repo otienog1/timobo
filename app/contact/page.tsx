@@ -76,45 +76,62 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Planning Panel */}
-          <div className="mt-20 pt-14 border-t border-stone-100">
-            <div className="grid lg:grid-cols-2 gap-10 lg:gap-24 items-start">
-              <div>
-                <p className="font-sofia-pro text-[11px] tracking-[0.2em] uppercase text-amber-600 mb-4">Why Plan With Us</p>
-                <h3 className="font-freight-display-pro text-2xl sm:text-3xl text-stone-800 mb-5 leading-tight">
-                  Planning Your Safari?
-                </h3>
-                <p className="font-sofia-pro text-sm text-stone-600 leading-relaxed">
-                  Our safari specialists are ready to help you create the perfect African adventure. Whether you&apos;re interested in wildlife safaris, cultural experiences, or MICE services, we&apos;ll craft a personalised itinerary just for you.
-                </p>
-              </div>
-              <div className="space-y-4">
-                {[
-                  "Free consultation and trip planning",
-                  "Custom itinerary design",
-                  "18+ years of expertise",
-                  "Sustainable and ethical tourism",
-                ].map((item) => (
-                  <div key={item} className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-1.5 h-1.5 rotate-45 bg-amber-400/70 inline-block mt-2" aria-hidden="true" />
-                    <p className="font-sofia-pro text-sm text-stone-600 leading-relaxed">{item}</p>
-                  </div>
-                ))}
-              </div>
+        </div>
+      </Section>
+
+      {/* Planning Your Safari */}
+      <Section className="py-20 lg:py-28 bg-stone-50 border-t border-stone-200">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
+          <div className="text-center mb-14">
+            <p className="font-sofia-pro text-[11px] tracking-[0.2em] uppercase text-amber-600 mb-5">Why Plan With Us</p>
+            <h2 className="font-freight-display-pro text-3xl sm:text-4xl text-stone-800 leading-tight">
+              Planning Your Safari?
+            </h2>
+            <div className="flex items-center justify-center gap-3 mt-6">
+              <span className="h-px w-14 bg-stone-300" />
+              <span className="w-1.5 h-1.5 rotate-45 bg-amber-400/70 inline-block shrink-0" />
+              <span className="h-px w-14 bg-stone-300" />
             </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-stone-200">
+            {[
+              {
+                heading: "Free Consultation",
+                body: "We spend time understanding your vision before making a single recommendation — no pressure, no templates.",
+              },
+              {
+                heading: "Custom Itineraries",
+                body: "Every journey is designed from scratch for you. No off-the-shelf packages, ever.",
+              },
+              {
+                heading: "18+ Years of Expertise",
+                body: "Deep knowledge of every destination, season, and experience across Eastern and Southern Africa.",
+              },
+              {
+                heading: "Sustainable Travel",
+                body: "Every booking supports conservation efforts, community initiatives, and ethical wildlife tourism.",
+              },
+            ].map(({ heading, body }) => (
+              <div key={heading} className="bg-white p-8 lg:p-10">
+                <span className="w-1.5 h-1.5 rotate-45 bg-amber-400/80 inline-block mb-6" aria-hidden="true" />
+                <h3 className="font-freight-display-pro text-xl text-stone-800 mb-3 leading-snug">{heading}</h3>
+                <p className="font-sofia-pro text-sm text-stone-500 leading-relaxed">{body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </Section>
 
       {/* FAQ */}
-      <Section className="py-20 lg:py-28 bg-stone-50">
+      <Section className="py-20 lg:py-28 bg-white border-t border-stone-200">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-14">
             <p className="font-sofia-pro text-[11px] tracking-[0.2em] uppercase text-amber-600 mb-5">Common Questions</p>
-            <h2 className="font-freight-display-pro text-3xl sm:text-4xl text-stone-800 leading-tight mb-4">
+            <h2 className="font-freight-display-pro text-3xl sm:text-4xl text-stone-800 leading-tight">
               Frequently Asked Questions
             </h2>
-            <div className="flex items-center justify-center gap-3">
+            <div className="flex items-center justify-center gap-3 mt-6">
               <span className="h-px w-14 bg-stone-300" />
               <span className="w-1.5 h-1.5 rotate-45 bg-amber-400/70 inline-block shrink-0" />
               <span className="h-px w-14 bg-stone-300" />
@@ -148,9 +165,10 @@ export default function ContactPage() {
                 a: "With 18+ years of experience, we focus on purpose-driven travel that supports conservation, cultural preservation, and community empowerment while delivering authentic African experiences.",
               },
             ].map(({ q, a }) => (
-              <div key={q} className="bg-white p-8">
-                <h3 className="font-sofia-pro-bold text-base mb-3 text-stone-800">{q}</h3>
-                <p className="font-sofia-pro text-sm text-stone-600 leading-relaxed">{a}</p>
+              <div key={q} className="bg-stone-50 p-8 lg:p-10">
+                <span className="w-1.5 h-1.5 rotate-45 bg-amber-400/80 inline-block mb-6" aria-hidden="true" />
+                <h3 className="font-freight-display-pro text-xl text-stone-800 mb-3 leading-snug">{q}</h3>
+                <p className="font-sofia-pro text-sm text-stone-500 leading-relaxed">{a}</p>
               </div>
             ))}
           </div>
@@ -174,7 +192,7 @@ export default function ContactPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/destinations"
-              className="inline-flex items-center justify-center font-sofia-pro-bold text-[11px] tracking-[0.2em] uppercase px-8 py-4 bg-amber-200 hover:bg-amber-300 text-stone-900 transition-all duration-300 rounded-sm shadow-[0_2px_6px_rgba(140,110,35,0.5)] hover:shadow-[0_2px_8px_rgba(140,110,35,0.65)]"
+              className="inline-flex items-center justify-center font-sofia-pro-bold text-[11px] tracking-[0.2em] uppercase px-8 py-4 bg-amber-200 hover:bg-amber-300 text-stone-900 transition-all duration-300 rounded-sm"
             >
               Explore Destinations
             </Link>

@@ -186,7 +186,7 @@ export default function AboutPage() {
           <div className="mt-14 pt-10 border-t border-stone-200">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center font-sofia-pro-bold text-[11px] tracking-[0.2em] uppercase px-8 py-4 bg-stone-900 hover:bg-stone-800 text-white transition-all duration-300 rounded-sm shadow-[0_2px_6px_rgba(28,25,23,0.25)] hover:shadow-[0_2px_8px_rgba(28,25,23,0.35)]"
+              className="inline-flex items-center justify-center font-sofia-pro-bold text-[11px] tracking-[0.2em] uppercase px-8 py-4 bg-stone-900 hover:bg-stone-800 text-white transition-all duration-300 rounded-sm"
             >
               Start Your Journey With Us
             </Link>
