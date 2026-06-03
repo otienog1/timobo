@@ -53,8 +53,8 @@ export default function SafariExperiencesPage() {
       title: "Elephant Safaris",
       subtitle: "Majestic Giants of Africa",
       image: "/images/services/safari-experiences/wildlife-safaris.jpg",
-      description: "Dedicated expeditions to Africa's great elephant habitats. Amboseli, Chobe, and beyond — witness herds in their natural landscape with expert guides who understand their every behaviour.",
-      highlights: ["Elephant-focused game drives", "Expert elephant behaviour guides", "Prime habitats: Amboseli and Chobe", "Conservation education programmes"]
+      description: "Dedicated expeditions to Africa's great elephant habitats. Amboseli and beyond — witness herds in their natural landscape with expert guides who understand their every behaviour.",
+      highlights: ["Elephant-focused game drives", "Expert elephant behaviour guides", "Prime habitat: Amboseli", "Conservation education programmes"]
     }
   ];
 

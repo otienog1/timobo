@@ -11,43 +11,27 @@ import { ScrollTrigger } from "@/lib/gsap";
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    designation: "Wildlife Photographer",
-    company: "UK",
+    name: "Barbara, Tucker, JB & Bickell",
+    designation: "",
+    company: "",
     testimonial:
-      "An absolutely incredible experience! The Great Migration in Masai Mara was breathtaking, and our guide was knowledgeable and passionate about wildlife conservation. Timobo made our dream safari a reality.",
+      "Josphat, we enjoyed meeting you and thank you for your excellent support on our trip. With best wishes for a wonderful 2011.",
   },
   {
     id: 2,
-    name: "Michael Chen",
-    designation: "CEO",
-    company: "Tech Solutions Inc.",
+    name: "Jean",
+    designation: "",
+    company: "",
     testimonial:
-      "Our corporate retreat in Tanzania was flawlessly organized. The team handled every detail with professionalism, from airport transfers to luxury accommodations. Our team came back inspired and rejuvenated.",
+      "We want to thank you for making our anniversary so special. The trip was outstanding, and the dinner at the Mara Serena was over the top. We both had a great dinner and a great night. You truly are and always will be our dearest friend. Please come to the US. We would love to have you come to our home. Until we meet again, may God bless you. You hold a special place in our hearts and always will. With many thanks and much love.",
   },
   {
     id: 3,
-    name: "Emma Rodriguez",
-    designation: "Adventure Traveler",
-    company: "Spain",
+    name: "Mum, Dad, Leslie & Ritchie",
+    designation: "",
+    company: "",
     testimonial:
-      "The gorilla trekking experience in Rwanda was life-changing. Coming face-to-face with these magnificent creatures in their natural habitat was emotional and unforgettable. Thank you for this incredible journey.",
-  },
-  {
-    id: 4,
-    name: "David Thompson",
-    designation: "Conservation Photographer",
-    company: "National Geographic",
-    testimonial:
-      "Timobo's commitment to conservation shines through every aspect of their tours. The elephant safari in Amboseli was not just beautiful, but educational and meaningful. They truly care about protecting Africa's wildlife.",
-  },
-  {
-    id: 5,
-    name: "Lisa Williams",
-    designation: "Travel Blogger",
-    company: "Wanderlust Adventures",
-    testimonial:
-      "The best investment we've made for our content! The Okavango Delta experience was magical - gliding through waterways in traditional mokoros while elephants bathed nearby. Timobo exceeded all expectations.",
+      "To our dearest special friend. Asante sana. Thank you from all of us for all you did to make this another trip of a lifetime. We love you.",
   },
 ];
 
@@ -63,9 +47,11 @@ const TestimonialCard = ({
     </p>
     <div className="h-px w-10 bg-amber-300/50 mx-auto mb-5" />
     <p className="font-sofia-pro-bold text-sm text-stone-800 tracking-[0.08em]">{testimonial.name}</p>
-    <p className="font-sofia-pro text-xs text-stone-400 tracking-[0.2em] uppercase mt-1.5">
-      {testimonial.designation} &middot; {testimonial.company}
-    </p>
+    {(testimonial.designation || testimonial.company) && (
+      <p className="font-sofia-pro text-xs text-stone-400 tracking-[0.2em] uppercase mt-1.5">
+        {[testimonial.designation, testimonial.company].filter(Boolean).join(" · ")}
+      </p>
+    )}
   </div>
 );
 

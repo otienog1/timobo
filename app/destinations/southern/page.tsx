@@ -92,14 +92,14 @@ export default function SouthernAfricaPage() {
               const slug = destination.name.toLowerCase().replace(/\s+/g, '-');
               return (
                 <div key={index} className="bg-white overflow-hidden">
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                  <Link href={`/destinations/${slug}`} className="relative aspect-[4/3] overflow-hidden block">
                     <Image
                       src={destination.image}
                       alt={`${destination.name} safari destination`}
                       fill
                       className="object-cover transition-transform duration-500 hover:scale-105"
                     />
-                  </div>
+                  </Link>
                   <div className="pt-5 pb-2">
                     <p className="font-sofia-pro text-[10px] tracking-[0.2em] uppercase text-amber-600 mb-2">{destination.highlight}</p>
                     <h3 className="font-freight-display-pro text-xl text-stone-800 mb-3">{destination.name}</h3>

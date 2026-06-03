@@ -20,10 +20,17 @@ export default function DestinationsPage() {
       },
       {
         name: "Tanzania",
-        description: "Tanzania is home to legendary wilderness icons – the vast Serengeti National Park, the awe-inspiring Ngorongoro Crater, and Africa's highest peak, Mount Kilimanjaro. Witness the drama of the Great Migration and explore untamed beauty.",
+        description: "Home to the Serengeti, Ngorongoro Crater, Tarangire, and Lake Manyara in the north — and the remote wilderness of Nyerere, Ruaha, and Mahale in the south. Finish on the spice-scented shores of Zanzibar.",
         image: "/images/destinations/destination-tanzania.jpg",
-        highlight: "Serengeti & Ngorongoro Crater",
+        highlight: "Serengeti · Ngorongoro · Zanzibar",
         bestTime: "June–October (Safari), Dec–Feb (Zanzibar)"
+      },
+      {
+        name: "Zanzibar",
+        description: "An island of ivory-white beaches, turquoise waters, and a UNESCO-listed Stone Town steeped in Swahili, Arab, and Portuguese history. The perfect complement to any Tanzania safari.",
+        image: "/images/destinations/destination-southern-tanzania.jpg",
+        highlight: "Beaches & Stone Town",
+        bestTime: "June–October, December–February"
       },
       {
         name: "Rwanda",
@@ -46,13 +53,6 @@ export default function DestinationsPage() {
         highlight: "Ancient Churches & Highland Treks",
         bestTime: "October–March"
       },
-      {
-        name: "Southern Tanzania",
-        description: "Discover Tanzania's hidden wilderness gems in the south – the vast Nyerere National Park, the dramatic Ruaha National Park, and remote safari experiences far from the crowds. Explore pristine landscapes where elephants roam freely and wild dogs hunt in packs.",
-        image: "/images/homepage/homepage-adventure-travel.jpg",
-        highlight: "Remote Wilderness & Wild Dogs",
-        bestTime: "June–October"
-      }
     ],
     southern: [
       {
@@ -172,18 +172,19 @@ export default function DestinationsPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredDestinations.map((destination, index) => {
               const region = destinations.eastern.includes(destination) ? 'eastern' : 'southern';
-              const slug = destination.name.toLowerCase().replace(/\s+/g, '-');
+              const rawSlug = destination.name.toLowerCase().replace(/\s+/g, '-');
+              const slug = rawSlug === 'zanzibar' ? 'tanzania#zanzibar' : rawSlug;
 
               return (
                 <div key={`${region}-${index}`} className="bg-white overflow-hidden">
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                  <Link href={`/destinations/${slug}`} className="relative aspect-[4/3] overflow-hidden block">
                     <Image
                       src={destination.image}
                       alt={`${destination.name} safari destination`}
                       fill
                       className="object-cover transition-transform duration-500 hover:scale-105"
                     />
-                  </div>
+                  </Link>
                   <div className="pt-5 pb-2">
                     <p className="font-sofia-pro text-[10px] tracking-[0.2em] uppercase text-amber-600 mb-2">{destination.highlight}</p>
                     <h3 className="font-freight-display-pro text-xl text-stone-800 mb-3">

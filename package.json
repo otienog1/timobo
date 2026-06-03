@@ -44,5 +44,5 @@
     "@types/react-dom": "^19.1.9",
     "playwright": "^1.55.0"
   },
-  "packageManager": "yarn@4.15.0"
+  "packageManager": "yarn@4.16.0"
 }
