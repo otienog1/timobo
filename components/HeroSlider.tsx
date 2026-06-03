@@ -19,18 +19,18 @@ export default function HeroSlider({ className = "" }: HeroSliderProps) {
 
       // Each element starts 0.25s after the previous (duration 0.85 − offset 0.60 = 0.25s gap)
       tl.fromTo("[data-hero='heading']",
-          { opacity: 0, y: 24, scale: 0.97 },
+          { opacity: 0, y: 10, scale: 0.99 },
           { opacity: 1, y: 0, scale: 1, duration: 0.85 })
         .fromTo("[data-hero='copy']",
-          { opacity: 0, y: 24 },
+          { opacity: 0, y: 8 },
           { opacity: 1, y: 0, duration: 0.85 },
           "-=0.60")
         .fromTo("[data-hero='divider']",
           { scaleX: 0, opacity: 0 },
-          { scaleX: 1, opacity: 1, duration: 0.6, ease: "power2.inOut", transformOrigin: "center" },
+          { scaleX: 1, opacity: 1, duration: 0.6, transformOrigin: "center" },
           "-=0.60")
         .fromTo("[data-hero='ctas']",
-          { opacity: 0, y: 24 },
+          { opacity: 0, y: 6 },
           { opacity: 1, y: 0, duration: 0.75 },
           "-=0.35")
     }, containerRef)

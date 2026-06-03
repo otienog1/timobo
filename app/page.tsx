@@ -1,12 +1,11 @@
 "use client";
 
 import HeroSlider from "@/components/HeroSlider";
+import ExpertiseCarousel from "@/components/ExpertiseCarousel";
 import Section from "@/components/Section";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
-import { gsap } from "@/lib/gsap";
-import { ScrollTrigger } from "@/lib/gsap";
+import { useState } from "react";
 
 const testimonials = [
   {
@@ -61,8 +60,6 @@ const TESTIMONIAL_COUNT = testimonials.length;
 export default function HomePage() {
   const [current, setCurrent] = useState(0);
   const [visible, setVisible] = useState(true);
-  const mainRef = useRef<HTMLElement>(null);
-
   const goTo = (index: number) => {
     setVisible(false);
     setTimeout(() => {
@@ -71,61 +68,8 @@ export default function HomePage() {
     }, 250);
   };
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const ease = "power3.out";
-      const fadeUp = { opacity: 0, y: 24 } as const;
-      const fadeIn = { opacity: 1, y: 0, duration: 0.8, ease } as const;
-
-      // ── About ──────────────────────────────────────────
-      const aboutTl = gsap.timeline({
-        scrollTrigger: { trigger: "[data-s='about']", start: "top 78%", toggleActions: "play none none none" },
-      });
-      aboutTl
-        .fromTo("[data-s='about-eyebrow']", fadeUp, fadeIn)
-        .fromTo("[data-s='about-intro']", fadeUp, fadeIn, "-=0.55")
-        .fromTo("[data-s='about-divider']", { scaleX: 0 }, { scaleX: 1, duration: 0.55, ease: "power2.inOut", transformOrigin: "left" }, "-=0.55")
-        .fromTo("[data-s='about-col']", fadeUp, { ...fadeIn, stagger: 0.12 }, "-=0.55")
-        .fromTo("[data-s='about-image']", fadeUp, { ...fadeIn, duration: 0.85 }, "<0.25");
-
-      // ── Services ───────────────────────────────────────
-      const servicesTl = gsap.timeline({
-        scrollTrigger: { trigger: "[data-s='services']", start: "top 78%", toggleActions: "play none none none" },
-      });
-      servicesTl
-        .fromTo("[data-s='services-header'] > *", fadeUp, { ...fadeIn, stagger: 0.12 })
-        .fromTo("[data-s='services-card']", fadeUp, { ...fadeIn, stagger: 0.12 }, "-=0.3");
-
-      // ── Destinations ───────────────────────────────────
-      const destTl = gsap.timeline({
-        scrollTrigger: { trigger: "[data-s='dest']", start: "top 78%", toggleActions: "play none none none" },
-      });
-      destTl
-        .fromTo("[data-s='dest-content'] > *", fadeUp, { ...fadeIn, stagger: 0.12 })
-        .fromTo("[data-s='dest-img']", { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out", stagger: 0.12 }, "-=0.55");
-
-      // ── Testimonials ───────────────────────────────────
-      const testimonialsTl = gsap.timeline({
-        scrollTrigger: { trigger: "[data-s='testimonials']", start: "top 78%", toggleActions: "play none none none" },
-      });
-      testimonialsTl
-        .fromTo("[data-s='testimonials-header'] > *", fadeUp, { ...fadeIn, stagger: 0.12 })
-        .fromTo("[data-s='testimonials-body']", fadeUp, fadeIn, "-=0.3");
-
-      // ── CTA ────────────────────────────────────────────
-      const ctaTl = gsap.timeline({
-        scrollTrigger: { trigger: "[data-s='cta']", start: "top 78%", toggleActions: "play none none none" },
-      });
-      ctaTl.fromTo("[data-s='cta-content'] > *", fadeUp, { ...fadeIn, stagger: 0.12 });
-
-      ScrollTrigger.refresh();
-    }, mainRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <main ref={mainRef} className="min-h-screen overflow-x-hidden">
+    <main className="min-h-screen overflow-x-hidden">
       <HeroSlider />
 
       {/* ── About / Story ─────────────────────────────── */}
@@ -206,87 +150,7 @@ export default function HomePage() {
 
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-0 border border-stone-200">
-
-            {/* Safari Experiences */}
-            <div data-s="services-card" className="group flex flex-col border-b lg:border-b-0 lg:border-r border-stone-200">
-              <div className="relative h-72 overflow-hidden">
-                <Image
-                  src="/images/homepage/homepage-safari-experiences.jpg"
-                  alt="Wildlife safari experience"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 to-transparent" />
-                <span className="absolute top-4 left-4 font-freight-display-pro text-5xl text-white/20 leading-none select-none">01</span>
-              </div>
-              <div className="p-7 flex flex-col flex-1">
-                <h3 className="font-freight-display-pro text-2xl text-stone-800 mb-3">Safari Experiences</h3>
-                <p className="font-sofia-pro text-sm text-stone-600 leading-relaxed mb-6 flex-1">
-                  Custom-designed safari itineraries connecting you to Africa&apos;s most iconic destinations — from luxury lodge stays and wildlife encounters to photography tours and conservation experiences.
-                </p>
-                <Link
-                  href="/services/safari-experiences"
-                  className="font-sofia-pro-bold text-[10px] tracking-[0.2em] uppercase text-amber-500 hover:text-amber-400 inline-flex items-center gap-2 transition-colors"
-                >
-                  Discover More <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-            </div>
-
-            {/* Adventure Travel */}
-            <div data-s="services-card" className="group flex flex-col border-b lg:border-b-0 lg:border-r border-stone-200">
-              <div className="relative h-72 overflow-hidden">
-                <Image
-                  src="/images/homepage/homepage-adventure-travel.jpg"
-                  alt="Adventure travel in Africa"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 to-transparent" />
-                <span className="absolute top-4 left-4 font-freight-display-pro text-5xl text-white/20 leading-none select-none">02</span>
-              </div>
-              <div className="p-7 flex flex-col flex-1">
-                <h3 className="font-freight-display-pro text-2xl text-stone-800 mb-3">Adventure Travel</h3>
-                <p className="font-sofia-pro text-sm text-stone-600 leading-relaxed mb-6 flex-1">
-                  Off-the-beaten-path expeditions across Northern Kenya, Ethiopia, Rwanda, and Tanzania — gorilla treks, cultural discoveries, and wilderness journeys for the true explorer.
-                </p>
-                <Link
-                  href="/services/adventure-travel"
-                  className="font-sofia-pro-bold text-[10px] tracking-[0.2em] uppercase text-amber-500 hover:text-amber-400 inline-flex items-center gap-2 transition-colors"
-                >
-                  Discover More <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-            </div>
-
-            {/* MICE Solutions */}
-            <div data-s="services-card" className="group flex flex-col">
-              <div className="relative h-72 overflow-hidden">
-                <Image
-                  src="/images/homepage/homepage-mice-solutions.jpg"
-                  alt="Corporate meetings and events in Africa"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 to-transparent" />
-                <span className="absolute top-4 left-4 font-freight-display-pro text-5xl text-white/20 leading-none select-none">03</span>
-              </div>
-              <div className="p-7 flex flex-col flex-1">
-                <h3 className="font-freight-display-pro text-2xl text-stone-800 mb-3">MICE Solutions</h3>
-                <p className="font-sofia-pro text-sm text-stone-600 leading-relaxed mb-6 flex-1">
-                  End-to-end corporate event services across Eastern and Southern Africa — conferences, incentive travel, workshops, and special events planned and executed flawlessly.
-                </p>
-                <Link
-                  href="/services/mice-solutions"
-                  className="font-sofia-pro-bold text-[10px] tracking-[0.2em] uppercase text-amber-500 hover:text-amber-400 inline-flex items-center gap-2 transition-colors"
-                >
-                  Discover More <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-            </div>
-
-          </div>
+          <ExpertiseCarousel />
         </div>
       </Section>
 
@@ -408,7 +272,7 @@ export default function HomePage() {
               Ready for Your African Adventure?
             </h2>
 
-            <div className="flex items-center justify-center gap-4 mb-8">
+            <div data-s="cta-divider" className="flex items-center justify-center gap-4 mb-8">
               <span className="h-px w-16 bg-amber-200/30" />
               <span className="w-1 h-1 rotate-45 bg-amber-200/50 inline-block shrink-0" />
               <span className="h-px w-16 bg-amber-200/30" />
@@ -419,6 +283,7 @@ export default function HomePage() {
             </p>
 
             <Link
+              data-s="cta-link"
               href="/contact"
               className="inline-flex items-center justify-center font-sofia-pro-bold text-[11px] tracking-[0.2em] uppercase px-10 py-4 bg-amber-200 hover:bg-amber-300 text-stone-900 transition-all duration-300 rounded-sm"
             >

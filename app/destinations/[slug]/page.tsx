@@ -243,13 +243,13 @@ export default async function DestinationPage({ params }: Props) {
                   href="/contact"
                   className="inline-flex items-center justify-center font-sofia-pro-bold text-[11px] tracking-[0.2em] uppercase px-8 py-4 bg-amber-200 hover:bg-amber-300 text-stone-900 transition-all duration-300 rounded-sm"
                 >
-                  Start Planning Your Journey
+                  Plan Your Safari
                 </Link>
                 <Link
                   href="/destinations"
                   className="inline-flex items-center justify-center font-sofia-pro text-[11px] tracking-[0.2em] uppercase px-8 py-4 border border-white/30 hover:border-white/60 text-white/80 hover:text-white hover:bg-white/5 transition-all duration-300 rounded-sm"
                 >
-                  Explore All Destinations
+                  Explore Destinations
                 </Link>
               </div>
             </div>
