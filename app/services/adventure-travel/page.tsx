@@ -95,49 +95,32 @@ export default function AdventureTravelPage() {
         </div>
       </Section>
 
-      <Section className="py-20 lg:py-28">
+      <Section className="py-20 lg:py-28 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
-          <div className="mb-14">
+          <div className="mb-12">
             <p className="font-sofia-pro text-[11px] tracking-[0.2em] uppercase text-amber-600 mb-4">The Expeditions</p>
-            <h2 className="font-freight-display-pro text-3xl sm:text-4xl text-stone-800 leading-tight max-w-xl">
-              Adventure Expeditions
-            </h2>
+            <h2 className="font-freight-display-pro text-3xl sm:text-4xl text-stone-800 leading-tight max-w-xl">Adventure Expeditions</h2>
           </div>
-
-          <div className="divide-y divide-stone-100">
+          <div className="grid md:grid-cols-2 gap-px bg-stone-200">
             {adventureJourneys.map((journey, index) => (
-              <div key={index} className="py-12 lg:py-14">
-                <div className="relative aspect-[4/3] overflow-hidden mb-8 lg:hidden">
-                  <Image src={journey.image} alt={journey.title} fill className="object-cover" />
+              <div key={index} className="bg-white overflow-hidden">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image src={journey.image} alt={journey.title} fill className="object-cover transition-transform duration-500 hover:scale-105" />
                 </div>
-                <div className="flex gap-6 lg:gap-10 items-start">
-                  <span className="font-freight-display-pro text-3xl lg:text-5xl text-stone-200 leading-none select-none flex-shrink-0 pt-1 w-10 lg:w-14" aria-hidden="true">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div className="flex-1 min-w-0 flex flex-col lg:flex-row lg:gap-12 gap-5 lg:items-start">
-                    <div className="lg:w-52 lg:flex-shrink-0">
-                      <p className="font-sofia-pro text-[10px] tracking-[0.2em] uppercase text-amber-600 mb-2">{journey.subtitle}</p>
-                      <h3 className="font-freight-display-pro text-2xl text-stone-800 leading-snug mb-3">{journey.title}</h3>
-                      <p className="font-sofia-pro text-[10px] tracking-[0.12em] uppercase text-stone-400">
-                        {journey.duration}&nbsp;&nbsp;·&nbsp;&nbsp;{journey.startingPrice}
-                      </p>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="font-sofia-pro text-sm text-stone-600 leading-relaxed mb-5">{journey.description}</p>
-                      <div className="space-y-2.5">
-                        {journey.highlights.map((h, i) => (
-                          <div key={i} className="flex items-start gap-2.5">
-                            <span className="flex-shrink-0 w-1.5 h-1.5 rotate-45 bg-amber-400/70 inline-block mt-1" aria-hidden="true" />
-                            <span className="font-sofia-pro text-xs text-stone-500">{h}</span>
-                          </div>
-                        ))}
+                <div className="p-8 lg:p-10">
+                  <p className="font-sofia-pro text-[10px] tracking-[0.2em] uppercase text-amber-600 mb-2">{journey.subtitle}</p>
+                  <h3 className="font-freight-display-pro text-xl text-stone-800 mb-3 leading-snug">{journey.title}</h3>
+                  <p className="font-sofia-pro text-[10px] tracking-[0.12em] uppercase text-stone-400 mb-4">
+                    {journey.duration}&nbsp;&nbsp;·&nbsp;&nbsp;{journey.startingPrice}
+                  </p>
+                  <p className="font-sofia-pro text-sm text-stone-500 leading-relaxed mb-5">{journey.description}</p>
+                  <div className="space-y-2.5">
+                    {journey.highlights.map((h, i) => (
+                      <div key={i} className="flex items-start gap-2.5">
+                        <span className="flex-shrink-0 w-1.5 h-1.5 rotate-45 bg-amber-400/70 inline-block mt-1" aria-hidden="true" />
+                        <span className="font-sofia-pro text-xs text-stone-500">{h}</span>
                       </div>
-                    </div>
-                  </div>
-                  <div className="hidden lg:block lg:w-64 lg:flex-shrink-0">
-                    <div className="relative aspect-[4/3] overflow-hidden">
-                      <Image src={journey.image} alt={journey.title} fill className="object-cover transition-transform duration-500 hover:scale-105" />
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -146,22 +129,23 @@ export default function AdventureTravelPage() {
         </div>
       </Section>
 
-      <Section className="py-20 lg:py-28 bg-stone-50">
+      <Section className="py-20 lg:py-28 bg-stone-50 border-t border-stone-200">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
-          <div className="relative aspect-[16/7] overflow-hidden mb-14">
-            <Image src="/images/services/Adventure-travel/ethiopian-highland-discovery.jpg" alt="Adventure travel expertise" fill className="object-cover" />
+          <div className="text-center mb-14">
+            <p className="font-sofia-pro text-[11px] tracking-[0.2em] uppercase text-amber-600 mb-5">Our Standards</p>
+            <h2 className="font-freight-display-pro text-3xl sm:text-4xl text-stone-800 leading-tight">Adventure Travel Expertise</h2>
+            <div className="flex items-center justify-center gap-3 mt-6">
+              <span className="h-px w-14 bg-stone-300" />
+              <span className="w-1.5 h-1.5 rotate-45 bg-amber-400/70 inline-block shrink-0" />
+              <span className="h-px w-14 bg-stone-300" />
+            </div>
           </div>
-          <div className="mb-12">
-            <p className="font-sofia-pro text-[11px] tracking-[0.2em] uppercase text-amber-600 mb-4">Our Standards</p>
-            <h2 className="font-freight-display-pro text-3xl sm:text-4xl text-stone-800 leading-tight max-w-2xl">
-              Adventure Travel Expertise
-            </h2>
-          </div>
-          <div className="divide-y divide-stone-200">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-stone-200">
             {expertiseFeatures.map(({ title, body }) => (
-              <div key={title} className="flex flex-col lg:flex-row lg:gap-20 py-8 lg:items-start">
-                <h3 className="font-freight-display-pro text-xl text-stone-800 lg:w-72 lg:flex-shrink-0 mb-2 lg:mb-0 leading-snug">{title}</h3>
-                <p className="font-sofia-pro text-sm text-stone-500 leading-relaxed flex-1">{body}</p>
+              <div key={title} className="bg-white p-8 lg:p-10">
+                <span className="w-1.5 h-1.5 rotate-45 bg-amber-400/80 inline-block mb-6" aria-hidden="true" />
+                <h3 className="font-freight-display-pro text-xl text-stone-800 mb-3 leading-snug">{title}</h3>
+                <p className="font-sofia-pro text-sm text-stone-500 leading-relaxed">{body}</p>
               </div>
             ))}
           </div>
