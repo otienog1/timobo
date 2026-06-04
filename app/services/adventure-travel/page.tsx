@@ -12,7 +12,7 @@ export default function AdventureTravelPage() {
       subtitle: "Lake Turkana & Samburu Wilderness",
       duration: "10 Days",
       startingPrice: "From $4,850",
-      image: "/images/services/Adventure-travel/northern-kenya-retreat.jpg",
+      image: "/images/services/adventure-travel/northern-kenya-retreat.jpg",
       description: "Journey to Kenya's remote northern frontier — the jade waters of Lake Turkana, Samburu's unique wildlife, and ancient pastoralist communities in pristine desert landscapes.",
       highlights: ["Lake Turkana — Africa's largest desert lake", "Samburu's Special Five wildlife", "Traditional pastoralist communities", "Remote desert camping"]
     },
@@ -21,7 +21,7 @@ export default function AdventureTravelPage() {
       subtitle: "Ancient Churches & Tribal Cultures",
       duration: "12 Days",
       startingPrice: "From $5,200",
-      image: "/images/services/Adventure-travel/ethiopian-highland-discovery.jpg",
+      image: "/images/services/adventure-travel/ethiopian-highland-discovery.jpg",
       description: "Explore the cradle of civilisation. Rock-hewn churches, dramatic highland scenery, and the Omo Valley's tribal cultures offer a journey unlike any other on the continent.",
       highlights: ["Lalibela's rock-hewn churches", "Simien Mountains trekking", "Danakil Depression expeditions", "Omo Valley tribal encounters"]
     },
@@ -30,7 +30,7 @@ export default function AdventureTravelPage() {
       subtitle: "Selous & Mafia Island Adventure",
       duration: "14 Days",
       startingPrice: "From $6,750",
-      image: "/images/services/Adventure-travel/southern-tanzania-explorer.jpg",
+      image: "/images/services/adventure-travel/southern-tanzania-explorer.jpg",
       description: "Tanzania's vast southern wilderness combined with pristine island paradise. Walking safaris, river expeditions, and world-class diving in untouched, uncrowded locations.",
       highlights: ["Nyerere National Park expeditions", "Ruaha's massive elephant herds", "Mafia Island marine sanctuary", "Historical Kilwa ruins"]
     },
@@ -39,7 +39,7 @@ export default function AdventureTravelPage() {
       subtitle: "Rwanda & Uganda Primates",
       duration: "8 Days",
       startingPrice: "From $7,200",
-      image: "/images/services/Adventure-travel/gorilla-trekking-expedition.jpg",
+      image: "/images/services/adventure-travel/gorilla-trekking-expedition.jpg",
       description: "Come face-to-face with endangered mountain gorillas and chimpanzees in the misty highlands of Rwanda and Uganda — a transformative encounter unlike any other in Africa.",
       highlights: ["Mountain gorilla encounters", "Chimpanzee tracking in Kibale", "Golden monkey experiences", "Canopy walks in ancient forests"]
     },
@@ -48,7 +48,7 @@ export default function AdventureTravelPage() {
       subtitle: "Sossusvlei & Skeleton Coast",
       duration: "11 Days",
       startingPrice: "From $5,950",
-      image: "/images/services/Adventure-travel/namibia-desert-adventure.jpg",
+      image: "/images/services/adventure-travel/namibia-desert-adventure.jpg",
       description: "Traverse the world's oldest desert — towering red dunes, the desolate Skeleton Coast, and the extraordinary desert-adapted wildlife that calls this stark landscape home.",
       highlights: ["Sossusvlei's towering dunes", "Skeleton Coast expeditions", "Desert-adapted wildlife", "Himba cultural encounters"]
     },
@@ -57,7 +57,7 @@ export default function AdventureTravelPage() {
       subtitle: "East to Southern Africa Overland",
       duration: "21 Days",
       startingPrice: "From $12,500",
-      image: "/images/services/Adventure-travel/multi-country-expedition.jpg",
+      image: "/images/services/adventure-travel/multi-country-expedition.jpg",
       description: "An epic overland journey connecting nations and ecosystems. The full spectrum of African wilderness, cultures, and landscapes — a journey that defines the continent.",
       highlights: ["Cross-border migrations", "Diverse ecosystem experiences", "Cultural exchange opportunities", "Comprehensive African adventure"]
     }
@@ -155,7 +155,7 @@ export default function AdventureTravelPage() {
       <Section className="py-20 lg:py-28 bg-stone-900 overflow-hidden">
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row">
           <div className="relative w-full lg:w-1/2 aspect-[16/9] lg:aspect-auto lg:min-h-[480px]">
-            <Image src="/images/services/Adventure-travel/multi-country-expedition.jpg" alt="Adventure travel" fill className="object-cover" />
+            <Image src="/images/services/adventure-travel/multi-country-expedition.jpg" alt="Adventure travel" fill className="object-cover" />
           </div>
           <div className="w-full lg:w-1/2 bg-stone-900 flex items-center">
             <div className="px-8 py-14 sm:px-12 lg:px-16 lg:py-20">
