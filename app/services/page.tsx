@@ -89,79 +89,79 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      <Section className="py-20 lg:py-28">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
-          <div className="mb-14">
-            <p className="font-sofia-pro text-[11px] tracking-[0.2em] uppercase text-amber-600 mb-4">Our Offerings</p>
-            <h2 className="font-freight-display-pro text-3xl sm:text-4xl text-stone-800 leading-tight max-w-xl">
-              Comprehensive Travel Solutions
-            </h2>
-          </div>
-
-          <div className="divide-y divide-stone-100">
-            {services.map((service, index) => (
-              <div key={index} className="py-12 lg:py-14">
-                <div className="relative aspect-[4/3] overflow-hidden mb-8 lg:hidden">
-                  <Image src={service.image} alt={service.title} fill className="object-cover" />
+      {/* Section 3 — Alternating Services */}
+      <Section className="bg-white overflow-hidden border-t border-stone-100">
+        <div className="max-w-screen-xl mx-auto divide-y divide-stone-100">
+          {services.map((service, index) => {
+            const isEven = index % 2 === 0;
+            return (
+              <div
+                key={index}
+                className={`flex flex-col ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"}`}
+              >
+                <div className="relative w-full lg:w-[45%] aspect-[16/10] lg:aspect-auto lg:min-h-[480px] overflow-hidden flex-shrink-0">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover transition-transform duration-700 hover:scale-105"
+                  />
                 </div>
-                <div className="flex gap-6 lg:gap-10 items-start">
-                  <span className="font-freight-display-pro text-3xl lg:text-5xl text-stone-200 leading-none select-none flex-shrink-0 pt-1 w-10 lg:w-14" aria-hidden="true">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div className="flex-1 min-w-0 flex flex-col lg:flex-row lg:gap-12 gap-5 lg:items-start">
-                    <div className="lg:w-52 lg:flex-shrink-0">
-                      <p className="font-sofia-pro text-[10px] tracking-[0.2em] uppercase text-amber-600 mb-2">{service.subtitle}</p>
-                      <h3 className="font-freight-display-pro text-2xl text-stone-800 leading-snug mb-4">{service.title}</h3>
-                      <Link
-                        href={service.link}
-                        className="font-sofia-pro text-[10px] tracking-[0.18em] uppercase text-stone-400 hover:text-amber-600 transition-colors duration-200 inline-flex items-center gap-1.5"
-                      >
-                        Learn more
-                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </Link>
+                <div className="flex-1 flex items-center px-8 py-14 sm:px-12 lg:px-16 lg:py-20">
+                  <div className="max-w-lg">
+                    <p className="font-sofia-pro text-[11px] tracking-[0.2em] uppercase text-amber-600 mb-3">{service.subtitle}</p>
+                    <h3 className="font-freight-display-pro text-3xl sm:text-4xl text-stone-800 mb-4 leading-tight">{service.title}</h3>
+                    <div className="flex items-center gap-3 mb-6">
+                      <span className="h-px w-14 bg-stone-300" />
+                      <span className="w-1.5 h-1.5 rotate-45 bg-amber-400/70 inline-block shrink-0" />
+                      <span className="h-px w-14 bg-stone-300" />
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="font-sofia-pro text-sm text-stone-600 leading-relaxed mb-5">{service.description}</p>
-                      <div className="space-y-2.5">
-                        {service.highlights.map((h, i) => (
-                          <div key={i} className="flex items-start gap-2.5">
-                            <span className="flex-shrink-0 w-1.5 h-1.5 rotate-45 bg-amber-400/70 inline-block mt-1" aria-hidden="true" />
-                            <span className="font-sofia-pro text-xs text-stone-500">{h}</span>
-                          </div>
-                        ))}
-                      </div>
+                    <p className="font-sofia-pro text-sm text-stone-600 leading-relaxed mb-6">{service.description}</p>
+                    <div className="space-y-2.5 mb-8">
+                      {service.highlights.map((h, i) => (
+                        <div key={i} className="flex items-start gap-2.5">
+                          <span className="flex-shrink-0 w-1.5 h-1.5 rotate-45 bg-amber-400/70 inline-block mt-1" aria-hidden="true" />
+                          <span className="font-sofia-pro text-xs text-stone-500">{h}</span>
+                        </div>
+                      ))}
                     </div>
-                  </div>
-                  <div className="hidden lg:block lg:w-64 lg:flex-shrink-0">
-                    <div className="relative aspect-[4/3] overflow-hidden">
-                      <Image src={service.image} alt={service.title} fill className="object-cover transition-transform duration-500 hover:scale-105" />
-                    </div>
+                    <Link
+                      href={service.link}
+                      className="font-sofia-pro text-[10px] tracking-[0.18em] uppercase text-stone-400 hover:text-amber-600 transition-colors duration-200 inline-flex items-center gap-1.5"
+                    >
+                      Explore
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </Section>
 
-      <Section className="py-20 lg:py-28 bg-stone-50">
+      {/* Section 4 — Why Choose Timobo (4-col card grid) */}
+      <Section className="py-20 lg:py-28 bg-stone-50 border-t border-stone-200">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
-          <div className="relative aspect-[16/7] overflow-hidden mb-14">
-            <Image src="/images/services/services-why-choose-timobo.jpg" alt="Why choose Timobo Safaris" fill className="object-cover" />
-          </div>
-          <div className="mb-12">
-            <p className="font-sofia-pro text-[11px] tracking-[0.2em] uppercase text-amber-600 mb-4">Our Distinction</p>
-            <h2 className="font-freight-display-pro text-3xl sm:text-4xl text-stone-800 leading-tight max-w-2xl">
+          <div className="text-center mb-14">
+            <p className="font-sofia-pro text-[11px] tracking-[0.2em] uppercase text-amber-600 mb-5">Our Distinction</p>
+            <h2 className="font-freight-display-pro text-3xl sm:text-4xl text-stone-800 leading-tight">
               Why Choose Timobo Safaris?
             </h2>
+            <div className="flex items-center justify-center gap-3 mt-6">
+              <span className="h-px w-14 bg-stone-300" />
+              <span className="w-1.5 h-1.5 rotate-45 bg-amber-400/70 inline-block shrink-0" />
+              <span className="h-px w-14 bg-stone-300" />
+            </div>
           </div>
-          <div className="divide-y divide-stone-200">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-stone-200">
             {reasons.map(({ title, body }) => (
-              <div key={title} className="flex flex-col lg:flex-row lg:gap-20 py-8 lg:items-start">
-                <h3 className="font-freight-display-pro text-xl text-stone-800 lg:w-72 lg:flex-shrink-0 mb-2 lg:mb-0 leading-snug">{title}</h3>
-                <p className="font-sofia-pro text-sm text-stone-500 leading-relaxed flex-1">{body}</p>
+              <div key={title} className="bg-white p-8 lg:p-10">
+                <span className="w-1.5 h-1.5 rotate-45 bg-amber-400/80 inline-block mb-6" aria-hidden="true" />
+                <h3 className="font-freight-display-pro text-xl text-stone-800 mb-3 leading-snug">{title}</h3>
+                <p className="font-sofia-pro text-sm text-stone-500 leading-relaxed">{body}</p>
               </div>
             ))}
           </div>
