@@ -89,7 +89,7 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      {/* Section 3 — Alternating Services */}
+      {/* Section 3 — Alternating Services (full-bleed: no section padding — rows contain their own py-14/py-20) */}
       <Section className="bg-white overflow-hidden border-t border-stone-100">
         <div className="max-w-screen-xl mx-auto divide-y divide-stone-100">
           {services.map((service, index) => {
@@ -127,6 +127,7 @@ export default function ServicesPage() {
                     </div>
                     <Link
                       href={service.link}
+                      aria-label={`Explore ${service.title}`}
                       className="font-sofia-pro text-[10px] tracking-[0.18em] uppercase text-stone-400 hover:text-amber-600 transition-colors duration-200 inline-flex items-center gap-1.5"
                     >
                       Explore
